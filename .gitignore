@@ -1,0 +1,10 @@
+node_modules
+dist
+
+design
+*.css
+style-guide.md
+README*.md
+!/README.md
+
+test.*
