@@ -1,0 +1,173 @@
+/**********************/
+// Global Resets
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  font-family: Montserrat, sans-serif;
+  font-size: 62.5%;
+  font-weight: 500;
+  line-height: 1;
+}
+
+body {
+  font-size: 1.4rem;
+  background-color: hsl(30, 38%, 92%);
+}
+
+button {
+  font-family: inherit;
+  color: inherit;
+  border: none;
+  background: none;
+  cursor: pointer;
+}
+/**********************/
+
+/**********************/
+@mixin flex-center-v {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-center {
+  @include flex-center-v;
+  justify-content: center;
+}
+/**********************/
+
+/**********************/
+body {
+  display: flex;
+  min-height: 100vh;
+  padding: 3.6rem 1.8rem;
+}
+
+.card {
+  max-width: 64rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.img-box {
+  &__img {
+    display: block; // remove the default 4px bottom
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.content {
+  padding: 3.2rem;
+  color: hsl(228, 12%, 48%);
+  background-color: darken(hsl(0, 0%, 100%), 4%);
+
+  &__description {
+    margin-bottom: 3.2rem;
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.heading {
+  > span {
+    display: block;
+  }
+
+  &__primary {
+    margin-bottom: 3.2rem;
+    font-family: Fraunces, "sans-serif";
+    font-size: 4.2rem;
+    color: hsl(212, 21%, 14%);
+  }
+
+  &__secondary {
+    margin-bottom: 2.4rem;
+
+    font-size: 1.2rem;
+    letter-spacing: 0.8rem;
+  }
+}
+
+.price {
+  @include flex-center-v;
+  margin-bottom: 2.8rem;
+
+  & > * {
+    display: inline-block;
+  }
+
+  &__discounted {
+    margin-right: 1.6rem;
+    font-family: Fraunces, "sans-serif";
+    font-size: 3.2rem;
+    color: hsl(158, 36%, 37%);
+  }
+
+  &__original {
+    font-size: 1.6rem;
+  }
+}
+
+.btn-cart {
+  @include flex-center;
+  gap: 1.2rem;
+
+  width: 100%;
+  padding: 1.8rem 3.6rem;
+  border-radius: 8px;
+
+  font-weight: 700;
+  font-size: 1.6rem;
+  text-align: center;
+
+  color: hsl(0, 0%, 100%);
+  background-color: hsl(158, 36%, 37%);
+
+  transition: background-color 0.3s;
+
+  &:hover {
+    background-color: darken(hsl(158, 36%, 37%), 15%);
+  }
+}
+/**********************/
+
+/**********************/
+// Queries
+@media (max-width: 42em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .card {
+    grid-template-columns: 1fr;
+  }
+
+  .img-box__img {
+    max-height: 30rem;
+  }
+}
+/**********************/
+
+/**********************/
+// Utils
+.uppercase {
+  text-transform: uppercase;
+}
+/**********************/
