@@ -1,0 +1,291 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+
+  font-family: "League Spartan", sans-serif;
+  font-size: 62.5%;
+  font-weight: 400;
+  line-height: 1;
+}
+
+@mixin offset-x($dx, $n) {
+  @for $i from 1 through $n {
+    &:nth-child(#{$i}) {
+      transform: translateX(calc(($i - $n) * $dx));
+    }
+  }
+}
+
+@mixin offset-y($dy, $n) {
+  @for $i from 1 through $n {
+    &:nth-child(#{$i}) {
+      transform: translateY(calc(($i - $n) * $dy));
+    }
+  }
+}
+
+.grid-2-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 3.2rem;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 3.2rem;
+}
+
+body {
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.hero {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 8rem;
+
+  min-height: 100vh;
+  padding: 6.4rem 2.4rem;
+  background-color: #fff;
+
+  background: url(images/bg-pattern-top-desktop.svg),
+    url(images/bg-pattern-bottom-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: left 0 top 0, right 0 bottom 0;
+
+  > * {
+    max-width: 114rem;
+    margin: 0 auto;
+  }
+}
+
+.header-main {
+  &__title {
+    width: 80%;
+    margin-bottom: 2.4rem;
+
+    font-size: 5.6rem;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 0.9;
+
+    color: hsl(300, 43%, 22%);
+  }
+
+  &__description {
+    font-size: 2.2rem;
+    font-weight: 500;
+    line-height: 1.2;
+    color: hsl(303, 10%, 53%);
+  }
+}
+
+.ratings {
+  justify-self: end;
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  padding: 2.4rem 2rem;
+  border-radius: 8px;
+  background-color: hsl(300, 24%, 96%);
+
+  @include offset-x(5.6rem, 3);
+
+  &:not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+
+  &__text {
+    color: hsl(300, 43%, 22%);
+    font-size: 2rem;
+    font-weight: 700;
+  }
+}
+
+.rating-stars {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px;
+}
+
+.rating-star-box {
+  img {
+    display: block;
+  }
+}
+
+$testimonial-margin: 3.6rem;
+.testimonials {
+  padding-top: $testimonial-margin;
+}
+
+.testimonial {
+  padding: 4.2rem 3.2rem;
+  background-color: hsl(300, 43%, 22%);
+  border-radius: 8px;
+
+  @include offset-y(calc($testimonial-margin / 2), 3);
+
+  blockquote {
+    font-size: 1.7rem;
+    line-height: 1.4;
+    color: hsl(300, 24%, 96%);
+  }
+}
+
+.author {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: flex-end;
+  align-items: center;
+  column-gap: 2.4rem;
+
+  margin-bottom: 1.8rem;
+}
+
+.author-details {
+  &__name {
+    font-size: 2rem;
+    font-weight: 500;
+    color: hsl(300, 24%, 96%);
+    margin-bottom: 6px;
+  }
+
+  &__tag {
+    color: hsl(333, 80%, 67%);
+  }
+}
+
+.author-img-box {
+  flex-basis: 5.6rem;
+
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+  }
+}
+/* ************************ */
+
+/* ************************ */
+// Queries
+
+// 928px
+@media (max-width: 58em) {
+  html {
+    font-size: 56.25%;
+  }
+  .grid-2-col {
+    grid-template-columns: 55fr 45fr;
+  }
+  .rating {
+    @include offset-x(2.4rem, 3);
+    flex-direction: column;
+    gap: 1.2rem;
+
+    padding-top: 1.2rem;
+    padding-bottom: 1.2rem;
+    text-align: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1.8rem;
+    }
+  }
+}
+
+// 796px
+@media (max-width: 49.75em) {
+  .testimonials {
+    padding-top: 0;
+    grid-template-columns: 1fr;
+    gap: 1.6rem;
+  }
+  .testimonial {
+    @include offset-y(0, 3);
+    max-width: 60rem;
+  }
+}
+
+// 660px
+@media (max-width: 41.25em) {
+  .grid-2-col {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+// 634px
+@media (max-width: 39.75em) {
+  .grid-2-col {
+    grid-template-columns: 1fr;
+  }
+
+  .hero {
+    gap: 6.4rem;
+  }
+
+  .header-main {
+    text-align: center;
+
+    &__title {
+      width: 100%;
+    }
+  }
+
+  .ratings {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2.4rem;
+  }
+
+  .rating {
+    @include offset-y(0, 3);
+
+    &:not(:last-child) {
+      margin-bottom: 0;
+    }
+  }
+
+  .testimonial {
+    max-width: initial;
+  }
+}
+
+@media (max-width: 34.25em) {
+  .ratings {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 1.6rem;
+  }
+  .rating {
+    padding-top: 1.6rem;
+    padding-bottom: 1.6rem;
+  }
+}
+@media (max-width: 24.75em) {
+  .ratings {
+    grid-template-columns: 1fr;
+    justify-self: stretch;
+  }
+}
+/* ************************ */
