@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="A form requesting rating from the user, which displays a thank you note upon successful submission."
+    />
+
+    <title>Interactive Rating Component</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.scss" />
+    <script src="main.js" type="module"></script>
+  </head>
+
+  <body>
+    <main>
+      <section class="feedback card">
+        <header class="header">
+          <div class="header-content">
+            <h1>How did we do?</h1>
+            <p>
+              Please let us know how we did your support request. All feedback
+              is appreciated to help us improve our offering!
+            </p>
+          </div>
+
+          <div class="header-icon">
+            <img src="images/icon-star.svg" alt="Star icon" />
+          </div>
+        </header>
+
+        <form action="" class="rating-form">
+          <div class="rating-btns">
+            <button class="rating-btn" type="button" data-rating="1">1</button>
+            <button class="rating-btn" type="button" data-rating="2">2</button>
+            <button class="rating-btn" type="button" data-rating="3">3</button>
+            <button class="rating-btn" type="button" data-rating="4">4</button>
+            <button class="rating-btn" type="button" data-rating="5">5</button>
+          </div>
+
+          <button type="submit" class="submit-btn" disabled>Submit</button>
+        </form>
+      </section>
+
+      <article class="feedback-response card hide">
+        <div class="illustration-box">
+          <img
+            src="images/illustration-thank-you.svg"
+            alt="A touch screen mobile phone"
+            class="illustration-box__img"
+          />
+        </div>
+
+        <p class="rating-text">
+          You selected <span class="rating-text__rating"></span> out of 5
+        </p>
+
+        <header class="response-header">
+          <h1 class="response-header__title">Thank you!</h1>
+          <p class="response-header__text">
+            We appreciate you taking the time to give a rating. If you ever need
+            more support, don't hesitate to get in touch!
+          </p>
+        </header>
+      </article>
+    </main>
+  </body>
+</html>
