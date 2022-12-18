@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Use Data Analytics to get insights that help your business grow"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+
+    <title>Stats Preview Component</title>
+  </head>
+
+  <body>
+    <main>
+      <section class="section-insights">
+        <div class="info-box">
+          <header class="header">
+            <h1 class="header__title">
+              Get <span>insights</span> that help your business grow.
+            </h1>
+
+            <p class="header__description">
+              Discover the benefits of data analytics and make better decisions
+              regarding revenue, customer experience, and overall efficiency.
+            </p>
+          </header>
+
+          <div class="stats">
+            <div class="stat">
+              <p class="stat__number"><strong>10k+</strong></p>
+              <p class="stat__type">Companies</p>
+            </div>
+            <div class="stat">
+              <p class="stat__number"><strong>314</strong></p>
+              <p class="stat__type">Templates</p>
+            </div>
+            <div class="stat">
+              <p class="stat__number"><strong>12M+</strong></p>
+              <p class="stat__type">Queries</p>
+            </div>
+          </div>
+        </div>
+
+        <picture class="img-box">
+          <!-- looks like the given images are flipped? -->
+          <source
+            srcset="images/image-header-mobile.jpg"
+            media="(min-width: 792px)"
+          />
+
+          <img
+            src="images/image-header-desktop.jpg"
+            alt="People discussing ideas"
+            class="img-box__img"
+          />
+        </picture>
+      </section>
+    </main>
+  </body>
+</html>
