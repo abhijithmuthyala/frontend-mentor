@@ -1,0 +1,189 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: "Red Hat Display", sans-serif;
+  line-height: 1;
+
+  color: hsl(224, 23%, 55%);
+}
+
+main {
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background: url(images/pattern-background-desktop.svg) no-repeat;
+  background-size: contain;
+  background-position: top 0 left 0;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(hsl(225, 100%, 94%), 1);
+  }
+}
+
+@mixin round($rad: 0.8rem) {
+  border-radius: $rad;
+  overflow: hidden;
+}
+
+.card {
+  background-color: hsl(225, 100%, 98%);
+  padding: 4.2rem 3.6rem;
+  text-align: center;
+}
+
+.order {
+  @include round(1.8rem);
+
+  max-width: 36rem;
+  margin-inline: 2.4rem;
+}
+
+.img-box {
+  &__img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+}
+
+.order-details {
+  > :not(:last-child) {
+    margin-bottom: 2.4rem;
+  }
+}
+
+.order-header {
+  &__title {
+    margin-bottom: 1.8rem;
+
+    font-size: 2.4rem;
+    font-weight: 900;
+    color: hsl(223, 47%, 23%);
+  }
+
+  &__summary {
+    line-height: 1.5;
+  }
+}
+
+.order-plan-box {
+  @include round;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.8rem;
+
+  padding: 1.6rem;
+  background-color: rgba(hsl(225, 100%, 94%), 0.25);
+}
+
+.order-plan {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+  justify-content: center;
+
+  &__type {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: hsl(223, 47%, 23%);
+  }
+}
+
+.link:link,
+.link:visited {
+  font-weight: 700;
+  line-height: 1.2;
+  color: inherit;
+  text-decoration: none;
+
+  transition: all 0.3s;
+}
+
+.link--change:link,
+.link--change:visited {
+  margin-left: auto;
+  text-decoration: underline;
+  color: hsl(245, 75%, 52%);
+}
+
+.link--change:hover,
+.link--change:active {
+  color: lighten(hsl(245, 75%, 52%), 15%);
+}
+
+.link--pay:link,
+.link--pay:visited {
+  @include round;
+
+  display: block;
+  padding: 1.6rem 3.2rem;
+
+  color: hsl(225, 100%, 98%);
+  background-color: hsl(245, 75%, 52%);
+  box-shadow: 0 4px 16px 0 lighten(hsl(245, 75%, 52%), 15%);
+}
+
+.link--pay:hover,
+.link--pay:active .link--cancel:link,
+.link--cancel:visited {
+  background-color: lighten(hsl(245, 75%, 52%), 15%);
+}
+
+@media (max-width: 48em) {
+  main {
+    background-image: url(images/pattern-background-mobile.svg);
+  }
+}
+
+// 384px
+@media (max-width: 24em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+// 348px
+@media (max-width: 21.75em) {
+  .order-plan-box {
+    justify-content: center;
+  }
+
+  .link--change:link,
+  .link--change:visited {
+    margin-inline: auto;
+  }
+}

@@ -10,3 +10,4 @@
 | [Single Price Grid](https://single-price-grid-fem-component.netlify.app/) | | | |
 | [Stats Preview Card](https://stats-preview-fem-card.netlify.app/) | | | |
 | [QR Code Component](https://qr-code-fem-component.netlify.app/) | | | |
+| [Order Summary Component](https://order-summary-fem-component.netlify.app/) | | | |
