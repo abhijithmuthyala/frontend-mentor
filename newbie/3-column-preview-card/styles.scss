@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Lexend Deca", sans-serif;
+  font-weight: 400;
+  font-size: 1.5rem;
+  line-height: 1;
+
+  color: hsla(0, 0%, 100%, 0.75);
+}
+
+@mixin link-style($col) {
+  background-color: $col;
+
+  a:link,
+  a:visited {
+    color: $col;
+  }
+}
+
+.card {
+  $orange: hsl(31, 77%, 52%);
+  $blue-light: hsl(184, 100%, 22%);
+  $blue-dark: hsl(179, 100%, 13%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2.4rem;
+
+  padding: 4.2rem;
+
+  &--orange {
+    @include link-style($orange);
+  }
+
+  &--light-blue {
+    @include link-style($blue-light);
+  }
+
+  &--dark-blue {
+    @include link-style($blue-dark);
+  }
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+}
+
+.grid-3-col {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+$white: hsl(0, 0%, 95%);
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  background-color: $white;
+}
+
+.cars {
+  max-width: 86rem;
+  margin: 4.8rem 1.6rem;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.car {
+  min-height: 48rem;
+
+  &__icon {
+    margin-bottom: 4.2rem;
+  }
+
+  &__title {
+    margin-bottom: 3.2rem;
+
+    font-family: "Big Shoulders Display", sans-serif, cursive;
+    font-size: 3.6rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+
+    color: $white;
+  }
+
+  &__summary {
+    line-height: 1.6;
+  }
+
+  a:link,
+  a:visited {
+    align-self: flex-start;
+
+    padding: 1.6rem 3.2rem;
+    border-radius: 1000px;
+
+    background-color: $white;
+    transition: all 0.4s;
+  }
+
+  a:hover,
+  a:active {
+    background-color: transparent;
+    color: $white;
+    box-shadow: inset 0 0 0 2px $white;
+  }
+}
+
+@media (max-width: 45.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 41em) {
+  .grid-3-col {
+    grid-template-columns: 1fr;
+  }
+
+  .car {
+    min-height: 38rem;
+  }
+}

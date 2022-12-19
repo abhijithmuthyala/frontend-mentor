@@ -1,0 +1,18 @@
+{
+  "name": "3-column-preview-card",
+  "version": "1.0.0",
+  "description": "![Design preview for the 3-column preview card component coding challenge](./design/desktop-preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "vite",
+    "preview": "vite preview",
+    "build": "vite build"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "sass": "^1.57.0",
+    "vite": "^4.0.2"
+  }
+}
