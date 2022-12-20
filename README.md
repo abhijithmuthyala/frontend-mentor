@@ -12,3 +12,4 @@
 | [QR Code Component](https://qr-code-fem-component.netlify.app/) | | | |
 | [Order Summary Component](https://order-summary-fem-component.netlify.app/) | | | |
 | [3 Column Grid](https://3-col-grid.netlify.app/) | | | |
+| [Article Preview Component](https://article-fem-preview.netlify.app/) | | | |

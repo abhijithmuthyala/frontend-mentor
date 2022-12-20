@@ -1,0 +1,303 @@
+@use "sass:math";
+
+$main-bg: hsl(210, 46%, 95%);
+$article-bg: lighten($main-bg, 4%);
+
+$clr-heading: hsl(217, 19%, 35%);
+$clr-body: hsl(214, 17%, 51%);
+$clr-body-light: hsl(212, 23%, 69%);
+
+$border-rad: 1.2rem;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3rem;
+  font-family: "Manrope", sans-serif;
+  font-weight: 500;
+  line-height: 1;
+
+  color: $clr-body;
+  overflow-x: hidden;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  background: none;
+  border: none;
+}
+
+svg {
+  fill: $article-bg;
+}
+
+%fluid-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+  background-color: $main-bg;
+}
+
+.article-furniture {
+  display: grid;
+  grid-template-columns: 38fr 62fr;
+
+  margin-inline: 2.4rem;
+  max-width: 80rem;
+}
+
+.img-box {
+  border-top-left-radius: $border-rad;
+  border-top-right-radius: $border-rad;
+
+  overflow: hidden;
+
+  &__img {
+    @extend %fluid-img;
+    object-fit: cover;
+    object-position: bottom center;
+  }
+}
+
+.info {
+  // padding: 4.2rem;
+  & > * {
+    margin-inline: 4.2rem;
+  }
+
+  border-top-right-radius: $border-rad;
+  border-bottom-right-radius: $border-rad;
+
+  background-color: $article-bg;
+
+  &__title {
+    margin-top: 4.2rem;
+    margin-bottom: 1.6rem;
+
+    font-size: 2.2rem;
+    font-weight: 700;
+    line-height: 1.3;
+
+    color: $clr-heading;
+  }
+
+  &__description {
+    margin-bottom: 2.4rem;
+    font-size: 1.5rem;
+    line-height: 1.5;
+  }
+}
+
+.author-box {
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 1.6rem;
+  margin-bottom: 4.2rem;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 0.8rem;
+
+  &__name {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $clr-heading;
+  }
+
+  &__date {
+    color: $clr-body-light;
+  }
+}
+
+.author-img-box {
+  width: 4.8rem;
+  height: 4.8rem;
+
+  &__img {
+    @extend %fluid-img;
+    border-radius: 50%;
+  }
+}
+
+.share-icon-box {
+  position: relative;
+}
+
+.share-icon-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 1.2rem;
+  border-radius: 50%;
+  background-color: $main-bg;
+
+  position: relative;
+  z-index: 1;
+
+  &.clicked {
+    background-color: $clr-body;
+
+    .share-icon {
+      fill: $article-bg;
+    }
+  }
+}
+
+.share-icon {
+  fill: $clr-body;
+}
+
+$arrow-down-size: 1.8rem;
+.share-links-box.hidden {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+
+  transform: translate(50%, -($arrow-down-size / math.sqrt(2)));
+}
+
+.share-links-box {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  position: absolute;
+  bottom: 100%;
+  right: 50%;
+
+  padding: 1.8rem 3.6rem;
+  border-radius: $border-rad;
+  background-color: $clr-heading;
+
+  $offset: 0.8rem;
+  transform: translate(50%, -($arrow-down-size / math.sqrt(2)) - $offset);
+  transition: all 0.5s;
+
+  &::after {
+    display: block;
+    width: 1.8rem;
+    height: 1.8rem;
+
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotateZ(45deg);
+
+    content: "";
+    background-color: $clr-heading;
+  }
+}
+
+.share-links {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.6rem;
+}
+
+.share-text {
+  letter-spacing: 4px;
+  color: $clr-body-light;
+}
+
+@media (max-width: 58.5em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-width: 54em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-width: 48em) {
+  html {
+    font-size: 56.25%;
+  }
+
+  .article-furniture {
+    grid-template-columns: 1fr;
+    grid-template-rows: 28rem auto;
+    max-width: 48rem;
+  }
+
+  .img-box {
+    &__img {
+      object-position: center;
+    }
+  }
+}
+
+@media (max-width: 36em) {
+  .share-icon-box {
+    position: static;
+  }
+
+  .author-box {
+    position: relative;
+    margin: 0;
+    padding: 1.8rem 3.6rem;
+  }
+
+  .share-links-box {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-inline: 4.2rem;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    transform: none;
+
+    &.hidden {
+      transform: none;
+    }
+
+    &::after {
+      display: none;
+    }
+  }
+}
+
+@media (max-width: 22em) {
+  html {
+    font-size: 50%;
+  }
+}
