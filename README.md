@@ -15,3 +15,4 @@
 | [Article Preview Component](https://article-fem-preview.netlify.app/) | | | |
 | [4 Card Features](https://four-card-features-fem.netlify.app/) | | | |
 | [Huddle Hero Section](https://huddle-fem-cta.netlify.app/) | | | |
+| [FAQ Accordian](https://accordian-faq-fem.netlify.app/) | | | |

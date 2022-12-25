@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FAQ Section" />
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.scss" />
+    <script src="main.js" type="module"></script>
+    <title>FAQ Accordian Section</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="section-faq-wrapper">
+        <div role="presentation" aria-hidden="true" class="empty-box"></div>
+        <section class="section-faq">
+          <picture class="illustration-box">
+            <source
+              srcset="images/illustration-woman-online-desktop.svg"
+              media="(min-width: 864px)"
+            />
+            <img
+              src="images/illustration-woman-online-mobile.svg"
+              alt=""
+              class="illustration-box__woman-img"
+            />
+          </picture>
+
+          <div class="faq-content-box">
+            <h2 class="faq-title">FAQ</h2>
+
+            <ol class="faqs-list">
+              <li class="faqs-list-item">
+                <h3 class="faqs-list-item__question">
+                  How many team members can I invite?
+                </h3>
+                <button
+                  class="faqs-list-item__icon"
+                  aria-label="Arrow icon to toggle answer visibility"
+                >
+                  <img src="images/icon-arrow-down.svg" alt="" />
+                </button>
+                <p class="faqs-list-item__answer">
+                  You can invite up to 2 additional users on the Free plan.
+                  There is no limit on team members for the Premium plan.
+                </p>
+              </li>
+              <li class="faqs-list-item faqs-list-item--open">
+                <h3 class="faqs-list-item__question">
+                  What is the maximum file upload size?
+                </h3>
+                <button
+                  class="faqs-list-item__icon"
+                  aria-label="Arrow icon to toggle answer visibility"
+                >
+                  <img src="images/icon-arrow-down.svg" alt="" />
+                </button>
+                <p class="faqs-list-item__answer">
+                  No more than 2GB. All files in your account must fit your
+                  allotted storage space.
+                </p>
+              </li>
+              <li class="faqs-list-item">
+                <h3 class="faqs-list-item__question">
+                  How do I reset my password?
+                </h3>
+                <button
+                  class="faqs-list-item__icon"
+                  aria-label="Arrow icon to toggle answer visibility"
+                >
+                  <img src="images/icon-arrow-down.svg" alt="" />
+                </button>
+                <p class="faqs-list-item__answer">
+                  Click “Forgot password” from the login page or “Change
+                  password” from your profile page. A reset link will be emailed
+                  to you.
+                </p>
+              </li>
+              <li class="faqs-list-item">
+                <h3 class="faqs-list-item__question">
+                  Can I cancel my subscription?
+                </h3>
+                <button
+                  class="faqs-list-item__icon"
+                  aria-label="Arrow icon to toggle answer visibility"
+                >
+                  <img src="images/icon-arrow-down.svg" alt="" />
+                </button>
+                <p class="faqs-list-item__answer">
+                  Yes! Send us a message and we’ll process your request no
+                  questions asked.
+                </p>
+              </li>
+              <li class="faqs-list-item">
+                <h3 class="faqs-list-item__question">
+                  Do you provide additional support?
+                </h3>
+                <button
+                  class="faqs-list-item__icon"
+                  aria-label="Arrow icon to toggle answer visibility"
+                >
+                  <img src="images/icon-arrow-down.svg" alt="" />
+                </button>
+                <p class="faqs-list-item__answer">
+                  Chat and email support is available 24/7. Phone lines are open
+                  during normal business hours.
+                </p>
+              </li>
+            </ol>
+          </div>
+        </section>
+        <div role="presentation" aria-hidden="true" class="empty-box"></div>
+      </div>
+    </main>
+  </body>
+</html>
