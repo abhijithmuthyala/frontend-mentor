@@ -18,3 +18,4 @@
 | [FAQ Accordian](https://accordian-faq-fem.netlify.app/) | | | |
 | [Base Apparel](https://base-fem-apparel.netlify.app/) | | | |
 | [Intro Signup Form](https://intro-signup-form-fem.netlify.app/) | | | |
+| [Ping Coming Soon](https://ping-coming-soon-fem.netlify.app/) | | | |
