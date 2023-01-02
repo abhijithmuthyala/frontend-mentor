@@ -40,7 +40,13 @@
           />
         </div>
 
-        <button class="menu-btn" aria-label="Toggle navigation">
+        <button
+          class="menu-btn"
+          aria-label="Toggle navigation"
+          aria-controls="nav-main"
+          aria-expanded="false"
+          aria-haspopup="menu"
+        >
           <img
             src="assets/images/icon-menu.svg"
             alt=""
@@ -53,7 +59,7 @@
           />
         </button>
 
-        <nav class="nav-main closed">
+        <nav class="nav-main closed" id="nav-main">
           <ul class="nav-list">
             <li class="nav-list-item">
               <a href="#" class="nav-list-item__link">Home</a>

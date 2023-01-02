@@ -11,4 +11,8 @@ function toggleNavigation() {
   navEl.classList.toggle("closed");
 
   document.body.classList.toggle("overlay");
+
+  // a11y stuff
+  const isNavExpanded = navButton.getAttribute("aria-expanded") === "true";
+  navButton.setAttribute("aria-expanded", isNavExpanded ? "false" : "true");
 }
