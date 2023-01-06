@@ -1,0 +1,264 @@
+$clr-primary-red: hsl(10, 79%, 65%);
+$clr-primary-cyan: hsl(186, 34%, 60%);
+
+$white: hsl(33, 100%, 98%);
+$dark-brown: hsl(25, 47%, 15%);
+$md-brown: hsl(28, 10%, 53%);
+
+$main-bg: hsl(27, 66%, 92%);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "DM Sans", sans-serif;
+  font-size: 1.8rem;
+  font-weight: 400;
+  line-height: 1;
+}
+
+ol {
+  list-style: none;
+}
+
+hr {
+  height: 0;
+  margin-block: 4.2rem;
+  border: none;
+  border-top: 3px solid $main-bg;
+}
+
+.sr-only {
+  position: absolute;
+  height: 0;
+  width: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.max-w {
+  max-width: 54rem;
+  width: 100%;
+}
+
+.center-h {
+  margin-inline: auto;
+}
+
+.flex-1 {
+  flex: 1;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.block-el {
+  display: block;
+}
+
+.card {
+  padding: 3.2rem 3.6rem;
+  border-radius: 1.6rem;
+
+  &--primary {
+    background-color: $clr-primary-red;
+  }
+
+  &--neutral {
+    background-color: $white;
+  }
+}
+
+.img-box {
+  &__img {
+    display: block;
+  }
+}
+
+@mixin hide {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.remove {
+  display: none;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 2.4rem;
+
+  min-height: 100vh;
+  padding: 2.4rem;
+  background-color: $main-bg;
+}
+
+.section-summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.balance-summary {
+  color: $main-bg;
+
+  &__amount {
+    margin-top: 1.2rem;
+    font-size: 3.2rem;
+  }
+}
+
+.heading-chart {
+  color: $dark-brown;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.chart-container {
+  position: relative;
+  height: 18rem;
+  margin-top: 7.2rem;
+}
+
+.chart-error {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  font-size: 2rem;
+  font-weight: 700;
+  color: $clr-primary-red;
+  text-align: center;
+}
+
+.bars-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.8rem;
+
+  height: 100%;
+}
+
+.bars-list-item {
+  position: relative;
+  flex: 1;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 0.8rem;
+
+  &:nth-child(3) .bar-svg {
+    --clr-fill: 118, 181, 188;
+  }
+}
+
+.bar-svg {
+  --clr-fill: 236, 119, 95;
+
+  position: absolute;
+  bottom: 0;
+
+  border-radius: 4px;
+  fill: rgb(var(--clr-fill));
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:active {
+    cursor: pointer;
+    fill: rgba(var(--clr-fill), 0.75);
+  }
+
+  &:not(:hover, :active) ~ .bar-value {
+    @include hide;
+  }
+}
+
+.bar-label {
+  text-align: center;
+  font-size: 1.6rem;
+  color: $md-brown;
+}
+
+.bar-value {
+  --pos-y: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  position: absolute;
+  bottom: calc(var(--pos-y) + 0.8rem);
+  left: 50%;
+  transform: translate(-50%, 0rem);
+
+  height: 4.2rem;
+  padding: 1.6rem 1.2rem;
+  border-radius: 4px;
+  font-weight: 700;
+
+  color: $main-bg;
+  background-color: $dark-brown;
+
+  transition: all 0.3s;
+}
+
+.expenses-info {
+  display: flex;
+  justify-content: space-between;
+  color: $md-brown;
+}
+
+.expenses-current-month {
+  &__text {
+    strong {
+      margin-top: 0.8rem;
+      font-size: 4.8rem;
+      font-weight: 700;
+      color: $dark-brown;
+    }
+  }
+}
+
+.expenses-hike {
+  align-self: flex-end;
+  text-align: right;
+
+  &__text {
+    strong {
+      margin-bottom: 0.6rem;
+      font-weight: 700;
+      color: $dark-brown;
+    }
+  }
+}
+
+@media (max-width: 29.5em) {
+  html {
+    font-size: 50%;
+  }
+
+  .card {
+    padding: 2.4rem 1.6rem;
+  }
+}

@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Keep track of your expenses with key insights on your spending habits!"
+    />
+    <title>Expenses Chart</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.scss" />
+    <script src="index.js" type="module"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="sr-only">Keep track of your expenses and spend wisely!</h1>
+
+      <section class="section-summary center-h max-w card card--primary">
+        <h2 class="sr-only">Expenses Summary</h2>
+
+        <p class="balance-summary">
+          My balance
+          <strong class="balance-summary__amount block-el">$921.48</strong>
+        </p>
+
+        <div class="img-box logo-box">
+          <img src="images/logo.svg" alt="Expeses Chart Logo" />
+        </div>
+      </section>
+
+      <section class="section-chart center-h max-w card card--neutral">
+        <h2 class="heading-chart">Spending - Last 7 days</h2>
+
+        <div class="chart-container">
+          <ol class="bars-list">
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+            <li class="bars-list-item">
+              <div class="bar-svg-box flex-1 pos-rel">
+                <p class="bar-value"></p>
+              </div>
+              <p class="bar-label"></p>
+            </li>
+          </ol>
+          <p class="chart-error remove">⚠️ Failed to load data</p>
+        </div>
+
+        <hr />
+
+        <div class="expenses-info">
+          <div class="expenses-current-month">
+            <p class="expenses-current-month__text">
+              Total this month <strong class="block-el">$478.33</strong>
+            </p>
+          </div>
+
+          <div class="expenses-hike">
+            <p class="expenses-hike__text">
+              <strong class="block-el">+2.4%</strong>from last month
+            </p>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

@@ -3,7 +3,7 @@
 | Newbie | Junior | Intermediate | Advanced | Guru |
 |--------|--------|--------------|----------|------|
 | [Product Preview Component](https://fem-product-preview-component.netlify.app/) | [News Homepage](https://news-fem-homepage.netlify.app/) | | | |
-| [NFT Preview Card](https://preview-card-nft-fem.netlify.app/) | | | | |
+| [NFT Preview Card](https://preview-card-nft-fem.netlify.app/) | [Expenses Chart](https://expenses-fem-chart.netlify.app/) | | | |
 | [Profile Card](https://fem-profile-card-component.netlify.app//) | | | | |
 | [Social Proof Section](https://social-proof-fem-section.netlify.app/) | | | | |
 | [Interactive Rating Component](https://interactive-rating-fem-component.netlify.app/) | | | | |
