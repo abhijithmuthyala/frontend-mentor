@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Notifications" />
+    <title>Notifications page</title>
+
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+  </head>
+
+  <body>
+    <main>
+      <h1 class="sr-only">
+        Your portal into social media. Effortlessly communicate with others!
+      </h1>
+
+      <section class="section-notifs">
+        <div class="max-w center-h card">
+          <header class="header-notifs">
+            <h2 class="header-notifs__title">Notifications</h2>
+            <span class="header-notifs__count"></span>
+            <button class="header-notifs__btn">Mark all as read</button>
+          </header>
+
+          <ol class="notifs-list">
+            <li class="notif notif--unread grid-2-2">
+              <img
+                src="assets/images/avatar-mark-webber.webp"
+                alt="Avatar of Mark Webber"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Mark Webber </a>
+                  reacted to your recent post
+                  <a href="#" class="notif-summary__post-link"
+                    >My first tournament today!</a
+                  >
+                  &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">1m ago</span>
+                </p>
+              </div>
+            </li>
+            <li class="notif notif--unread grid-2-2">
+              <img
+                src="assets/images/avatar-angela-gray.webp"
+                alt="Avatar of Angela Gray"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Angela Gray </a>
+                  followed you &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">5m ago</span>
+                </p>
+              </div>
+            </li>
+            <li class="notif notif--unread grid-2-2">
+              <img
+                src="assets/images/avatar-jacob-thompson.webp"
+                alt="Avatar of Jacob Thompson"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Jacob Thompson </a>
+                  has joined your group
+                  <a href="#" class="notif-summary__post-link">Chess Club</a>
+                  &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">1 day ago</span>
+                </p>
+              </div>
+            </li>
+            <li class="notif grid-2-2">
+              <img
+                src="assets/images/avatar-rizky-hasanuddin.webp"
+                alt="Avatar of Ricky Hasanuddin"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author"
+                    >Ricky Hasanuddin
+                  </a>
+                  sent you a private message &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">5 days ago</span>
+                </p>
+              </div>
+
+              <a href="#" class="notif-message">
+                Hello, thanks for setting up the Chess Club. I've been a member
+                for a few weeks now and I'm already having lots of fun and
+                improving my game.
+              </a>
+            </li>
+            <li class="notif grid-2-3">
+              <img
+                src="assets/images/avatar-kimberly-smith.webp"
+                alt="Avatar of Kimberly Smith"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Kinberly Smith </a>
+                  commented on your picture &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">1 week ago</span>
+                </p>
+              </div>
+
+              <a href="#" class="notif__post-img">
+                <img
+                  src="assets/images/image-chess.webp"
+                  alt="A woman playing chess"
+                />
+              </a>
+            </li>
+            <li class="notif grid-2-2">
+              <img
+                src="assets/images/avatar-nathan-peterson.webp"
+                alt="Avatar of Nathan Peterson"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Nathan Peterson </a>
+                  reacted to your recent post
+                  <a href="#" class="notif-summary__post-link"
+                    >5 end-game strategies to increase your win rate</a
+                  >
+                  &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">2 weeks ago</span>
+                </p>
+              </div>
+            </li>
+            <li class="notif grid-2-2">
+              <img
+                src="assets/images/avatar-anna-kim.webp"
+                alt="Avatar of Anna Kim"
+                class="notif__author-img"
+              />
+
+              <div class="notif-summary-box">
+                <p class="notif-summary">
+                  <a href="#" class="notif-summary__author">Anna Kim </a>
+                  left the group
+                  <a href="#" class="notif-summary__post-link">Chess Club</a>
+                  &nbsp;<span
+                    class="notif-summary__dot"
+                    aria-hidden="true"
+                  ></span>
+                  <span class="notif-summary__time block-el">2 weeks ago</span>
+                </p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const unreadNotifElements = document.querySelectorAll(".notif--unread");
+      const notifCountElement = document.querySelector(".header-notifs__count");
+      const markAsReadBtn = document.querySelector(".header-notifs__btn");
+
+      notifCountElement.textContent = unreadNotifElements.length;
+      markAsReadBtn.addEventListener("click", markNotificationsAsRead);
+
+      function markNotificationsAsRead() {
+        unreadNotifElements.forEach((unreadNotifEl) =>
+          unreadNotifEl.classList.remove("notif--unread")
+        );
+      }
+    </script>
+  </body>
+</html>
