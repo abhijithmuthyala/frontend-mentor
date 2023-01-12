@@ -31,119 +31,164 @@
   </head>
 
   <body>
-    <header class="header-main">
-      <div class="img-box logo-box">
-        <img src="images/logo.svg" alt="Snap Logo" class="img-box__img" />
-      </div>
+    <header>
+      <div class="header-main">
+        <div class="img-box logo-box">
+          <img src="images/logo.svg" alt="Snap Logo" class="img-box__img" />
+        </div>
 
-      <nav class="nav">
-        <ul class="nav-list">
-          <li class="nav-list-item">
-            <a href="#" class="nav-list-item__link">Features</a>
+        <button
+          class="nav-menu-btn collapsed"
+          aria-label="Main navigation menu"
+          aria-controls="nav-container"
+          aria-expanded="false"
+          aria-haspopup="menu"
+        >
+          <img
+            src="images/icon-menu.svg"
+            alt=""
+            class="nav-menu-btn__icon nav-menu-btn__icon--collapsed"
+          />
+          <img
+            src="images/icon-close-menu.svg"
+            alt=""
+            class="nav-menu-btn__icon nav-menu-btn__icon--opened"
+          />
+        </button>
 
-            <button class="nav-list-item__btn collapsed">
-              <img
-                src="images/icon-arrow-down.svg"
-                alt=""
-                class="icon-arrow-down"
-              />
-              <img
-                src="images/icon-arrow-up.svg"
-                alt=""
-                class="icon-arrow-up"
-              />
-            </button>
+        <div class="nav-container" id="nav-container">
+          <nav class="nav">
+            <ul class="nav-list">
+              <li class="nav-list-item">
+                <a href="#" class="nav-list-item__link">Features</a>
 
-            <ul class="nav-menu-list hide">
-              <li class="nav-menu-list-item">
-                <div class="img-box">
-                  <img src="images/icon-todo.svg" alt="" class="img-box__img" />
-                </div>
-
-                <a href="#" class="nav-menu-list-item__link">Todo List</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <div class="img-box">
+                <button
+                  class="nav-list-item__btn collapsed"
+                  aria-label="Features links"
+                  aria-controls="more-features"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
                   <img
-                    src="images/icon-calendar.svg"
+                    src="images/icon-arrow-down.svg"
                     alt=""
-                    class="img-box__img"
+                    class="icon-arrow-down"
                   />
-                </div>
-                <a href="#" class="nav-menu-list-item__link">Calendar</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <div class="img-box">
                   <img
-                    src="images/icon-reminders.svg"
+                    src="images/icon-arrow-up.svg"
                     alt=""
-                    class="img-box__img"
+                    class="icon-arrow-up"
                   />
-                </div>
-                <a href="#" class="nav-menu-list-item__link">Reminders</a>
+                </button>
+
+                <ul class="nav-menu-list hide" id="more-features">
+                  <li class="nav-menu-list-item">
+                    <div class="img-box" tabindex="0">
+                      <img
+                        src="images/icon-todo.svg"
+                        alt=""
+                        class="img-box__img"
+                      />
+                    </div>
+
+                    <a href="#" class="nav-menu-list-item__link">Todo List</a>
+                  </li>
+                  <li class="nav-menu-list-item">
+                    <div class="img-box">
+                      <img
+                        src="images/icon-calendar.svg"
+                        alt=""
+                        class="img-box__img"
+                      />
+                    </div>
+                    <a href="#" class="nav-menu-list-item__link">Calendar</a>
+                  </li>
+                  <li class="nav-menu-list-item">
+                    <div class="img-box">
+                      <img
+                        src="images/icon-reminders.svg"
+                        alt=""
+                        class="img-box__img"
+                      />
+                    </div>
+                    <a href="#" class="nav-menu-list-item__link">Reminders</a>
+                  </li>
+                  <li class="nav-menu-list-item">
+                    <div class="img-box">
+                      <img
+                        src="images/icon-planning.svg"
+                        alt=""
+                        class="img-box__img"
+                      />
+                    </div>
+                    <a href="#" class="nav-menu-list-item__link">Planning</a>
+                  </li>
+                </ul>
               </li>
-              <li class="nav-menu-list-item">
-                <div class="img-box">
+              <li class="nav-list-item">
+                <a href="#" class="nav-list-item__link">Company</a>
+
+                <button
+                  class="nav-list-item__btn collapsed"
+                  aria-label="Company links"
+                  aria-controls="more-company"
+                  aria-haspopup="menu"
+                  aria-expanded="false"
+                >
                   <img
-                    src="images/icon-planning.svg"
+                    src="images/icon-arrow-down.svg"
                     alt=""
-                    class="img-box__img"
+                    class="icon-arrow-down"
                   />
-                </div>
-                <a href="#" class="nav-menu-list-item__link">Planning</a>
+                  <img
+                    src="images/icon-arrow-up.svg"
+                    alt=""
+                    class="icon-arrow-up"
+                  />
+                </button>
+
+                <ul class="nav-menu-list hide" id="more-company">
+                  <li class="nav-menu-list-item">
+                    <a href="#" class="nav-menu-list-item__link">History</a>
+                  </li>
+                  <li class="nav-menu-list-item">
+                    <a href="#" class="nav-menu-list-item__link"
+                      >Our&nbsp;Team</a
+                    >
+                  </li>
+                  <li class="nav-menu-list-item">
+                    <a href="#" class="nav-menu-list-item__link">Blog</a>
+                  </li>
+                </ul>
+              </li>
+              <li class="nav-list-item">
+                <a href="#" class="nav-list-item__link">Careers</a>
+              </li>
+              <li class="nav-list-item">
+                <a href="#" class="nav-list-item__link">About</a>
               </li>
             </ul>
-          </li>
-          <li class="nav-list-item">
-            <a href="#" class="nav-list-item__link">Company</a>
+          </nav>
 
-            <button class="nav-list-item__btn collapsed">
-              <img
-                src="images/icon-arrow-down.svg"
-                alt=""
-                class="icon-arrow-down"
-              />
-              <img
-                src="images/icon-arrow-up.svg"
-                alt=""
-                class="icon-arrow-up"
-              />
-            </button>
-
-            <ul class="nav-menu-list hide">
-              <li class="nav-menu-list-item">
-                <a href="#" class="nav-menu-list-item__link">History</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <a href="#" class="nav-menu-list-item__link">Our&nbsp;Team</a>
-              </li>
-              <li class="nav-menu-list-item">
-                <a href="#" class="nav-menu-list-item__link">Blog</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-list-item">
-            <a href="#" class="nav-list-item__link">Careers</a>
-          </li>
-          <li class="nav-list-item">
-            <a href="#" class="nav-list-item__link">About</a>
-          </li>
-        </ul>
-      </nav>
-
-      <div class="actions">
-        <a href="#" class="actions__link actions__link--login">Login</a>
-        <a href="#" class="actions__link actions__link--register">Register</a>
+          <div class="actions">
+            <a href="#" class="actions__link actions__link--login">Login</a>
+            <a href="#" class="actions__link actions__link--register"
+              >Register</a
+            >
+          </div>
+        </div>
       </div>
     </header>
 
     <main>
+      <h1 class="sr-only">Welcome to Snap!</h1>
+
       <section class="section-hero">
         <div class="max-w grid-2-2">
           <div class="hero-content-box">
             <header class="header-hero">
               <h2 class="header-hero__title">
-                <span class="block-el">Make</span
+                <span class="block-el">Make&nbsp;</span
                 ><span class="block-el">remote work</span>
               </h2>
 
@@ -153,7 +198,12 @@
               </p>
             </header>
 
-            <a href="#" class="link-learn-more">Learn more</a>
+            <a
+              href="#"
+              aria-label="Learn more about snap"
+              class="link-learn-more"
+              >Learn more</a
+            >
           </div>
 
           <div class="clients-box">
@@ -180,12 +230,12 @@
 
           <picture class="hero-img-box">
             <source
-              media="(max-width: 768px)"
+              media="(max-width: 800px)"
               srcset="images/image-hero-mobile.png"
             />
             <img
               src="images/image-hero-desktop.png"
-              alt="Man working on his laptop"
+              alt=""
               class="hero-img-box__img"
             />
           </picture>

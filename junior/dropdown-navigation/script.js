@@ -1,10 +1,15 @@
 const navListElement = document.querySelector(".nav-list");
 const submenuControlButtons = document.querySelectorAll(".nav-list-item__btn");
+const navMenuBtn = document.querySelector(".nav-menu-btn");
+const navActionsContainer = document.querySelector(".actions");
 
 const { submenuButtonHandler, navEscapeHandler } = getNavHandlers();
 
 navListElement.addEventListener("click", submenuButtonHandler);
 navListElement.addEventListener("keydown", navEscapeHandler);
+
+navMenuBtn.addEventListener("click", toggleNavContainer);
+navActionsContainer.addEventListener("click", toggleNavContainer);
 
 function getNavHandlers() {
   let prevActiveBtn = null;
@@ -18,10 +23,15 @@ function getNavHandlers() {
   };
 
   function submenuButtonHandler(e) {
-    if (e.target.closest("a")) {
-      toggleActiveState(activeBtn, activeMenu);
-      resetActiveStates();
-      return;
+    {
+      const activeLink = e.target.closest("a");
+      if (activeLink) {
+        toggleActiveState(activeBtn, activeMenu);
+        resetActiveStates();
+        toggleNavContainer(e);
+        activeLink.blur();
+        return;
+      }
     }
 
     activeBtn = e.target.closest("button");
@@ -51,11 +61,34 @@ function getNavHandlers() {
   }
 
   function toggleActiveState(btn, menu) {
-    btn?.classList.toggle("collapsed");
-    menu?.classList.toggle("hide");
+    if (!btn || !menu) return;
+
+    btn.classList.toggle("collapsed");
+    menu.classList.toggle("hide");
+    updateAriaAttrs(btn);
   }
 
   function resetActiveStates() {
     prevActiveBtn = prevActiveMenu = activeBtn = activeMenu = null;
   }
+}
+
+function toggleNavContainer(e) {
+  e.stopPropagation();
+  if (getComputedStyle(navMenuBtn).display === "none") return;
+
+  const navContainer = document.querySelector(".nav-container");
+  navContainer.classList.toggle("reveal");
+  navMenuBtn.classList.toggle("collapsed");
+  document.body.classList.toggle("overlay");
+
+  updateAriaAttrs(navMenuBtn);
+}
+
+function updateAriaAttrs(btn) {
+  const menuExpanded = btn.getAttribute("aria-expanded");
+  btn.setAttribute(
+    "aria-expanded",
+    menuExpanded === "false" ? "true" : "false"
+  );
 }
