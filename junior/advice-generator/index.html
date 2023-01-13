@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Advices to boost your morale." />
+    <title>Advice Generator</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+
+    <script src="app.js" type="module"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="sr-only">
+        Get motivational advices from the greats all around the world.
+      </h1>
+
+      <div class="center-content vh100">
+        <section class="section-advice card">
+          <h2 class="advice-title">
+            ADVICE <span class="advice-title__id"></span>
+          </h2>
+          <blockquote aria-live="polite">
+            &ldquo;<span class="advice"></span>&rdquo;
+          </blockquote>
+          <picture class="advice-end-line">
+            <source
+              media="(min-width: 768px)"
+              srcset="images/pattern-divider-desktop.svg"
+            />
+            <img
+              src="images/pattern-divider-mobile.svg"
+              alt=""
+              class="advice-end-line__icon"
+            />
+          </picture>
+          <button class="btn-new-advice" aria-label="Generate new advice">
+            <img
+              src="images/icon-dice.svg"
+              alt=""
+              class="btn-new-advice__icon"
+            />
+          </button>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
