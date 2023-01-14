@@ -7,7 +7,7 @@
 | [Profile Card](https://fem-profile-card-component.netlify.app//) | [Notifications Page](https://notif-page-fem.netlify.app/) | | | |
 | [Social Proof Section](https://social-proof-fem-section.netlify.app/) | [Dropdown Navigation](https://fem-drop-down-nav.netlify.app/) | | | |
 | [Interactive Rating Component](https://interactive-rating-fem-component.netlify.app/) | [Advice Generator](https://gen-advice-fem.netlify.app/) | | | |
-| [Single Price Grid](https://single-price-grid-fem-component.netlify.app/) | | | |
+| [Single Price Grid](https://single-price-grid-fem-component.netlify.app/) | [Time Tracking Dashboard](https://fem-time-track.netlify.app/) | | |
 | [Stats Preview Card](https://stats-preview-fem-card.netlify.app/) | | | |
 | [QR Code Component](https://qr-code-fem-component.netlify.app/) | | | |
 | [Order Summary Component](https://order-summary-fem-component.netlify.app/) | | | |

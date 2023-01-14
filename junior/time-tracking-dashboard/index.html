@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Track how much time you spend on various activities."
+    />
+    <title>Time Tracking Dashboard</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+
+    <script src="app.js" type="module"></script>
+  </head>
+
+  <body>
+    <main>
+      <h1 class="sr-only">
+        Boost your productivity by tracking your activities!
+      </h1>
+
+      <section class="section-dashboard">
+        <div class="max-w dashboard-grid">
+          <div class="report-intro-box card">
+            <header class="header-dashboard card">
+              <img
+                src="images/image-jeremy.png"
+                alt="Avatar of Jeremy Robson"
+                class="header-dashboard__user-img"
+              />
+              <h2 class="header-dashboard__title">
+                <span class="block-el header-dashboard__subtitle"
+                  >Report for</span
+                >
+                <span class="block-el header-dashboard__username"
+                  >Jeremy Robson</span
+                >
+              </h2>
+            </header>
+
+            <ul class="track-options">
+              <li>
+                <button
+                  class="btn-track-option active"
+                  data-stat-type="daily"
+                  aria-label="Generate daily tracking statistics"
+                  aria-pressed="true"
+                >
+                  Daily
+                </button>
+              </li>
+              <li>
+                <button
+                  class="btn-track-option"
+                  data-stat-type="weekly"
+                  aria-label="Generate weekly tracking statistics"
+                  aria-pressed="false"
+                >
+                  Weekly
+                </button>
+              </li>
+              <li>
+                <button
+                  class="btn-track-option"
+                  data-stat-type="monthly"
+                  aria-label="Generate monthly tracking statistics"
+                  aria-pressed="false"
+                >
+                  Monthly
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <div class="reports-box reports-grid"></div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
