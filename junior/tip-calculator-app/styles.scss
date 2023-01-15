@@ -1,0 +1,290 @@
+$StrongCyan: hsl(172, 67%, 45%);
+$VeryDarkCyan: hsl(183, 100%, 15%);
+$DarkGrayishCyan: hsl(186, 14%, 43%);
+$GrayishCyan: hsl(184, 14%, 56%);
+$LightGrayishCyan: hsl(185, 41%, 84%);
+$VeryLightGrayishCyan: hsl(189, 41%, 97%);
+$White: hsl(0, 0%, 100%);
+
+:root {
+  --input-padding: 0.8rem 2rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 700;
+  font-family: "Space Mono", sans-serif;
+  line-height: 1;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+img {
+  display: block;
+}
+
+button,
+input {
+  display: inline-block;
+  width: 100%;
+
+  border: none;
+  background: none;
+
+  font-size: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+input {
+  &:focus {
+    outline: 3px solid $StrongCyan;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.center-x {
+  margin-inline: auto;
+}
+
+.border-md {
+  border-radius: 2.4rem;
+}
+
+.border-sm {
+  border-radius: 0.8rem;
+}
+
+.max-w {
+  max-width: 92rem;
+}
+
+* {
+  // opacity: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-height: 100vh;
+  background-color: $LightGrayishCyan;
+
+  > * {
+    width: 100%;
+  }
+}
+
+.header-main {
+  padding-block: 4.8rem;
+}
+
+.section-form-content-box {
+  display: grid;
+  gap: 2.4rem;
+  background-color: $White;
+  padding: 2.4rem;
+}
+
+.form-bill {
+  display: flex;
+  flex-direction: column;
+  gap: 3.4rem;
+  padding: 0.6rem;
+}
+
+.bill-label {
+  display: flex;
+  flex-direction: column;
+  row-gap: 0.8rem;
+
+  color: $DarkGrayishCyan;
+}
+
+.bill-input {
+  min-height: 4.8rem;
+  padding: var(--input-padding);
+  background-color: $VeryLightGrayishCyan;
+  box-shadow: 0 0 0.6rem 0 rgba($GrayishCyan, 0.3);
+
+  font-size: 2.4rem;
+  text-align: right;
+  color: $VeryDarkCyan;
+}
+
+.tip-label {
+  margin-bottom: 1.8rem;
+}
+
+.tip-inputs-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 4.8rem;
+  gap: 1.8rem;
+}
+
+.tip-inputs-list-item {
+  font-size: 2.2rem;
+}
+
+.btn-tip {
+  height: 100%;
+  background-color: $VeryDarkCyan;
+
+  color: $VeryLightGrayishCyan;
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: rgba($StrongCyan, 0.5);
+    color: $VeryDarkCyan;
+  }
+
+  &:focus {
+    outline: 3px solid $StrongCyan;
+  }
+
+  &.selected {
+    background-color: $StrongCyan;
+    color: $VeryDarkCyan;
+  }
+}
+
+.bill-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 3.8rem;
+
+  padding: 0 2.4rem 2.4rem;
+  border-radius: 1.2rem;
+  background-color: $VeryDarkCyan;
+}
+
+.bill-summary-list {
+  margin-top: 4.6rem;
+}
+
+.bill-summary-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  &:not(:last-child) {
+    margin-bottom: 3rem;
+  }
+}
+
+.amount-label {
+  font-size: 1.6rem;
+  color: $White;
+
+  &--light {
+    display: block;
+    margin-top: 0.6rem;
+
+    font-size: 1.3rem;
+    color: $GrayishCyan;
+  }
+}
+
+.amount {
+  font-size: 3rem;
+  color: $StrongCyan;
+}
+
+.btn-reset {
+  min-height: 4.8rem;
+  background-color: $StrongCyan;
+
+  font-size: 2rem;
+  color: $VeryDarkCyan;
+}
+
+@media (min-width: 42em) {
+  .header-main {
+    padding-block: 16rem 9rem;
+  }
+  .section-form-content-box {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 50em) {
+  .section-form-content-box {
+    padding: 4.2rem;
+  }
+
+  .form-bill {
+    gap: 4.6rem;
+  }
+
+  .tip-inputs-list {
+    grid-template-columns: repeat(3, 1fr);
+    padding-right: 1.6rem;
+
+    .bill-input {
+      padding-inline: 1.2rem 0;
+      text-align: left;
+    }
+  }
+
+  .bill-summary {
+    padding: 0 3.2rem 3.6rem 4.2rem;
+  }
+
+  .bill-summary-list {
+    margin-top: 4.6rem;
+  }
+
+  .bill-summary-list-item {
+    &:not(:last-child) {
+      margin-bottom: 4.6rem;
+    }
+  }
+
+  .amount {
+    font-size: 3.2rem;
+  }
+
+  .btn-reset {
+    min-height: 4.8rem;
+  }
+}
+
+@media (min-width: 64em) {
+  .amount {
+    font-size: 4.6rem;
+  }
+}

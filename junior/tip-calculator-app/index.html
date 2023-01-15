@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Split the bill among your gang members with ease"
+    />
+    <title>Splitter</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.scss" />
+
+    <script src="app.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="header-main">
+      <img
+        src="images/logo.svg"
+        alt="Splitter Logo"
+        class="header-main__logo center-x"
+      />
+    </header>
+
+    <main>
+      <h1 class="sr-only">Split the bill among your gang members with ease.</h1>
+
+      <section class="section-form">
+        <div class="section-form-content-box border-md max-w center-x">
+          <form action="/" class="form-bill">
+            <label for="bill" class="bill-label">
+              Bill
+              <input
+                class="bill-input border-sm"
+                id="bill"
+                name="bill"
+                type="number"
+                min="0"
+                max="10000"
+                step=".01"
+                placeholder="0"
+                value="142.55"
+                required
+              />
+            </label>
+
+            <div class="tips-box">
+              <p class="bill-label tip-label">Select Tip &percnt;</p>
+
+              <ol class="tip-inputs-list">
+                <li class="tip-inputs-list-item">
+                  <button class="btn-tip border-sm">5&percnt;</button>
+                </li>
+                <li class="tip-inputs-list-item">
+                  <button class="btn-tip border-sm">10&percnt;</button>
+                </li>
+                <li class="tip-inputs-list-item">
+                  <button class="btn-tip border-sm">15&percnt;</button>
+                </li>
+                <li class="tip-inputs-list-item">
+                  <button class="btn-tip border-sm">25&percnt;</button>
+                </li>
+                <li class="tip-inputs-list-item">
+                  <button class="btn-tip border-sm">50&percnt;</button>
+                </li>
+                <li class="tip-inputs-list-item">
+                  <input
+                    class="bill-input border-sm"
+                    name="tip-percent"
+                    id="tip-percent"
+                    type="number"
+                    min="0"
+                    max="100"
+                    step="5"
+                    placeholder="Custom"
+                    aria-label="Enter tip percentage"
+                  />
+                </li>
+              </ol>
+            </div>
+
+            <label for="num-people" class="bill-label">
+              Number of People
+              <input
+                type="number"
+                class="bill-input border-sm"
+                id="num-people"
+                min="1"
+                max="50"
+                value="5"
+                required
+              />
+            </label>
+          </form>
+
+          <div class="bill-summary">
+            <ol class="bill-summary-list">
+              <li class="bill-summary-list-item">
+                <span class="amount-label"
+                  >Tip Amount <br />
+                  <span class="amount-label--light">/ person</span></span
+                >
+                <span class="amount amount--tip">$4.27</span>
+              </li>
+              <li class="bill-summary-list-item">
+                <span class="amount-label"
+                  >Total <br />
+                  <span class="amount-label--light">/ person</span></span
+                >
+                <span class="amount amount--total">$32.79</span>
+              </li>
+            </ol>
+
+            <button class="btn-reset border-sm">RESET</button>
+          </div>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
