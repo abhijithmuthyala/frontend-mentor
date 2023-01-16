@@ -45,7 +45,13 @@
         <div class="section-form-content-box border-md max-w center-x">
           <form action="/" class="form-bill">
             <div>
-              <label for="bill" class="bill-label"> Bill</label>
+              <label
+                for="bill"
+                class="bill-label"
+                aria-label="Enter the total bill"
+              >
+                Bill</label
+              >
 
               <div class="bill-input-box">
                 <input
@@ -55,47 +61,80 @@
                   type="number"
                   min="0"
                   max="10000"
-                  maxlength="7"
                   step=".01"
                   placeholder="0"
                 />
+                <strong class="error-msg" role="alert">
+                  Invalid entry! Valid range is 0 to 10000
+                </strong>
               </div>
-
-              <p class="error-msg">Valid range is 0-10000</p>
             </div>
 
             <div class="tips-box">
               <p class="bill-label tip-label">Select Tip &percnt;</p>
 
-              <ol class="tip-inputs-list">
+              <ol
+                class="tip-inputs-list"
+                aria-label="Select tip percentage or add your own."
+              >
                 <li class="tip-inputs-list-item">
-                  <button type="button" class="btn-tip border-sm">
+                  <button
+                    type="button"
+                    class="btn-tip border-sm"
+                    aria-label="Add 5% tip"
+                    aria-pressed="false"
+                  >
                     5&percnt;
                   </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button type="button" class="btn-tip border-sm">
+                  <button
+                    type="button"
+                    class="btn-tip border-sm"
+                    aria-label="Add 10% tip"
+                    aria-pressed="false"
+                  >
                     10&percnt;
                   </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button type="button" class="btn-tip border-sm">
+                  <button
+                    type="button"
+                    class="btn-tip border-sm"
+                    aria-label="Add 15% tip"
+                    aria-pressed="false"
+                  >
                     15&percnt;
                   </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button type="button" class="btn-tip border-sm" 25>
+                  <button
+                    type="button"
+                    class="btn-tip border-sm"
+                    aria-label="Add 25% tip"
+                    aria-pressed="false"
+                  >
                     25&percnt;
                   </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button type="button" class="btn-tip border-sm">
+                  <button
+                    type="button"
+                    class="btn-tip border-sm"
+                    aria-label="Add 50% tip"
+                    aria-pressed="false"
+                  >
                     50&percnt;
                   </button>
                 </li>
                 <li class="tip-inputs-list-item">
                   <div>
-                    <label for="tip-percent" class="tip-label"></label>
+                    <p class="sr-only"></p>
+                    <label
+                      for="tip-percent"
+                      class="tip-label"
+                      aria-label="Enter custom tip percentage"
+                    ></label>
                     <input
                       class="bill-input border-sm"
                       name="tip-percent"
@@ -105,9 +144,10 @@
                       max="100"
                       step="5"
                       placeholder="Custom"
-                      aria-label="Enter tip percentage"
                     />
-                    <p class="error-msg">Valid integer range is 5-100</p>
+                    <strong class="error-msg" role="alert">
+                      Invalid entry! Valid range is 5 to 100
+                    </strong>
                   </div>
                 </li>
               </ol>
@@ -126,13 +166,15 @@
                   max="50"
                   placeholder="0"
                 />
+                <strong class="error-msg" role="alert">
+                  Invalid entry! Valid range is 1 to 100
+                </strong>
               </div>
-
-              <p class="error-msg">Valid integer range is 1-100</p>
             </div>
           </form>
 
-          <div class="bill-summary">
+          <section class="bill-summary">
+            <h3 class="sr-only">Bill split details</h3>
             <ol class="bill-summary-list">
               <li class="bill-summary-list-item">
                 <span class="amount-label"
@@ -151,7 +193,7 @@
             </ol>
 
             <button class="btn-reset border-sm">RESET</button>
-          </div>
+          </section>
         </div>
       </section>
     </main>

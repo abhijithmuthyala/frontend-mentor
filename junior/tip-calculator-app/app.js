@@ -2,6 +2,7 @@ import {
   resetInputs,
   clearErrors,
   getValidityChecker,
+  toggleBtnAriaState,
   debounce,
 } from "./utils";
 
@@ -91,9 +92,15 @@ function getFormHandlers() {
       const clickedBtn = e.target.closest(".btn-tip");
       if (!clickedBtn) return;
 
-      prevBtn?.classList.remove("selected");
+      if (prevBtn) {
+        prevBtn.classList.remove("selected");
+        toggleBtnAriaState(prevBtn);
+      }
+
       if (prevBtn !== clickedBtn) {
         clickedBtn.classList.add("selected");
+        toggleBtnAriaState(clickedBtn);
+
         prevBtn = clickedBtn;
       } else {
         prevBtn = null;

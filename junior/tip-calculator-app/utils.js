@@ -1,4 +1,10 @@
-export { resetInputs, clearErrors, getValidityChecker, debounce };
+export {
+  resetInputs,
+  clearErrors,
+  getValidityChecker,
+  debounce,
+  toggleBtnAriaState,
+};
 
 function resetInputs(inputEls) {
   inputEls.forEach((inputEl) => {
@@ -17,6 +23,11 @@ function getValidityChecker(min, max) {
       Number.isInteger(inputValue) && inputValue >= min && inputValue <= max
     );
   };
+}
+
+function toggleBtnAriaState(btn) {
+  const currentState = btn.getAttribute("aria-pressed");
+  btn.setAttribute("aria-pressed", currentState === "false" ? "true" : "false");
 }
 
 function debounce(fn, delay = 200) {
