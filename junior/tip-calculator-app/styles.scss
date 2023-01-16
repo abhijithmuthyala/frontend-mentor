@@ -88,8 +88,27 @@ input {
   max-width: 92rem;
 }
 
-* {
-  // opacity: 0;
+$error-msg-clr: orangered;
+
+.error-msg {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1.2rem);
+  right: 0;
+
+  font-size: 1.3rem;
+  color: $error-msg-clr;
+}
+
+input {
+  &.error {
+    outline: none;
+    box-shadow: inset 0 0 0 3px $error-msg-clr;
+
+    ~ .error-msg {
+      display: block;
+    }
+  }
 }
 
 body {
@@ -102,6 +121,28 @@ body {
 
   > * {
     width: 100%;
+  }
+}
+
+@mixin input-icon($icon-url) {
+  position: relative;
+
+  &::before {
+    display: flex;
+    justify-content: center;
+
+    content: "";
+    width: 1.8rem;
+    height: 1.8rem;
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(2.4rem, -50%);
+
+    background-image: url($icon-url);
+    background-repeat: no-repeat;
+    background-size: contain;
   }
 }
 
@@ -124,11 +165,19 @@ body {
 }
 
 .bill-label {
-  display: flex;
-  flex-direction: column;
-  row-gap: 0.8rem;
+  position: relative;
 
+  display: inline-block;
+  margin-bottom: 0.8rem;
   color: $DarkGrayishCyan;
+}
+
+.bill-input-box {
+  @include input-icon("images/icon-dollar.svg");
+}
+
+.num-people-box {
+  @include input-icon("images/icon-person.svg");
 }
 
 .bill-input {
@@ -142,6 +191,10 @@ body {
   color: $VeryDarkCyan;
 }
 
+.tips-box {
+  position: relative;
+}
+
 .tip-label {
   margin-bottom: 1.8rem;
 }
@@ -153,14 +206,11 @@ body {
   gap: 1.8rem;
 }
 
-.tip-inputs-list-item {
-  font-size: 2.2rem;
-}
-
 .btn-tip {
   height: 100%;
   background-color: $VeryDarkCyan;
 
+  font-size: 2.2rem;
   color: $VeryLightGrayishCyan;
 
   transition: all 0.3s;
@@ -230,6 +280,17 @@ body {
 
   font-size: 2rem;
   color: $VeryDarkCyan;
+
+  transition: all 0.3s;
+
+  &:hover,
+  &:focus {
+    background-color: $LightGrayishCyan;
+  }
+
+  &:focus {
+    outline: 5px solid $StrongCyan;
+  }
 }
 
 @media (min-width: 42em) {

@@ -41,71 +41,95 @@
       <h1 class="sr-only">Split the bill among your gang members with ease.</h1>
 
       <section class="section-form">
+        <h2 class="sr-only">Enter bill details.</h2>
         <div class="section-form-content-box border-md max-w center-x">
           <form action="/" class="form-bill">
-            <label for="bill" class="bill-label">
-              Bill
-              <input
-                class="bill-input border-sm"
-                id="bill"
-                name="bill"
-                type="number"
-                min="0"
-                max="10000"
-                step=".01"
-                placeholder="0"
-                value="142.55"
-                required
-              />
-            </label>
+            <div>
+              <label for="bill" class="bill-label"> Bill</label>
+
+              <div class="bill-input-box">
+                <input
+                  class="bill-input border-sm"
+                  id="bill"
+                  name="bill"
+                  type="number"
+                  min="0"
+                  max="10000"
+                  maxlength="7"
+                  step=".01"
+                  placeholder="0"
+                />
+              </div>
+
+              <p class="error-msg">Valid range is 0-10000</p>
+            </div>
 
             <div class="tips-box">
               <p class="bill-label tip-label">Select Tip &percnt;</p>
 
               <ol class="tip-inputs-list">
                 <li class="tip-inputs-list-item">
-                  <button class="btn-tip border-sm">5&percnt;</button>
+                  <button type="button" class="btn-tip border-sm">
+                    5&percnt;
+                  </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button class="btn-tip border-sm">10&percnt;</button>
+                  <button type="button" class="btn-tip border-sm">
+                    10&percnt;
+                  </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button class="btn-tip border-sm">15&percnt;</button>
+                  <button type="button" class="btn-tip border-sm">
+                    15&percnt;
+                  </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button class="btn-tip border-sm">25&percnt;</button>
+                  <button type="button" class="btn-tip border-sm" 25>
+                    25&percnt;
+                  </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <button class="btn-tip border-sm">50&percnt;</button>
+                  <button type="button" class="btn-tip border-sm">
+                    50&percnt;
+                  </button>
                 </li>
                 <li class="tip-inputs-list-item">
-                  <input
-                    class="bill-input border-sm"
-                    name="tip-percent"
-                    id="tip-percent"
-                    type="number"
-                    min="0"
-                    max="100"
-                    step="5"
-                    placeholder="Custom"
-                    aria-label="Enter tip percentage"
-                  />
+                  <div>
+                    <label for="tip-percent" class="tip-label"></label>
+                    <input
+                      class="bill-input border-sm"
+                      name="tip-percent"
+                      id="tip-percent"
+                      type="number"
+                      min="5"
+                      max="100"
+                      step="5"
+                      placeholder="Custom"
+                      aria-label="Enter tip percentage"
+                    />
+                    <p class="error-msg">Valid integer range is 5-100</p>
+                  </div>
                 </li>
               </ol>
             </div>
 
-            <label for="num-people" class="bill-label">
-              Number of People
-              <input
-                type="number"
-                class="bill-input border-sm"
-                id="num-people"
-                min="1"
-                max="50"
-                value="5"
-                required
-              />
-            </label>
+            <div>
+              <label for="num-people" class="bill-label">
+                Number of People
+              </label>
+              <div class="num-people-box">
+                <input
+                  type="number"
+                  class="bill-input border-sm"
+                  id="num-people"
+                  min="1"
+                  max="50"
+                  placeholder="0"
+                />
+              </div>
+
+              <p class="error-msg">Valid integer range is 1-100</p>
+            </div>
           </form>
 
           <div class="bill-summary">
