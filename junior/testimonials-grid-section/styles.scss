@@ -1,0 +1,178 @@
+@use "sass:list";
+
+$ModerateViolet: hsl(263, 55%, 52%);
+$VeryDarkGrayishBlue: hsl(217, 19%, 35%);
+$VeryDarkBlackishBlue: hsl(219, 29%, 14%);
+$White: hsl(0, 0%, 100%);
+$LightGray: hsl(0, 0%, 81%);
+$LightGrayishBlue: hsl(210, 46%, 95%);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.3rem;
+  font-weight: 500;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  line-height: 1;
+}
+
+@mixin flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.block-el {
+  display: block;
+}
+
+.max-w {
+  max-width: 112rem;
+}
+
+.card {
+  padding: 2.6rem 3.2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 1.8rem 0 rgba($VeryDarkBlackishBlue, 0.2);
+
+  $bg-map: (
+    "violet": $ModerateViolet,
+    "gray-blue": $VeryDarkGrayishBlue,
+    "white": $White,
+    "black-blue": $VeryDarkBlackishBlue,
+  );
+
+  @each $type, $col in $bg-map {
+    &--bg-#{$type} {
+      background-color: $col;
+    }
+  }
+}
+
+body {
+  background-color: $LightGrayishBlue;
+  color: $LightGray;
+}
+
+.section-testimonials {
+  @include flex-center;
+  min-height: 100vh;
+
+  padding: 7rem 2.4rem;
+}
+
+.testimonials-grid {
+  display: grid;
+  gap: 2.6rem 2.4rem;
+
+  flex: 1;
+}
+
+.header-testimonial {
+  display: flex;
+  align-items: center;
+  gap: 1.4rem;
+
+  margin-bottom: 1.8rem;
+}
+
+.author-img {
+  display: block;
+  height: 3rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 2px solid $LightGray;
+}
+
+.author-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 4px;
+
+  font-size: 1.3rem;
+  font-weight: inherit;
+
+  &__name {
+    color: $LightGrayishBlue;
+  }
+}
+
+.testimonial-summary {
+  margin-bottom: 1.8rem;
+
+  font-size: 1.9rem;
+  letter-spacing: 0.25px;
+  line-height: 1.25;
+  color: $LightGrayishBlue;
+}
+
+.testimonial-detailed {
+  line-height: 1.4;
+  color: $LightGray;
+}
+
+.card--bg-white {
+  $gray: darken($LightGray, 20%);
+
+  .author-details {
+    &__name {
+      color: $VeryDarkGrayishBlue;
+    }
+
+    &__tag {
+      color: $gray;
+    }
+  }
+
+  .testimonial-summary {
+    color: $VeryDarkBlackishBlue;
+  }
+
+  .testimonial-detailed {
+    color: $gray;
+  }
+}
+
+@media (min-width: 64em) {
+  .testimonials-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: auto auto;
+  }
+
+  .article-testimonial {
+    &:nth-child(1) {
+      grid-column: 1 / 3;
+    }
+
+    &:nth-child(4) {
+      grid-column: 2 / span 2;
+    }
+
+    &:nth-child(5) {
+      grid-column: 4;
+      grid-row: 1 / span 2;
+    }
+  }
+}
