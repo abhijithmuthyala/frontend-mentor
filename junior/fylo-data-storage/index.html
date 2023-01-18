@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Fylo cloud data storage dashboard" />
+    <title>Fylo Data storage</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      sizes="32x32"
+      type="image/png"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.scss" />
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="header-main">
+        <img src="images/logo.svg" alt="Fylo logo" class="logo" />
+
+        <ul class="actions-list">
+          <li class="actions-list-item">
+            <button class="btn-action" aria-label="Open a file">
+              <img
+                src="images/icon-document.svg"
+                alt=""
+                class="actions-list-item__icon"
+              />
+            </button>
+          </li>
+          <li class="actions-list-item">
+            <button class="btn-action" aria-label="Open a folder">
+              <img
+                src="images/icon-folder.svg"
+                alt=""
+                class="actions-list-item__icon"
+              />
+            </button>
+          </li>
+          <li class="actions-list-item">
+            <button class="btn-action" aria-label="Upload files">
+              <img
+                src="images/icon-upload.svg"
+                alt=""
+                class="actions-list-item__icon"
+              />
+            </button>
+          </li>
+        </ul>
+      </header>
+      <main class="main">
+        <h1 class="sr-only">Fylo cloud storage dashboard</h1>
+
+        <section class="section-data-stats">
+          <header class="header-data-stats">
+            <h2 class="header-data-stats__title">
+              You've used
+              <span class="gb"><span class=".gb__number">815 </span>GB</span> of
+              your storage
+            </h2>
+          </header>
+
+          <div class="data-bar-box">
+            <div class="data-bar"></div>
+          </div>
+          <div class="data-bar-limits">
+            <span>0 GB</span>
+            <span>1000 GB</span>
+          </div>
+
+          <div class="data-remaining-box">
+            <p class="gb"><span class="gb__number">185</span> GB LEFT</p>
+            <div class="data-remaining__triangle"></div>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+</html>

@@ -10,7 +10,7 @@
 | [Single Price Grid](https://single-price-grid-fem-component.netlify.app/) | [Time Tracking Dashboard](https://fem-time-track.netlify.app/) | | |
 | [Stats Preview Card](https://stats-preview-fem-card.netlify.app/) | [Tip Calculator App](https://fem-tip-calc-app.netlify.app/) | | |
 | [QR Code Component](https://qr-code-fem-component.netlify.app/) | [Testimonials Grid](https://fem-grid-testimonials.netlify.app/) | | |
-| [Order Summary Component](https://order-summary-fem-component.netlify.app/) | | | |
+| [Order Summary Component](https://order-summary-fem-component.netlify.app/) | [Fylo Data Storage](https://fem-fylo.netlify.app/) | | |
 | [3 Column Grid](https://3-col-grid.netlify.app/) | | | |
 | [Article Preview Component](https://article-fem-preview.netlify.app/) | | | |
 | [4 Card Features](https://four-card-features-fem.netlify.app/) | | | |
