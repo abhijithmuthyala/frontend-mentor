@@ -4,7 +4,7 @@ $VeryDarkCyan: hsl(192, 100%, 9%);
 $GrayishBlue: hsl(208, 11%, 55%);
 
 $pad-inline-body: 1.6rem;
-$pad-section: 3.8rem;
+$pad-section: 4.8rem 3.8rem;
 
 * {
   margin: 0;
@@ -38,6 +38,7 @@ h3 {
 
 a:link,
 a:visited {
+  display: inline-block;
   text-decoration: none;
   color: inherit;
 }
@@ -64,9 +65,15 @@ img {
   align-items: center;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
 body {
   display: flow-root;
-  // padding-inline: $pad-inline-body;
 }
 
 .header-main-wrapper {
@@ -75,14 +82,12 @@ body {
   left: 0;
 
   width: 100%;
-  padding-inline: $pad-inline-body;
+  padding: 2.4rem $pad-inline-body;
 }
 
 .header-main {
   @extend %flex-center-v;
   justify-content: space-between;
-
-  padding-block: 2.4rem;
 }
 
 .header-main-logo {
@@ -123,8 +128,7 @@ body {
 }
 
 .section-hero-wrapper {
-  display: flex;
-  padding-top: 8rem;
+  padding: $pad-section;
   background-color: $VeryPaleCyan;
 
   background-image: url(images/bg-hero-mobile.svg);
@@ -134,12 +138,12 @@ body {
 }
 
 .section-hero {
-  padding: 4.8rem $pad-section;
+  margin-top: 8rem;
   text-align: center;
 }
 
 .header-hero {
-  margin-bottom: 3.6rem;
+  margin-bottom: 3rem;
 
   &__title {
     margin-bottom: 2.4rem;
@@ -153,5 +157,63 @@ body {
 }
 
 .illustration-img {
-  margin-top: 6.4rem;
+  margin-top: 5.2rem;
+}
+
+.section-features-wrapper {
+  padding: 4.6rem 2rem;
+}
+
+.article-feature {
+  padding: 5.6rem 3.6rem 3.2rem;
+  border-radius: 1.6rem;
+  box-shadow: 0 0 1.2rem 0 rgba($VeryDarkCyan, 0.1);
+
+  text-align: center;
+
+  &:not(:last-child) {
+    margin-bottom: 4.2rem;
+  }
+
+  &__img {
+    // max-width: ;
+    margin: 0 auto 5.6rem;
+    padding-inline: 1.4rem;
+
+    // height: 19.2rem;
+    // width: auto;
+  }
+}
+
+.header-feature {
+  &__title {
+    margin-bottom: 1.4rem;
+    font-size: 2rem;
+  }
+
+  &__summary {
+    font-size: 1.4rem;
+    line-height: 1.5;
+    color: $GrayishBlue;
+  }
+}
+
+.section-cta-wrapper {
+  padding: 2.4rem 1.2rem;
+}
+
+.section-cta {
+  padding: 4.6rem 2.4rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 0 0.6rem 0 rgba($VeryDarkCyan, 0.1);
+
+  text-align: center;
+}
+
+.header-cta {
+  margin-bottom: 2.8rem;
+
+  &__title {
+    font-size: 1.75rem;
+  }
 }

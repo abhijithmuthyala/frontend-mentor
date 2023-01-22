@@ -27,7 +27,6 @@
 
     <link rel="stylesheet" href="styles.scss" />
   </head>
-
   <body>
     <div class="header-main-wrapper">
       <header class="header-main">
@@ -42,7 +41,6 @@
         </div>
       </header>
     </div>
-
     <main>
       <div class="section-hero-wrapper">
         <section class="section-hero">
@@ -68,12 +66,15 @@
           />
         </section>
       </div>
-
       <div class="section-features-wrapper">
         <section class="section-features">
           <h2 class="sr-only">What we offer...</h2>
-
-          <article class="article-feature feature-card">
+          <article class="article-feature">
+            <img
+              src="images/illustration-grow-together.svg"
+              alt=""
+              class="article-feature__img"
+            />
             <header class="header-feature">
               <h3 class="header-feature__title">Grow Together</h3>
               <p class="header-feature__summary">
@@ -82,14 +83,13 @@
                 you miss out on with a feedback form.
               </p>
             </header>
-
+          </article>
+          <article class="article-feature">
             <img
-              src="images/illustration-grow-together.svg"
+              src="images/illustration-flowing-conversation.svg"
               alt=""
               class="article-feature__img"
             />
-          </article>
-          <article class="article-feature feature-card">
             <header class="header-feature">
               <h3 class="header-feature__title">Flowing Conversations</h3>
               <p class="header-feature__summary">
@@ -98,14 +98,13 @@
                 flow.
               </p>
             </header>
-
+          </article>
+          <article class="article-feature">
             <img
-              src="images/illustration-flowing-conversation.svg"
+              src="images/illustration-your-users.svg"
               alt=""
               class="article-feature__img"
             />
-          </article>
-          <article class="article-feature feature-card">
             <header class="header-feature">
               <h3 class="header-feature__title">Your Users</h3>
               <p class="header-feature__summary">
@@ -114,25 +113,17 @@
                 your users can start chatting immediately.
               </p>
             </header>
-
-            <img
-              src="images/illustration-your-users.svg"
-              alt=""
-              class="article-feature__img"
-            />
           </article>
         </section>
       </div>
-
       <div class="section-cta-wrapper">
         <section class="section-cta">
           <header class="header-cta">
             <h2 class="header-cta__title">Ready To Build Your Community?</h2>
           </header>
-
-          <button class="btn-action btn-action--primary">
+          <a href="#" class="link-action link-action--primary">
             Get Started For Free
-          </button>
+          </a>
         </section>
       </div>
     </main>
