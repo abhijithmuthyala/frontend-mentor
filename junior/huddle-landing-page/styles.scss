@@ -1,0 +1,157 @@
+$Pink: hsl(322, 100%, 66%);
+$VeryPaleCyan: hsl(193, 100%, 96%);
+$VeryDarkCyan: hsl(192, 100%, 9%);
+$GrayishBlue: hsl(208, 11%, 55%);
+
+$pad-inline-body: 1.6rem;
+$pad-section: 3.8rem;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  color: $VeryDarkCyan;
+}
+
+h1,
+h2,
+h3 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 600;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+%flex-center-v {
+  display: flex;
+  align-items: center;
+}
+
+body {
+  display: flow-root;
+  // padding-inline: $pad-inline-body;
+}
+
+.header-main-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  padding-inline: $pad-inline-body;
+}
+
+.header-main {
+  @extend %flex-center-v;
+  justify-content: space-between;
+
+  padding-block: 2.4rem;
+}
+
+.header-main-logo {
+  width: 10.4rem;
+}
+
+.header-main-actions {
+  @extend %flex-center-v;
+}
+
+.link-action {
+  &:link,
+  &:active {
+    border-radius: 1000px;
+    box-shadow: 0 0 0.6rem 0 rgba($VeryDarkCyan, 0.2);
+
+    font-weight: 700;
+  }
+
+  &--primary {
+    &:link,
+    &:active {
+      padding: 1.2rem 6rem;
+      background-color: $Pink;
+
+      font-size: 1.2rem;
+      color: $VeryPaleCyan;
+    }
+  }
+
+  &--secondary {
+    &:link,
+    &:active {
+      padding: 0.6rem 2.4rem;
+      font-size: 1rem;
+    }
+  }
+}
+
+.section-hero-wrapper {
+  display: flex;
+  padding-top: 8rem;
+  background-color: $VeryPaleCyan;
+
+  background-image: url(images/bg-hero-mobile.svg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: right 0 top 0px;
+}
+
+.section-hero {
+  padding: 4.8rem $pad-section;
+  text-align: center;
+}
+
+.header-hero {
+  margin-bottom: 3.6rem;
+
+  &__title {
+    margin-bottom: 2.4rem;
+    font-size: 2.4rem;
+  }
+
+  &__summary {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.illustration-img {
+  margin-top: 6.4rem;
+}
