@@ -105,6 +105,16 @@ body {
     box-shadow: 0 0 0.6rem 0 rgba($VeryDarkCyan, 0.2);
 
     font-weight: 700;
+    transition: all 0.3s;
+  }
+
+  @mixin link-bg($bg-col, $text-col) {
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: rgba($bg-col, 0.6);
+      color: $text-col;
+    }
   }
 
   &--primary {
@@ -116,14 +126,20 @@ body {
       font-size: 1.2rem;
       color: $VeryPaleCyan;
     }
+
+    @include link-bg($Pink, $VeryPaleCyan);
   }
 
   &--secondary {
     &:link,
     &:active {
       padding: 0.6rem 2.4rem;
+      background-color: white;
+
       font-size: 1rem;
     }
+
+    @include link-bg(white, $GrayishBlue);
   }
 }
 
@@ -138,6 +154,10 @@ body {
 }
 
 .section-hero {
+  display: grid;
+  align-items: center;
+  gap: 5.2rem;
+
   margin-top: 8rem;
   text-align: center;
 }
@@ -157,7 +177,8 @@ body {
 }
 
 .illustration-img {
-  margin-top: 5.2rem;
+  max-width: 56rem;
+  margin-inline: auto;
 }
 
 .section-features-wrapper {
@@ -165,6 +186,10 @@ body {
 }
 
 .article-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 5.6rem;
+
   padding: 5.6rem 3.6rem 3.2rem;
   border-radius: 1.6rem;
   box-shadow: 0 0 1.2rem 0 rgba($VeryDarkCyan, 0.1);
@@ -176,12 +201,9 @@ body {
   }
 
   &__img {
-    // max-width: ;
-    margin: 0 auto 5.6rem;
+    max-width: 36rem;
+    margin: 0 auto;
     padding-inline: 1.4rem;
-
-    // height: 19.2rem;
-    // width: auto;
   }
 }
 
@@ -206,6 +228,8 @@ body {
 }
 
 .section-cta {
+  max-width: 56rem;
+  margin: 0 auto;
   padding: 4.6rem 2.4rem;
   border-radius: 1.6rem;
   box-shadow: 0 0 0.6rem 0 rgba($VeryDarkCyan, 0.1);
@@ -267,14 +291,21 @@ body {
 }
 
 .footer-nav-list {
-  display: flex;
-  flex-direction: column;
+  display: grid;
   gap: 2.4rem;
 }
 
 .footer-nav-list-item {
   &__link {
-    font-size: 1.8rem;
+    &:link,
+    &:visited {
+      font-size: 1.8rem;
+    }
+
+    &:hover,
+    &:active {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -291,16 +322,23 @@ body {
   justify-content: center;
   align-items: center;
 
-  padding: 0.8rem;
-  border: 2px solid $VeryPaleCyan;
-  border-radius: 50%;
-
   &__icon {
+    box-sizing: content-box;
     display: block;
     width: 1.8rem;
     aspect-ratio: 1;
 
+    padding: 0.8rem;
+    border: 2px solid $VeryPaleCyan;
+    border-radius: 50%;
+
     fill: $VeryPaleCyan;
+    transition: all 0.3s;
+
+    &:hover {
+      fill: $Pink;
+      border-color: $Pink;
+    }
   }
 }
 
@@ -308,4 +346,118 @@ body {
   margin-top: 2.4rem;
   font-size: 1.2rem;
   text-align: center;
+}
+
+@media (min-width: 48em) {
+  .header-main-wrapper {
+    padding-block: 3.2rem;
+  }
+
+  .header-main-logo {
+    height: 2rem;
+    width: auto;
+  }
+
+  .section-hero-wrapper {
+    padding-inline: 5.4rem;
+    background-image: url(images/bg-hero-desktop.svg);
+  }
+
+  .article-feature {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+
+    &--reverse {
+      flex-direction: row-reverse;
+    }
+  }
+
+  .footer-content-grid {
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8rem;
+  }
+
+  .footer-address-list,
+  .footer-nav-list,
+  .footer-socials-list {
+    align-items: flex-start;
+    gap: 1.8rem;
+  }
+
+  .footer-address-list-item {
+    &__text {
+      font-size: 1.4rem;
+    }
+  }
+
+  .footer-nav-list-item {
+    &__link {
+      &:link,
+      &:visited {
+        font-size: 1.4rem;
+      }
+    }
+  }
+
+  .footer-socials-list-item {
+    &__icon {
+      width: 1.2rem;
+    }
+  }
+
+  .footer-nav-list {
+    grid-template-columns: 1fr 1fr;
+    gap: 2.4rem;
+  }
+
+  .copyright {
+    font-size: 1rem;
+    text-align: right;
+  }
+}
+
+@media (min-width: 56em) {
+  .section-hero {
+    grid-template-columns: 42fr 58fr;
+    margin-top: 5.2rem;
+    text-align: left;
+  }
+}
+
+@media (min-width: 75em) {
+  html {
+    font-size: 100%;
+  }
+
+  .header-main,
+  .section-hero,
+  .section-features,
+  .footer {
+    max-width: 80rem;
+    margin-inline: auto;
+  }
+
+  .link-action {
+    &--secondary {
+      &:link,
+      &:visited {
+        padding: 0.8rem 3.6rem;
+      }
+    }
+  }
+
+  .header-hero {
+    &__summary {
+      font-size: 1.4rem;
+    }
+  }
+
+  .section-features-wrapper {
+    padding: 8.6rem 6.4rem;
+  }
+
+  .footer-wrapper {
+    padding: 9.6rem 6.4rem;
+  }
 }
