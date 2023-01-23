@@ -12,7 +12,7 @@
 | [QR Code Component](https://qr-code-fem-component.netlify.app/) | [Testimonials Grid](https://fem-grid-testimonials.netlify.app/) | | |
 | [Order Summary Component](https://order-summary-fem-component.netlify.app/) | [Fylo Data Storage](https://fem-fylo.netlify.app/) | | |
 | [3 Column Grid](https://3-col-grid.netlify.app/) | [Clipboard landing page](https://clipboard-fem.netlify.app/) | | |
-| [Article Preview Component](https://article-fem-preview.netlify.app/) | | | |
+| [Article Preview Component](https://article-fem-preview.netlify.app/) | [Huddle Landing Page](https://huddle-lndg-page.netlify.app/) | | |
 | [4 Card Features](https://four-card-features-fem.netlify.app/) | | | |
 | [Huddle Hero Section](https://huddle-fem-cta.netlify.app/) | | | |
 | [FAQ Accordian](https://accordian-faq-fem.netlify.app/) | | | |
