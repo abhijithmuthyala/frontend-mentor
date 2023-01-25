@@ -53,6 +53,9 @@ a:visited {
 
 input[type="range"] {
   -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
   width: 100%;
   background: transparent;
 
@@ -149,7 +152,7 @@ h1 {
   flex-basis: 100%;
   position: relative;
 
-  &::-webkit-slider-runnable-track {
+  @mixin range-track() {
     height: 0.8rem;
     border-radius: 100px;
     background: linear-gradient(
@@ -159,11 +162,14 @@ h1 {
     );
   }
 
-  &::-webkit-slider-thumb {
+  @mixin range-thumb() {
     cursor: pointer;
 
     height: 4rem;
-    aspect-ratio: 1;
+    width: 4rem;
+    // aspect-ratio doesn't work with firefox
+    // aspect-ratio: 1;
+
     border-radius: 50%;
     background: url(images/icon-slider.svg) no-repeat center,
       linear-gradient($StrongCyan, $StrongCyan);
@@ -178,6 +184,22 @@ h1 {
     &:active {
       cursor: grab;
     }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+  }
+
+  &::-moz-range-track {
+    @include range-track();
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb();
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb();
   }
 }
 
