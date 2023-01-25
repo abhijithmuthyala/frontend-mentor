@@ -57,10 +57,13 @@ input[type="range"] {
   appearance: none;
 
   width: 100%;
-  background: transparent;
 
   &::-webkit-slider-thumb {
     -webkit-appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    -moz-appearance: none;
   }
 }
 
@@ -176,7 +179,8 @@ h1 {
 
     box-shadow: 0 0.8rem 3.2rem 2px rgba($StrongCyan, 1);
 
-    position: absolute;
+    // !important for firefox; 'top' decl doesn't seem to work with firefox
+    position: absolute !important;
     top: 50%;
     left: var(--left-pos);
     transform: translate(var(--transform-x), -50%);

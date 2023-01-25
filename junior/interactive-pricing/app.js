@@ -6,7 +6,7 @@ function setupPriceInputElement() {
   const pageViewsEl = document.querySelector(".pageviews__number");
   const priceEl = document.querySelector(".per-month__amount");
 
-  const rangeMap = {
+  const range = {
     min: 1,
     max: 5,
     step: 1,
@@ -23,6 +23,8 @@ function setupPriceInputElement() {
   let planData = null;
 
   injectInputRange();
+  priceInputHandler();
+
   priceInputEl.addEventListener("input", priceInputHandler);
   billBtn.addEventListener("click", togglePlan);
 
@@ -49,7 +51,11 @@ function setupPriceInputElement() {
     );
     priceInputEl.style.setProperty(
       "--transform-x",
-      `${targetIndex > 0 && targetIndex < planMap.size ? "-100%" : "0"}`
+      `${
+        (targetIndex === 0 && "0") ||
+        (targetIndex === planMap.size - 1 && "-100%") ||
+        "-50%"
+      }`
     );
   }
 
@@ -70,13 +76,13 @@ function setupPriceInputElement() {
 
     const alpha = (value - min) / (max - min);
 
-    const mappedValue = rangeMap.min + alpha * (rangeMap.max - rangeMap.min);
-    const steps = Math.floor((mappedValue - rangeMap.min) / rangeMap.step);
+    const mappedValue = range.min + alpha * (range.max - range.min);
+    const steps = Math.floor((mappedValue - range.min) / range.step);
     return steps;
   }
 
   function injectInputRange() {
-    Object.entries(rangeMap).forEach(([attr, value]) =>
+    Object.entries(range).forEach(([attr, value]) =>
       priceInputEl.setAttribute(attr, value)
     );
   }
