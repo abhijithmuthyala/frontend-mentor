@@ -24,6 +24,7 @@ function setupPriceInputElement() {
 
   injectInputRange();
   priceInputHandler();
+  updatePlanBtnAriaAtts();
 
   priceInputEl.addEventListener("input", priceInputHandler);
   billBtn.addEventListener("click", togglePlan);
@@ -32,8 +33,17 @@ function setupPriceInputElement() {
     const yearlyPlanDiscountPercent = 25;
 
     discountPercent = discountPercent === 0 ? yearlyPlanDiscountPercent : 0;
+
     billBtn.classList.toggle("toggled");
     renderPlanData();
+    updatePlanBtnAriaAtts(discountPercent);
+  }
+
+  function updatePlanBtnAriaAtts(discountPercent) {
+    billBtn.setAttribute(
+      "aria-label",
+      `Switch to ${discountPercent > 0 ? "monthly" : "yearly"} billing`
+    );
   }
 
   function priceInputHandler() {
@@ -42,6 +52,7 @@ function setupPriceInputElement() {
 
     renderPlanData();
     updateSliderPosition(targetIndex);
+    updatePriceInputAriaAtts(planData.pricePerMonth);
   }
 
   function updateSliderPosition(targetIndex) {
@@ -85,5 +96,9 @@ function setupPriceInputElement() {
     Object.entries(range).forEach(([attr, value]) =>
       priceInputEl.setAttribute(attr, value)
     );
+  }
+
+  function updatePriceInputAriaAtts(price) {
+    priceInputEl.setAttribute("aria-valuenow", price);
   }
 }
