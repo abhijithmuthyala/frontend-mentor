@@ -338,6 +338,10 @@ h1 {
     font-size: 75%;
   }
 
+  body {
+    background-size: auto, contain;
+  }
+
   .header-main {
     &__title {
       font-size: 2.4rem;
