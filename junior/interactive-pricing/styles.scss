@@ -1,0 +1,391 @@
+$SoftCyan: hsl(174, 77%, 80%);
+$StrongCyan: hsl(174, 86%, 45%);
+$LightGrayishRed: hsl(14, 92%, 95%);
+$LightRed: hsl(15, 100%, 70%);
+$PaleBlue: hsl(226, 100%, 87%);
+
+$White: hsl(0, 0%, 100%);
+$VeryPaleBlue: hsl(230, 100%, 99%);
+$LightGrayishBlue: hsl(224, 65%, 95%);
+$LightGrayishBlue: hsl(223, 50%, 87%);
+$GrayishBlue: hsl(225, 20%, 60%);
+$DarkDesaturatedBlue: hsl(227, 35%, 25%);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.5rem;
+  font-weight: 600;
+  font-family: "Manrope", sans-serif;
+  color: $GrayishBlue;
+}
+
+ul {
+  list-style: none;
+}
+
+button {
+  display: inline-block;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  width: 100%;
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+  }
+
+  &::-moz-range-thumb {
+    -moz-appearance: none;
+  }
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+%price-card {
+  padding: 3.2rem 2.4rem;
+  border-radius: 1.2rem;
+  background-color: $White;
+  box-shadow: 0 0 0.6rem 0 rgba($DarkDesaturatedBlue, 0.1);
+}
+
+body {
+  min-height: 100vh;
+  background-color: $VeryPaleBlue;
+
+  background: url(images/pattern-circles.svg), url(images/bg-pattern.svg);
+  background-repeat: no-repeat;
+  background-position: top 5.6rem center, top left;
+}
+
+h1 {
+  color: $DarkDesaturatedBlue;
+  font-weight: 800;
+}
+
+.header-main {
+  padding-block: 8.8rem 6.4rem;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 0.8rem;
+    font-size: 2rem;
+  }
+
+  &__summary {
+    padding-inline: 9.6rem;
+
+    font-size: 1.3rem;
+    line-height: 1.8;
+  }
+}
+
+.section-pricing-wrapper {
+  padding: 0 2.4rem;
+}
+
+.section-pricing {
+  @extend %price-card;
+  padding-inline: 0;
+  margin-inline: auto;
+}
+
+.pageviews {
+  font-size: 1.3rem;
+  letter-spacing: 1.25px;
+}
+
+.per-month {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &__amount {
+    font-size: 3.2rem;
+    color: $DarkDesaturatedBlue;
+  }
+}
+
+.pricing-box {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 4rem;
+
+  margin-bottom: 3.4rem;
+  padding-inline: 2.4rem;
+}
+
+.price-input {
+  --left-pos: 50%;
+  --transform-x: 0%;
+
+  flex-basis: 100%;
+  position: relative;
+
+  @mixin range-track() {
+    height: 0.8rem;
+    border-radius: 100px;
+    background: linear-gradient(
+      to right,
+      $SoftCyan var(--left-pos),
+      $LightGrayishBlue var(--left-pos)
+    );
+  }
+
+  @mixin range-thumb() {
+    cursor: pointer;
+
+    height: 4rem;
+    width: 4rem;
+    // aspect-ratio doesn't work with firefox
+    // aspect-ratio: 1;
+
+    border-radius: 50%;
+    background: url(images/icon-slider.svg) no-repeat center,
+      linear-gradient($StrongCyan, $StrongCyan);
+
+    box-shadow: 0 0.8rem 3.2rem 2px rgba($StrongCyan, 1);
+
+    // !important for firefox; 'top' decl doesn't seem to work with firefox
+    position: absolute !important;
+    top: 50%;
+    left: var(--left-pos);
+    transform: translate(var(--transform-x), -50%);
+
+    &:active {
+      cursor: grab;
+    }
+  }
+
+  &::-webkit-slider-runnable-track {
+    @include range-track();
+  }
+
+  &::-moz-range-track {
+    @include range-track();
+  }
+
+  &::-webkit-slider-thumb {
+    @include range-thumb();
+  }
+
+  &::-moz-range-thumb {
+    @include range-thumb();
+  }
+}
+
+.yearly-bill-text {
+  position: relative;
+
+  &::after {
+    display: block;
+    content: "-25%";
+
+    position: absolute;
+    left: calc(100% + 0.6rem);
+    top: 50%;
+    transform: translateY(-50%);
+
+    padding: 2px 4px;
+    border-radius: 100px;
+    background-color: $LightGrayishRed;
+    color: $LightRed;
+  }
+}
+
+.hr {
+  width: 100%;
+  height: 2px;
+  margin-block: 3.6rem 2.4rem;
+  border: none;
+  background-color: $LightGrayishBlue;
+}
+
+.bill-button-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+
+  font-size: 1.2rem;
+}
+
+.btn-bill {
+  width: 4.2rem;
+  height: 2.2rem;
+  border-radius: 1000px;
+  background-color: $LightGrayishBlue;
+
+  position: relative;
+
+  &:hover {
+    background-color: $SoftCyan;
+  }
+
+  $buff: 4px;
+
+  &::after {
+    display: block;
+    content: "";
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate($buff, -50%);
+
+    height: calc(100% - $buff * 2);
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: $White;
+
+    transition: all 0.3s;
+  }
+
+  &.toggled {
+    &::after {
+      left: 100%;
+      transform: translate(calc(-100% - $buff), -50%);
+    }
+  }
+}
+
+.cta-box {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.features-list-item {
+  position: relative;
+  padding-left: 2.8rem;
+
+  &::after {
+    display: block;
+    content: "";
+    width: 1rem;
+    aspect-ratio: 1;
+    background: url(images/icon-check.svg) no-repeat;
+    background-size: cover;
+
+    position: absolute;
+    left: 4px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}
+
+.link-cta {
+  &:link,
+  &:visited {
+    display: block;
+    width: 100%;
+    margin-inline: auto;
+    padding: 1.2rem 3.6rem;
+    border-radius: 1000px;
+    background-color: $DarkDesaturatedBlue;
+
+    text-align: center;
+    font-size: 1.4rem;
+    color: $PaleBlue;
+  }
+}
+
+@media (min-width: 48em) {
+  html {
+    font-size: 75%;
+  }
+
+  body {
+    background-size: auto, contain;
+  }
+
+  .header-main {
+    &__title {
+      font-size: 2.4rem;
+    }
+  }
+
+  .section-pricing {
+    max-width: 45rem;
+    padding-top: 4rem;
+  }
+
+  .pricing-box {
+    justify-content: space-between;
+    align-items: center;
+
+    padding-inline: 4rem;
+  }
+
+  .price-input {
+    order: 1;
+  }
+
+  .cta-box {
+    flex-direction: row;
+    align-items: center;
+
+    padding-inline: 3.2rem;
+  }
+
+  .features-list {
+    align-items: flex-start;
+    gap: 0.6rem;
+
+    text-align: left;
+  }
+
+  .link-cta {
+    &:link,
+    &:visited {
+      max-width: 14.6rem;
+      padding: 0.8rem 1.2rem;
+      margin: 0 0 0 auto;
+
+      font-size: 1.2rem;
+    }
+  }
+}

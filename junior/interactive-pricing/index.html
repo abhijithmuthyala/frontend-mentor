@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Interactive pricing card" />
+    <title>Interactive Pricing</title>
+
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@600;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="styles.scss" />
+    <script src="app.js" type="module"></script>
+  </head>
+
+  <body>
+    <header class="header-main">
+      <h1 class="header-main__title">Simple, traffic-based pricing</h1>
+      <p class="header-main__summary">
+        Sign-up for our 30-day trial. No credit card required.
+      </p>
+    </header>
+
+    <main>
+      <div class="section-pricing-wrapper">
+        <section class="section-pricing">
+          <h2 class="sr-only">Pricing options</h2>
+
+          <div class="pricing-box">
+            <p class="pageviews">
+              <span class="pageviews__number">100K</span>
+              PAGEVIEWS
+            </p>
+
+            <label for="price-input" class="sr-only"
+              >Payment in dollars per month</label
+            >
+            <input
+              type="range"
+              min="1"
+              max="5"
+              step="1"
+              class="price-input"
+              id="price-input"
+            />
+
+            <p class="per-month">
+              <span class="per-month__amount">$16.00</span>
+              &nbsp;/ month
+            </p>
+          </div>
+
+          <div class="bill-button-box">
+            <p>Monthly Billing</p>
+            <button
+              class="btn-bill"
+              aria-label="Toggle between monthly and yearly billing."
+            ></button>
+            <p class="yearly-bill-text">Yearly Billing</p>
+          </div>
+
+          <hr class="hr" />
+
+          <div class="cta-box">
+            <ul class="features-list">
+              <li class="features-list-item">Unlimited websites</li>
+              <li class="features-list-item">100% data ownership</li>
+              <li class="features-list-item">Email reports</li>
+            </ul>
+
+            <a href="#" class="link-cta">Start my trial</a>
+          </div>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>
