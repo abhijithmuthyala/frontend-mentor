@@ -1,5 +1,5 @@
-$SoftRed: hsl(7, 99%, 70%);
-$Yellow: hsl(51, 100%, 49%);
+$SoftRed: rgb(254, 120, 103);
+$Yellow: rgb(250, 212, 0);
 $DarkDesaturatedCyan: hsl(167, 40%, 24%);
 $DarkBlue: hsl(198, 62%, 26%);
 $DarkModerateCyan: hsl(168, 34%, 41%);
@@ -8,6 +8,9 @@ $VeryDarkGrayishBlue: hsl(213, 9%, 39%);
 $DarkGrayishBlue: hsl(232, 10%, 55%);
 $GrayishBlue: hsl(210, 4%, 67%);
 $White: hsl(0, 0%, 100%);
+
+$SoftRedRGB: 254, 120, 103;
+$YellowRGB: 250, 212, 0;
 
 *,
 *::before,
@@ -54,7 +57,8 @@ img {
 }
 
 h1,
-h2 {
+h2,
+h3 {
   font-family: "Fraunces", sans-serif;
   font-weight: 900;
 }
@@ -74,10 +78,25 @@ h2 {
   opacity: 0;
 }
 
-@mixin pseudo {
+@mixin pseudo($pos: absolute) {
   display: block;
   content: "";
-  position: absolute;
+  position: $pos;
+}
+
+@mixin feature-img($device) {
+  $imgs: (
+    1: "transform",
+    2: "stand-out",
+  );
+
+  @each $i, $img-name in $imgs {
+    &:nth-child(#{$i}) {
+      &::before {
+        background-image: url(images/#{$device}/image-#{$img-name}.jpg);
+      }
+    }
+  }
 }
 
 .header-main-wrapper {
@@ -181,4 +200,82 @@ h2 {
 .img-arrow-down {
   width: initial;
   margin: 4.8rem auto 13.4rem;
+}
+
+.article-feature {
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    margin-bottom: 2.4rem;
+
+    font-size: 3.2rem;
+    color: $VeryDarkDesaturatedBlue;
+  }
+
+  &__summary {
+    margin-bottom: 3.2rem;
+    line-height: 1.65;
+  }
+
+  &::before {
+    @include pseudo(relative);
+
+    width: 100%;
+    height: 31.2rem;
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+
+  @include feature-img("mobile");
+}
+
+.learn-more-link {
+  &:link,
+  &:visited {
+    position: relative;
+
+    font-family: "Fraunces", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+
+    color: $VeryDarkDesaturatedBlue;
+
+    &::after {
+      @include pseudo;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -70%);
+
+      width: calc(100% + 8px);
+      height: 8px;
+      border-radius: 100px;
+      background-color: rgba(var(--bg-clr), 0.3);
+
+      z-index: -1;
+    }
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    &::after {
+      background-color: rgba(var(--bg-clr), 0.7);
+    }
+  }
+
+  &--yellow {
+    --bg-clr: #{$YellowRGB};
+  }
+  &--red {
+    --bg-clr: #{$SoftRedRGB};
+  }
+}
+
+.article-feature-content-box {
+  padding: 6.4rem 2.4rem 6.8rem;
+  text-align: center;
 }
