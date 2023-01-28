@@ -84,7 +84,7 @@ h3 {
   position: $pos;
 }
 
-@mixin feature-img($device) {
+@mixin feature-img($device: "mobile") {
   $imgs: (
     1: "transform",
     2: "stand-out",
@@ -95,6 +95,23 @@ h3 {
       &::before {
         background-image: url(images/#{$device}/image-#{$img-name}.jpg);
       }
+    }
+  }
+}
+
+@mixin overlay-img($device: "mobile") {
+  $imgs: (
+    1: "graphic-design",
+    2: "photography",
+  );
+
+  @each $i, $img-name in $imgs {
+    &:nth-child(#{$i}) {
+      background: url(images/#{$device}/image-#{$img-name}.jpg)
+        no-repeat
+        top
+        center;
+      background-size: cover;
     }
   }
 }
@@ -278,4 +295,39 @@ h3 {
 .article-feature-content-box {
   padding: 6.4rem 2.4rem 6.8rem;
   text-align: center;
+}
+
+.article-img-overlay {
+  display: flow-root;
+  // display: flex;
+  // flex-direction: column;
+  // justify-content: flex-end;
+  // gap: 1.6rem;
+
+  min-height: 60rem;
+  padding: 0 2.4rem 5rem;
+
+  @include overlay-img("mobile");
+
+  text-align: center;
+  color: var(--text-clr);
+
+  &__title {
+    margin-block: 39.8rem 2.8rem;
+    font-size: 2.8rem;
+  }
+
+  &__summary {
+    font-size: 1.5rem;
+    line-height: 1.8;
+    letter-spacing: 0.25px;
+  }
+
+  &--green {
+    --text-clr: #{$DarkDesaturatedCyan};
+  }
+
+  &--blue {
+    --text-clr: #{$DarkBlue};
+  }
 }
