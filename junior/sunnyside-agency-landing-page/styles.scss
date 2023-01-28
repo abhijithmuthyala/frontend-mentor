@@ -191,21 +191,32 @@ h3 {
   &:visited {
     font-size: 2rem;
     line-height: 1.25;
+
+    transition: 0.3s all;
   }
 
   &--contact {
     &:link,
     &:visited {
+      --bg-clr: #{$Yellow};
+      --clr: #{$VeryDarkDesaturatedBlue};
+
       padding: 1.8rem 3.2rem;
       border-radius: 100px;
-      background-color: $Yellow;
+      background-color: var(--bg-clr);
 
       font-size: 1.4rem;
       font-weight: 700;
       font-family: "Fraunces", sans-serif;
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      color: $VeryDarkDesaturatedBlue;
+      color: var(--clr);
+    }
+
+    &:hover,
+    &:active,
+    &:focus {
+      --bg-clr: #{rgba($Yellow, 0.6)};
     }
   }
 }
@@ -292,6 +303,7 @@ h3 {
       background-color: rgba(var(--bg-clr), 0.3);
 
       z-index: -1;
+      transition: all 0.3s;
     }
   }
 
@@ -450,6 +462,33 @@ h3 {
   color: $DarkModerateCyan;
 }
 
+.nav-footer-list-item {
+  &__link {
+    &:link,
+    &:visited {
+      transition: all 0.5s;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      color: rgba($White, 0.75);
+    }
+  }
+}
+
 .socials-list {
   @include flex-center(2.8rem);
+}
+
+.socials-link {
+  &:hover &__icon,
+  &:focus &__icon,
+  &:active &__icon {
+    fill: rgba($White, 0.75);
+  }
+
+  &__icon {
+    transition: all 0.3s;
+  }
 }
