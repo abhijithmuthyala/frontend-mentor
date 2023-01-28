@@ -415,3 +415,41 @@ h3 {
     aspect-ratio: 1;
   }
 }
+
+.footer-wrapper {
+  padding: 6.4rem 2.4rem;
+  background-color: rgba($DarkModerateCyan, 0.6);
+}
+
+.footer-logo-link {
+  $link: &;
+
+  &:link,
+  &:visited {
+    display: block;
+    width: 16.8rem;
+    margin-inline: auto;
+
+    #{$link}__img {
+      filter: invert(65%) sepia(4%) saturate(4769%) hue-rotate(116deg)
+        contrast(93%);
+    }
+  }
+}
+
+@mixin flex-center($gap) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: $gap;
+}
+
+.nav-footer-list {
+  @include flex-center(5.8rem);
+  margin-block: 4.6rem 8.6rem;
+  color: $DarkModerateCyan;
+}
+
+.socials-list {
+  @include flex-center(2.8rem);
+}
