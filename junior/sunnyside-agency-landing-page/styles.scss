@@ -109,7 +109,7 @@ h3 {
     &:nth-child(#{$i}) {
       background: url(images/#{$device}/image-#{$img-name}.jpg)
         no-repeat
-        top
+        center
         center;
       background-size: cover;
     }
@@ -135,6 +135,11 @@ h3 {
   }
 }
 
+@mixin max-width($w) {
+  max-width: $w;
+  margin-inline: auto;
+}
+
 .header-main-wrapper {
   position: absolute;
   top: 0;
@@ -150,6 +155,8 @@ h3 {
   align-items: center;
 
   position: relative;
+
+  @include max-width(144rem);
 
   &__logo {
     width: initial;
@@ -229,10 +236,13 @@ h3 {
 }
 
 .section-hero {
+  @include max-width(144rem);
   margin-top: 14.4rem;
 }
 
 .header-hero {
+  padding-inline: 2.4rem;
+
   &__title {
     font-size: 3.8rem;
     text-align: center;
@@ -249,9 +259,13 @@ h3 {
   margin: 4.8rem auto 13.4rem;
 }
 
+.section-features {
+  @include max-width(144rem);
+}
+
 .article-feature {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  box-shadow: 0 0 1.2rem 0 rgba($GrayishBlue, 0.2);
 
   &__title {
     margin-bottom: 2.4rem;
@@ -269,7 +283,7 @@ h3 {
     @include pseudo(relative);
 
     width: 100%;
-    height: 31.2rem;
+    min-height: 31.2rem;
 
     background-size: cover;
     background-position: center;
@@ -324,14 +338,21 @@ h3 {
 }
 
 .article-feature-content-box {
+  align-self: center;
+
   padding: 6.4rem 2.4rem 6.8rem;
   text-align: center;
 }
 
+.section-img-overlay {
+  display: grid;
+  @include max-width(144rem);
+}
+
 .article-img-overlay {
   display: flow-root;
-  min-height: 60rem;
-  padding: 0 2.4rem 5rem;
+  // min-height: 60rem;
+  padding: 0 2.4rem 5.6rem;
 
   @include overlay-img("mobile");
 
@@ -359,7 +380,11 @@ h3 {
 }
 
 .section-testimonials-wrapper {
-  padding: 6.4rem 3.2rem;
+  padding: 6.4rem 3.2rem 5.8rem;
+}
+
+.section-testimonials {
+  @include max-width(60rem);
 }
 
 .header-testimonials {
@@ -383,11 +408,11 @@ h3 {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3rem;
+  gap: 3.2rem;
   text-align: center;
 
   &__avatar {
-    width: 7.2rem;
+    width: 7.4rem;
     aspect-ratio: 1;
     border-radius: 50%;
   }
@@ -398,7 +423,7 @@ h3 {
   }
 
   &__name {
-    margin-bottom: 1.3rem;
+    margin-bottom: 1.2rem;
 
     font-size: 1.8rem;
     color: $VeryDarkDesaturatedBlue;
@@ -422,6 +447,8 @@ h3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
 
+  @include max-width(144rem);
+
   &__img-box {
     @include gallery-img();
     aspect-ratio: 1;
@@ -431,6 +458,10 @@ h3 {
 .footer-wrapper {
   padding: 6.4rem 2.4rem;
   background-color: rgba($DarkModerateCyan, 0.6);
+}
+
+.footer {
+  @include max-width(144rem);
 }
 
 .footer-logo-link {
@@ -490,5 +521,137 @@ h3 {
 
   &__icon {
     transition: all 0.3s;
+  }
+}
+
+@media (min-width: 29em) {
+  .article-img-overlay {
+    &__title {
+      margin-top: 32rem;
+    }
+  }
+}
+
+@media (min-width: 43.5em) {
+  .section-hero-wrapper {
+    background-image: url(images/desktop/image-header.jpg);
+  }
+
+  .article-feature,
+  .section-img-overlay {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .article-feature {
+    &--reverse {
+      :first-child {
+        order: -1;
+      }
+    }
+  }
+}
+
+@media (min-width: 50em) {
+  .header-main-wrapper {
+    padding: 4.8rem;
+  }
+
+  .header-main {
+    &__logo {
+      width: 16rem;
+    }
+  }
+
+  .article-feature {
+    @include feature-img("desktop");
+  }
+
+  .article-img-overlay {
+    @include overlay-img("desktop");
+  }
+}
+
+@media (min-width: 69em) {
+  .section-hero {
+    margin-top: 19.6rem;
+  }
+
+  .header-hero {
+    &__title {
+      font-size: 5.2rem;
+      letter-spacing: 12px;
+    }
+  }
+
+  .img-arrow-down {
+    margin-block: 9.6rem 32.6rem;
+  }
+
+  .article-feature {
+    --pad-high: 16.4rem;
+    --pad-low: 11.2rem;
+    --pad-inline: var(--pad-low) var(--pad-high);
+
+    grid-template-rows: 60rem;
+
+    &__title {
+      font-size: 4.2rem;
+      line-height: 1.1;
+    }
+
+    &--reverse {
+      --pad-inline: var(--pad-high) var(--pad-low);
+    }
+  }
+
+  .article-feature-content-box {
+    padding-inline: var(--pad-inline);
+    text-align: left;
+  }
+
+  .section-img-overlay {
+    grid-template-rows: 60rem;
+  }
+
+  .article-img-overlay {
+    &__title {
+      margin-top: 40rem;
+    }
+
+    &__summary {
+      @include max-width(36rem);
+    }
+  }
+
+  .section-testimonials-wrapper {
+    padding-block: 16rem 12.8rem;
+  }
+
+  .section-testimonials {
+    max-width: 108rem;
+  }
+
+  .header-testimonials {
+    margin-bottom: 8rem;
+
+    &__title {
+      font-size: 2.2rem;
+    }
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .article-testimonial {
+    gap: 5rem;
+  }
+
+  .section-gallery {
+    grid-template-rows: 45rem;
+
+    &__img-box {
+      aspect-ratio: initial;
+    }
   }
 }
