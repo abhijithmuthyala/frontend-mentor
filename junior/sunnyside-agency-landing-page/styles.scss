@@ -116,6 +116,25 @@ h3 {
   }
 }
 
+@mixin gallery-img($device: "mobile") {
+  $imgs: (
+    1: "milkbottles",
+    2: "orange",
+    3: "cone",
+    4: "sugar-cubes",
+  );
+
+  @each $i, $img-name in $imgs {
+    &:nth-child(#{$i}) {
+      background: url(images/#{$device}/image-gallery-#{$img-name}.jpg)
+        no-repeat
+        top
+        center;
+      background-size: cover;
+    }
+  }
+}
+
 .header-main-wrapper {
   position: absolute;
   top: 0;
@@ -299,11 +318,6 @@ h3 {
 
 .article-img-overlay {
   display: flow-root;
-  // display: flex;
-  // flex-direction: column;
-  // justify-content: flex-end;
-  // gap: 1.6rem;
-
   min-height: 60rem;
   padding: 0 2.4rem 5rem;
 
@@ -385,5 +399,19 @@ h3 {
 
   &__author-intro-box {
     order: 1;
+  }
+}
+
+.section-gallery-wrapper {
+  padding-top: 2.6rem;
+}
+
+.section-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+
+  &__img-box {
+    @include gallery-img();
+    aspect-ratio: 1;
   }
 }
