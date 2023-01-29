@@ -88,7 +88,7 @@ h3 {
   );
 
   @each $i, $img-name in $imgs {
-    &:nth-child(#{$i}) {
+    &:nth-of-type(#{$i}) {
       &::before {
         background-image: url(images/#{$device}/image-#{$img-name}.jpg);
       }
@@ -103,7 +103,7 @@ h3 {
   );
 
   @each $i, $img-name in $imgs {
-    &:nth-child(#{$i}) {
+    &:nth-of-type(#{$i}) {
       background: url(images/#{$device}/image-#{$img-name}.jpg)
         no-repeat
         center

@@ -6,4 +6,14 @@ function toggleMenu() {
 
   navMainElement.classList.toggle("hide");
   this.classList.toggle("btn-menu--opened");
+  toggleMenuBtnAria();
+  navMainElement.focus();
+}
+
+function toggleMenuBtnAria() {
+  const expanded = menuBtn.getAttribute("aria-expanded");
+  menuBtn.setAttribute(
+    "aria-expanded",
+    expanded === "false" ? "true" : "false"
+  );
 }
