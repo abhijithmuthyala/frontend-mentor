@@ -1,0 +1,270 @@
+$VeryDarkBlue: hsl(243, 87%, 12%);
+$DesaturatedBlue: hsl(238, 22%, 44%);
+
+$BrightBlue: hsl(224, 93%, 58%);
+$ModerateCyan: hsl(170, 45%, 43%);
+
+$LightGrayishBlue: hsl(240, 75%, 98%);
+$LightGray: hsl(0, 0%, 75%);
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 1.6rem;
+  font-weight: 400;
+  font-family: "Open Sans", sans-serif;
+  line-height: 1;
+}
+
+ul {
+  list-style: none;
+}
+
+a:link,
+a:visited {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input {
+  display: block;
+  width: 100%;
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  line-height: inherit;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+///////////////////////////////
+
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+
+  visibility: hidden;
+  pointer-events: none;
+}
+
+///////////////////////////////
+
+h2,
+.header-main {
+  font-family: "Raleway", sans-serif;
+  font-weight: 700;
+}
+
+.header-main,
+.section-hero-wrapper,
+.section-features-wrapper,
+.section-cta-wrapper,
+.footer-wrapper {
+  padding-inline: 2.4rem;
+}
+
+.header-main {
+  position: absolute;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  width: 100%;
+  padding-top: 2.4rem;
+
+  font-family: "Raleway", sans-serif;
+  font-size: 1.2rem;
+
+  &__logo {
+    width: 8rem;
+  }
+}
+
+.nav-main-list {
+  display: flex;
+  align-items: center;
+  gap: 2.4rem;
+
+  font-weight: 700;
+  color: $DesaturatedBlue;
+}
+
+.section-hero-wrapper {
+  display: flow-root;
+  position: relative;
+
+  &::after {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+
+    display: block;
+    width: 100%;
+    content: "";
+
+    height: 3.2rem;
+
+    background: url(images/bg-curve-mobile.svg) no-repeat top;
+    background-size: cover;
+  }
+}
+
+.section-hero,
+.section-features {
+  display: flex;
+  flex-direction: column;
+}
+
+.section-hero {
+  gap: 4.2rem;
+
+  padding-inline: 0.8rem;
+  margin: 14rem 0 12rem;
+}
+
+.header-hero {
+  text-align: center;
+  color: $VeryDarkBlue;
+
+  &__title {
+    margin-bottom: 2.4rem;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+    line-height: 1.5;
+    letter-spacing: 0;
+  }
+
+  &__summary {
+    margin-bottom: 3rem;
+
+    font-size: 1.4rem;
+    line-height: 1.5;
+  }
+}
+
+.illustration-box {
+  align-self: center;
+  max-width: 42rem;
+  width: 100%;
+  aspect-ratio: 1133 / 839;
+
+  background: no-repeat center;
+  background-size: cover;
+
+  &--hero {
+    background-image: url(images/illustration-1.svg);
+  }
+
+  &--features {
+    background-image: url(images/illustration-2.svg);
+  }
+}
+
+.form-mail {
+  &__input {
+    min-height: 4.2rem;
+
+    padding-inline: 1.8rem;
+    margin-bottom: 1.6rem;
+    border-radius: 0.6rem;
+
+    font-size: 1.4rem;
+
+    &::placeholder {
+      color: $LightGray;
+    }
+  }
+}
+
+.btn {
+  padding: 1.2rem 0;
+  border: none;
+  border-radius: 0.6rem;
+
+  color: #fff;
+}
+
+.btn--hero {
+  background-color: $BrightBlue;
+}
+
+.section-features-wrapper {
+  display: flow-root;
+  background-color: $LightGrayishBlue;
+}
+
+.section-features {
+  gap: 8.8rem;
+  margin-top: 6rem;
+}
+
+.header-features {
+  margin-bottom: 2.4rem;
+  text-align: center;
+
+  &__title {
+    font-size: 1.6rem;
+    line-height: 1.5;
+  }
+}
+
+.features-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.6rem;
+
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: $DesaturatedBlue;
+}
+
+.link-working {
+  &:link,
+  &:visited {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+
+    max-width: max-content;
+    margin: 3.6rem auto;
+    padding-bottom: 0.4rem;
+    border-bottom: solid 2px currentColor;
+
+    font-size: 1.2rem;
+    color: $ModerateCyan;
+
+    &::after {
+      display: inline-block;
+      width: 1.8rem;
+      aspect-ratio: 1;
+      content: "";
+
+      background: url(images/icon-arrow.svg) no-repeat center;
+      background-size: cover;
+    }
+  }
+}
