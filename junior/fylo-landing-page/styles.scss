@@ -70,6 +70,10 @@ img {
 
 ///////////////////////////////
 
+body {
+  color: $VeryDarkBlue;
+}
+
 h2,
 .header-main {
   font-family: "Raleway", sans-serif;
@@ -219,7 +223,7 @@ h2,
 
 .section-features {
   gap: 8.8rem;
-  margin-top: 6rem;
+  margin: 6rem 0 8.4rem;
 }
 
 .header-features {
@@ -250,7 +254,7 @@ h2,
     gap: 0.6rem;
 
     max-width: max-content;
-    margin: 3.6rem auto;
+    margin: 3.6rem auto 3.8rem;
     padding-bottom: 0.4rem;
     border-bottom: solid 2px currentColor;
 
@@ -267,4 +271,56 @@ h2,
       background-size: cover;
     }
   }
+}
+
+.testimonial {
+  max-width: 28rem;
+  margin-inline: auto;
+  padding: 2.2rem 2.6rem;
+  border-radius: 0.6rem;
+  background-color: #fff;
+  box-shadow: 0 0 1.8rem 0.8rem rgba($VeryDarkBlue, 0.1);
+
+  font-size: 1.2rem;
+
+  &__quote {
+    margin: 0.8rem 0;
+    line-height: 1.5;
+  }
+
+  &__author-avatar {
+    width: 2.4rem;
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+  }
+
+  &__author-name {
+    margin-bottom: 4px;
+
+    font-weight: 700;
+    font-size: 1rem;
+    letter-spacing: 0.5px;
+  }
+
+  &__author-designation {
+    font-size: 0.8rem;
+    color: $DesaturatedBlue;
+  }
+
+  &::before {
+    display: block;
+    width: 1.2rem;
+    aspect-ratio: 1;
+    content: "";
+
+    background: url(images/icon-quotes.svg) no-repeat center;
+    background-size: cover;
+  }
+}
+
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
