@@ -188,7 +188,8 @@ h2,
   }
 }
 
-.form-mail {
+.form-mail,
+.form-cta {
   &__input {
     min-height: 4.2rem;
 
@@ -202,18 +203,15 @@ h2,
       color: $LightGray;
     }
   }
-}
 
-.btn {
-  padding: 1.2rem 0;
-  border: none;
-  border-radius: 0.6rem;
+  &__btn {
+    padding: 1.2rem 0;
+    background-color: $BrightBlue;
+    border: none;
+    border-radius: 0.6rem;
 
-  color: #fff;
-}
-
-.btn--hero {
-  background-color: $BrightBlue;
+    color: #fff;
+  }
 }
 
 .section-features-wrapper {
@@ -323,4 +321,50 @@ h2,
   display: flex;
   align-items: center;
   gap: 0.8rem;
+}
+
+.section-cta-wrapper {
+  display: flow-root;
+  background-color: $DesaturatedBlue;
+}
+
+.section-cta {
+  margin: 5.6rem 0 6.4rem;
+}
+
+.header-cta {
+  margin-bottom: 2rem;
+  text-align: center;
+
+  &__title {
+    margin-bottom: 1.8rem;
+
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: $LightGrayishBlue;
+  }
+
+  &__summary {
+    padding-inline: 1.6rem;
+
+    font-size: 1.4rem;
+    line-height: 1.6;
+  }
+}
+
+.form-cta {
+  max-width: 24rem;
+  margin-inline: auto;
+
+  &__input {
+    min-height: 3.2rem;
+    margin-bottom: 1.2rem;
+  }
+
+  &__btn {
+    min-height: 3.2rem;
+
+    font-weight: 700;
+    font-size: 1rem;
+  }
 }
