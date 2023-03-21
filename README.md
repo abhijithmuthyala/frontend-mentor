@@ -14,7 +14,7 @@
 | [3 Column Grid](https://3-col-grid.netlify.app/) | [Clipboard landing page](https://clipboard-fem.netlify.app/) | | |
 | [Article Preview Component](https://article-fem-preview.netlify.app/) | [Huddle Landing Page](https://huddle-lndg-page.netlify.app/) | | |
 | [4 Card Features](https://four-card-features-fem.netlify.app/) | [Interactive Pricing Component](https://fem-interactive-pricing.netlify.app/) | | |
-| [Huddle Hero Section](https://huddle-fem-cta.netlify.app/) | | | |
+| [Huddle Hero Section](https://huddle-fem-cta.netlify.app/) | [Fylo landing page](https://fylo-lndg-page.netlify.app/) | | |
 | [FAQ Accordian](https://accordian-faq-fem.netlify.app/) | | | |
 | [Base Apparel](https://base-fem-apparel.netlify.app/) | | | |
 | [Intro Signup Form](https://intro-signup-form-fem.netlify.app/) | | | |
