@@ -620,8 +620,14 @@ h2,
     }
   }
 
+  .form-control.error {
+    .form-mail__input {
+      margin-bottom: 0;
+    }
+  }
+
   .form-mail {
-    // TODO:  refactor!
+    position: relative;
 
     display: flex;
     align-items: center;
@@ -634,6 +640,13 @@ h2,
 
     & > * {
       flex: 1;
+    }
+
+    & .error-msg {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      transform: translateY(1.2rem);
     }
   }
 
