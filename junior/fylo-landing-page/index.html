@@ -26,7 +26,6 @@
     />
   </head>
   <body>
-    <h1 class="sr-only">Welcome to Fylo!</h1>
     <div class="header-main-wrapper">
       <header class="header-main">
         <img
@@ -51,6 +50,8 @@
     </div>
 
     <main>
+      <h1 class="sr-only">Welcome to Fylo!</h1>
+
       <div class="section-hero-wrapper">
         <section class="section-hero">
           <div class="illustration-box illustration-box--hero"></div>
@@ -67,7 +68,7 @@
             </header>
             <form class="form-mail">
               <div class="form-control">
-                <label for="email" class="form-label sr-only"></label>
+                <label for="email" class="form-label sr-only">Email</label>
                 <input
                   type="email"
                   name="email"
@@ -113,9 +114,11 @@
             <div class="testimonials">
               <article class="testimonial">
                 <blockquote class="testimonial__quote">
-                  Fylo has improved our team productivity by an order of
-                  magnitude. Since making the switch our team has become a
-                  well-oiled collaboration machine.
+                  <h3>
+                    Fylo has improved our team productivity by an order of
+                    magnitude. Since making the switch our team has become a
+                    well-oiled collaboration machine.
+                  </h3>
                 </blockquote>
                 <div class="testimonial-author">
                   <img
@@ -148,7 +151,7 @@
           </header>
           <form class="form-cta">
             <div class="form-control">
-              <label for="email-cta" class="form-label sr-only"> </label>
+              <label for="email-cta" class="form-label sr-only">Email</label>
               <input
                 type="email"
                 name="email"
@@ -190,7 +193,7 @@
               </li>
             </ul>
           </address>
-          <nav>
+          <nav aria-label="Site links">
             <ul class="footer-links-list">
               <li class="footer-links-list-item">
                 <a class="footer-links-list-item__link" href="#">About Us</a>
