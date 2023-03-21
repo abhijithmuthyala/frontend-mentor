@@ -66,14 +66,17 @@
               </p>
             </header>
             <form class="form-mail">
-              <label for="email" class="form-label sr-only"></label>
-              <input
-                type="email"
-                name="email"
-                id="email"
-                class="form-mail__input"
-                placeholder="Enter your email.."
-              />
+              <div class="form-control">
+                <label for="email" class="form-label sr-only"></label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form-mail__input"
+                  placeholder="Enter your email.."
+                />
+                <p class="error-msg error-msg--warn">Please check your email</p>
+              </div>
               <button type="submit" class="form-mail__btn">Get Started</button>
             </form>
           </div>
@@ -144,14 +147,18 @@
             </p>
           </header>
           <form class="form-cta">
-            <label for="email-cta" class="form-label sr-only"> </label>
-            <input
-              type="email"
-              name="email"
-              id="email-cta"
-              class="form-cta__input"
-              placeholder="Enter your email.."
-            />
+            <div class="form-control">
+              <label for="email-cta" class="form-label sr-only"> </label>
+              <input
+                type="email"
+                name="email"
+                id="email-cta"
+                class="form-cta__input"
+                placeholder="Enter your email.."
+              />
+              <p class="error-msg error-msg--info">Please check your email</p>
+            </div>
+
             <button type="submit" class="form-cta__btn">
               Get Started For Free
             </button>
@@ -185,10 +192,18 @@
           </address>
           <nav>
             <ul class="footer-links-list">
-              <li class="footer-links-list-item"><a href="#">About Us</a></li>
-              <li class="footer-links-list-item"><a href="#">Jobs</a></li>
-              <li class="footer-links-list-item"><a href="#">Press</a></li>
-              <li class="footer-links-list-item"><a href="#">Blog</a></li>
+              <li class="footer-links-list-item">
+                <a class="footer-links-list-item__link" href="#">About Us</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a class="footer-links-list-item__link" href="#">Jobs</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a class="footer-links-list-item__link" href="#">Press</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a class="footer-links-list-item__link" href="#">Blog</a>
+              </li>
             </ul>
           </nav>
           <ul class="footer-links-list">
@@ -257,5 +272,53 @@
         </div>
       </footer>
     </div>
+
+    <script>
+      const forms = document.querySelectorAll("form");
+
+      forms.forEach((form) => {
+        form.addEventListener("submit", handleForm);
+        form.addEventListener("input", debounce(handleChange));
+      });
+
+      function handleChange(e) {
+        e.target.closest(".form-control")?.classList.remove("error");
+      }
+
+      function handleForm(e) {
+        e.preventDefault();
+
+        const emailControlElement = e.target.querySelector(".form-control");
+        const emailElement = emailControlElement.querySelector("input");
+
+        if (emailElement.value === "") return;
+
+        if (!validateEmail(emailElement.value)) {
+          emailControlElement.classList.add("error");
+        } else {
+          emailControlElement.classList.remove("error");
+          emailElement.value = "";
+          emailElement.blur();
+        }
+      }
+
+      function validateEmail(email) {
+        return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+      }
+
+      function debounce(callback, threshold = 200) {
+        let timerId;
+
+        return function (event) {
+          if (timerId) {
+            clearTimeout(timerId);
+          }
+
+          timerId = setTimeout(() => {
+            callback(event);
+          }, threshold);
+        };
+      }
+    </script>
   </body>
 </html>

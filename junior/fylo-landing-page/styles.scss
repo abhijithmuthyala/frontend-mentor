@@ -7,6 +7,8 @@ $ModerateCyan: hsl(170, 45%, 43%);
 $LightGrayishBlue: hsl(240, 75%, 98%);
 $LightGray: hsl(0, 0%, 75%);
 
+$WarnMsgClr: orangered;
+
 * {
   margin: 0;
   padding: 0;
@@ -74,6 +76,20 @@ address {
 
   visibility: hidden;
   pointer-events: none;
+}
+
+.error-msg {
+  display: none;
+  margin-bottom: 1.6rem;
+  font-size: 1.2rem;
+
+  &--warn {
+    color: $WarnMsgClr;
+  }
+
+  &--info {
+    color: $LightGrayishBlue;
+  }
 }
 
 ///////////////////////////////
@@ -198,6 +214,19 @@ h2,
   }
 }
 
+.form-control.error {
+  .form-mail__input,
+  .form-cta__input {
+    margin-bottom: 4px;
+    border-color: $WarnMsgClr;
+    outline: none;
+  }
+
+  .error-msg {
+    display: block;
+  }
+}
+
 .form-mail,
 .form-cta {
   &__input {
@@ -215,12 +244,18 @@ h2,
   }
 
   &__btn {
+    --bg-clr: #{$BrightBlue};
+
     padding: 1.2rem 0;
-    background-color: $BrightBlue;
+    background-color: var(--bg-clr);
     border: none;
     border-radius: 0.6rem;
 
     color: #fff;
+
+    &:hover {
+      --bg-clr: #{rgba($BrightBlue, 0.75)};
+    }
   }
 }
 
@@ -278,6 +313,11 @@ h2,
       background: url(images/icon-arrow.svg) no-repeat center;
       background-size: cover;
     }
+  }
+
+  &:hover,
+  &:active {
+    color: rgba($ModerateCyan, 0.75);
   }
 }
 
@@ -407,9 +447,16 @@ h2,
 .footer-links-list {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 2.2rem;
 
   font-size: 1.6rem;
+}
+
+.footer-links-list-item {
+  &:hover {
+    color: $BrightBlue;
+  }
 }
 
 .footer-list-item-icon {
@@ -442,8 +489,10 @@ h2,
 }
 
 .footer-social-link {
+  --fill-clr: #{$LightGray};
+
   padding: 0.6rem;
-  border: 2px solid $LightGray;
+  border: 2px solid var(--fill-clr);
   border-radius: 50%;
 
   &__icon {
@@ -452,7 +501,11 @@ h2,
     width: 1.2rem;
     height: 1.2rem;
 
-    fill: #fff;
+    fill: var(--fill-clr);
+  }
+
+  &:hover {
+    --fill-clr: #{$BrightBlue};
   }
 }
 
