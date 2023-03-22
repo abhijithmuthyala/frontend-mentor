@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Check and compare your cognitive skills."
+    />
+    <title>Results Summary</title>
+
+    <link rel="stylesheet" href="styles.scss" />
+    <link
+      rel="shortcut icon"
+      href="assets/images/favicon-32x32.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@500;700;800&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="body">
+    <main class="main">
+      <h1 class="sr-only">Test and compare your cognitive skills</h1>
+      <div class="app-layout">
+        <div class="section-result-wrapper result-card">
+          <section class="section-result">
+            <h2 class="section-result__title">Your Result</h2>
+            <div class="result-box">
+              <p class="result-box__score">76</p>
+              <p class="result-box__max-score">of 100</p>
+            </div>
+            <p class="section-result__feedback-heading">Great</p>
+            <p class="relative-score">
+              You scored higher than
+              <span class="relative-score__number">65</span>% of the people who
+              have taken these tests.
+            </p>
+          </section>
+        </div>
+        <div class="section-summary-wrapper">
+          <section class="section-summary">
+            <h2 class="section-summary__title">Summary</h2>
+            <ul class="summary-list">
+              <li
+                class="summary-list-item summary-item-card summary-item-card--red"
+              >
+                <p class="summary-list-item__type">Reaction</p>
+                <p>
+                  <span class="summary-list-item__score">80</span
+                  ><span class="summary-list-item__max-score"> / 100</span>
+                </p>
+              </li>
+              <li
+                class="summary-list-item summary-item-card summary-item-card--orange"
+              >
+                <p class="summary-list-item__type">Memory</p>
+                <p>
+                  <span class="summary-list-item__score">92</span
+                  ><span class="summary-list-item__max-score"> / 100</span>
+                </p>
+              </li>
+              <li
+                class="summary-list-item summary-item-card summary-item-card--green"
+              >
+                <p class="summary-list-item__type">Verbal</p>
+                <p>
+                  <span class="summary-list-item__score">61</span
+                  ><span class="summary-list-item__max-score"> / 100</span>
+                </p>
+              </li>
+              <li
+                class="summary-list-item summary-item-card summary-item-card--violet"
+              >
+                <p class="summary-list-item__type">Visual</p>
+                <p>
+                  <span class="summary-list-item__score">72</span
+                  ><span class="summary-list-item__max-score"> / 100</span>
+                </p>
+              </li>
+            </ul>
+            <button class="btn">Continue</button>
+          </section>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
