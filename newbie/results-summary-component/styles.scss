@@ -1,0 +1,137 @@
+// Primary
+$LightRed: hsl(0, 100%, 67%);
+$OrangeYellow: hsl(39, 100%, 56%);
+$GreenTeal: hsl(166, 100%, 37%);
+$CobaltBlue: hsl(234, 85%, 45%);
+
+// Gradients
+$LightSlateBlue: hsl(252, 100%, 67%);
+$LightRoyalBlue: hsl(241, 81%, 54%);
+
+$VioletBlue: hsla(256, 72%, 46%, 1);
+$PersianBlue: hsla(241, 72%, 46%, 0);
+
+// Neutral
+$White: hsl(0, 0%, 100%);
+$PaleBlue: hsl(221, 100%, 96%);
+$LightLavender: hsl(241, 100%, 89%);
+$DarkGrayBlue: hsl(224, 30%, 27%);
+
+///////////////////////////////////
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.8rem;
+  font-weight: 500;
+  font-family: "Hanken Grotesk", sans-serif;
+}
+
+button {
+  display: block;
+  width: 100%;
+
+  cursor: pointer;
+
+  font-size: inherit;
+  font-weight: inherit;
+  font-family: inherit;
+  color: inherit;
+}
+
+///////////////////////////////////
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+
+  opacity: 0;
+  pointer-events: none;
+}
+
+.result-card {
+  --rad: 3.2rem;
+
+  padding: 2.4rem 0;
+  border-radius: 0 0 var(--rad) var(--rad);
+}
+
+///////////////////////////////////
+
+body {
+  min-height: 100vh;
+  color: $DarkGrayBlue;
+}
+
+.section-result {
+  background: linear-gradient(to bottom, $LightSlateBlue, $LightRoyalBlue);
+
+  text-align: center;
+
+  &__title {
+    margin-bottom: 2.4rem;
+
+    font-size: 1.8rem;
+    color: $LightLavender;
+  }
+
+  &__feedback-heading {
+    margin-bottom: 0.8rem;
+
+    font-size: 2.4rem;
+    font-weight: 700;
+    color: $White;
+  }
+}
+
+.result-box {
+  max-width: 14rem;
+  aspect-ratio: 1;
+  margin: 0 auto 2.4rem;
+  border-radius: 50%;
+
+  background: linear-gradient(to bottom, $VioletBlue, $PersianBlue);
+
+  &__score {
+    padding-top: 2.4rem;
+
+    font-size: 5.6rem;
+    font-weight: 800;
+    color: $White;
+  }
+
+  &__max-score {
+    font-size: 1.6rem;
+    color: $LightLavender;
+
+    opacity: 0.75;
+  }
+}
+
+.relative-score {
+  margin-bottom: 1.4rem;
+  padding-inline: 4.8rem;
+
+  font-size: 1.6rem;
+  color: $PaleBlue;
+  opacity: 0.75;
+}
+
+///////////////////////////////////
+
+///////////////////////////////////
