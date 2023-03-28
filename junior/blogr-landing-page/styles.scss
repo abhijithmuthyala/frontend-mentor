@@ -2,5 +2,201 @@
 @tailwind utilities;
 @tailwind components;
 
-// font-family: 'Overpass', sans-serif;
+:root {
+  --content-max-width: 1280px;
+
+  --red-200: hsl(355, 100%, 74%);
+  --red-400: hsl(13, 100%, 72%);
+  --red-600: hsl(356, 100%, 66%);
+  --red-800: hsl(353, 100%, 62%);
+  --blue-900: hsl(208, 49%, 24%);
+
+  --white: hsl(0, 0%, 100%);
+  --gray-blue-50: hsla(240, 2%, 79%, 0.35);
+  --gray-blue-200: hsl(240, 2%, 79%);
+  --gray-blue-400: hsla(207, 13%, 34%, 0.75);
+  --gray-blue-600: hsl(207, 13%, 34%);
+  --gray-blue-900: hsl(237, 17%, 21%);
+
+  --black-blue-900: hsl(240, 10%, 16%);
+  --desat-blue--900: hsl(237, 23%, 32%);
+}
+
+a {
+  display: inline-block;
+}
+
+html {
+  font-size: 62.5%;
+  overflow-y: scroll;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+
+  font-size: 1.6rem;
+  font-family: "Overpass", sans-serif;
+  color: var(--gray-blue-600);
+}
+
+@mixin hide {
+  visibility: hidden;
+  pointer-events: none;
+  opacity: 0;
+}
+
+.header-main-wrapper {
+  position: absolute;
+
+  width: 100%;
+  padding: 0 2.4rem;
+}
+
+.header-main {
+  position: relative;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  padding: 5.6rem 0 3.6rem;
+
+  &__logo {
+    width: 8rem;
+  }
+}
+
+.mobile-menu-btn {
+  @mixin bg-img($name) {
+    --bg-img: url("./images/#{$name}.svg");
+  }
+
+  @include bg-img("icon-close");
+
+  max-width: 3.2rem;
+  width: 100%;
+  aspect-ratio: 1;
+
+  background: var(--bg-img) no-repeat center;
+  background-size: contain;
+
+  &.closed {
+    @include bg-img("icon-hamburger");
+  }
+}
+
+.nav-main {
+  position: absolute;
+  top: 100%;
+  right: 0;
+
+  width: 100%;
+  padding: 3.2rem 2.4rem;
+
+  background-color: var(--white);
+  border-radius: 0.6rem;
+
+  &.hide {
+    @include hide();
+  }
+
+  &__ruler {
+    margin: 2.4rem 0 2.8rem;
+    border: 1px solid var(--gray-blue-50);
+  }
+}
+
+.nav-main-links-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+}
+
+.nav-main-links-list-item {
+  --color: var(--gray-blue-400);
+
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: var(--color);
+
+  &:has(.closed) {
+    --color: var(--gray-blue-600);
+  }
+}
+
+.nav-main-links-btn {
+  --rotate-angle: -180deg;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.6rem;
+
+  margin-inline: auto;
+
+  &:has(+ .closed) {
+    --rotate-angle: 0deg;
+  }
+
+  &::after {
+    display: inline-block;
+    content: "";
+    width: 1.2rem;
+    aspect-ratio: 1;
+
+    background: url(images/icon-arrow-dark.svg) no-repeat center;
+    background-size: contain;
+
+    transform: rotateZ(var(--rotate-angle));
+    transition: transform 0.3s;
+  }
+}
+
+.nav-main-menu-list {
+  --max-height: 24rem;
+  --margin-top: 2rem;
+  --pad-v: 2.4rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.6rem;
+
+  max-height: var(--max-height);
+  margin-top: var(--margin-top);
+  padding: var(--pad-v) 0;
+  border-radius: 4px;
+
+  font-size: 1.6rem;
+
+  background-color: var(--gray-blue-50);
+  transition: all 0.5s;
+
+  &.closed {
+    --max-height: 0;
+    --margin-top: 0;
+    --pad-v: 0;
+
+    @include hide();
+  }
+}
+
+.nav-main-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem;
+
+  font-size: 1.8rem;
+  font-weight: 600;
+
+  &__btn {
+    padding: 1.2rem 3.6rem;
+    border-radius: 1000px;
+
+    background: linear-gradient(var(--red-400), var(--red-800));
+    color: var(--white);
+  }
+}
 // font-family: 'Ubuntu', sans-serif;

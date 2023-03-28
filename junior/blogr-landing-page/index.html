@@ -26,31 +26,82 @@
     />
     <title>Blogr</title>
   </head>
-  <body></body>
+  <body class="bg-slate-500">
+    <div class="header-main-wrapper">
+      <header class="header-main">
+        <img src="images/logo.svg" alt="Blogr logo" class="header-main__logo" />
+        <nav class="nav-main" id="nav-main">
+          <ul class="nav-main-links-list">
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links"
+              >
+                Product
+              </button>
+              <ul class="nav-main-menu-list closed" id="products-links">
+                <li class="nav-main-menu-list-item">Overview</li>
+                <li class="nav-main-menu-list-item">Pricing</li>
+                <li class="nav-main-menu-list-item">Marketplace</li>
+                <li class="nav-main-menu-list-item">Features</li>
+                <li class="nav-main-menu-list-item">Integrations</li>
+              </ul>
+            </li>
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links"
+              >
+                Company
+              </button>
+              <ul class="nav-main-menu-list closed" id="products-links">
+                <li class="nav-main-menu-list-item">About</li>
+                <li class="nav-main-menu-list-item">Team</li>
+                <li class="nav-main-menu-list-item">Blog</li>
+                <li class="nav-main-menu-list-item">Careers</li>
+              </ul>
+            </li>
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links"
+              >
+                Connect
+              </button>
+              <ul class="nav-main-menu-list" id="products-links">
+                <li class="nav-main-menu-list-item">Contact</li>
+                <li class="nav-main-menu-list-item">Newsletter</li>
+                <li class="nav-main-menu-list-item">LinkedIn</li>
+              </ul>
+            </li>
+          </ul>
+          <hr class="nav-main__ruler" />
+          <div class="nav-main-actions">
+            <a href="#" class="nav-main-actions__link">Login</a>
+            <button class="nav-main-actions__btn">Sign Up</button>
+          </div>
+        </nav>
+        <button
+          class="mobile-menu-btn"
+          aria-label="Show Navigation Links"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-main"
+        ></button>
+      </header>
+    </div>
+    <main>
+      <div class="hero-wrapper"></div>
+    </main>
+  </body>
 </html>
 <!-- 
-
-  Product
-
-  Overview
-  Pricing
-  Marketplace
-  Features
-  Integrations
-
-  Company
-
-  About
-  Team
-  Blog
-  Careers
-
-  Connect
-
-  Contact
-  Newsletter
-  LinkedIn
-  
   Login
   Sign Up
 
