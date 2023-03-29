@@ -3,7 +3,7 @@
 @tailwind components;
 
 :root {
-  --content-max-width: 1280px;
+  --content-max-width: 1104px;
   --body-padding: 2.4rem;
 
   --red-200: hsl(355, 100%, 74%);
@@ -39,12 +39,27 @@ body {
   font-size: 1.6rem;
   font-family: "Overpass", sans-serif;
   color: var(--gray-blue-600);
+
+  overflow-x: hidden;
+}
+
+[class*="wrapper"] > * {
+  max-width: var(--content-max-width);
+  margin-inline: auto;
 }
 
 @mixin hide {
   visibility: hidden;
   pointer-events: none;
   opacity: 0;
+}
+
+@mixin hero-bg-img($form: "mobile") {
+  --bg-img-url: url("images/bg-pattern-intro-#{$form}.svg");
+}
+
+@mixin illustration($name, $form: "mobile") {
+  --bg-img: url("images/illustration-#{$name}-#{$form}.svg");
 }
 
 .header-main-wrapper {
@@ -90,14 +105,17 @@ body {
 .nav-main {
   position: absolute;
   top: 100%;
-  right: 0;
+  left: 50%;
   z-index: 1;
 
   width: 100%;
+  max-width: 60rem;
+  transform: translateX(-50%);
   padding: 3.2rem 2.4rem;
 
   background-color: var(--white);
   border-radius: 0.6rem;
+  box-shadow: 0 0 1.2rem 1px rgba(0, 0, 0, 0.2);
 
   &.hide {
     @include hide();
@@ -208,12 +226,14 @@ body {
 .section-hero-wrapper {
   --body-padding: 3.6rem;
 
+  @include hero-bg-img("mobile");
+
   display: flow-root;
   min-height: 60rem;
   padding: 0 var(--body-padding);
   border-bottom-left-radius: 10rem;
 
-  background: url(images/bg-pattern-intro-mobile.svg) no-repeat center,
+  background: var(--bg-img-url) no-repeat center,
     linear-gradient(to bottom, var(--red-400), var(--red-800));
   background-size: cover;
 }
@@ -311,16 +331,13 @@ body {
   display: grid;
   gap: 4.2rem;
 
-  @mixin illustration($name) {
-    --bg-img: url("images/#{$name}.svg");
-  }
-
   &::before {
     display: block;
     content: "";
     width: 100%;
+    max-width: 38rem;
     aspect-ratio: 406/331;
-    margin-bottom: 3.8rem;
+    margin: 0 auto 3.8rem;
 
     background: var(--bg-img) no-repeat center;
     background-size: cover;
@@ -329,11 +346,11 @@ body {
   }
 
   &--editor {
-    @include illustration("illustration-editor-mobile");
+    @include illustration("editor");
   }
 
   &--laptop {
-    @include illustration("illustration-laptop-mobile");
+    @include illustration("laptop");
   }
 }
 
@@ -376,6 +393,8 @@ body {
   &::after {
     display: block;
     width: 100%;
+    max-width: 40rem;
+    margin: 0 auto;
     aspect-ratio: 552/579;
     content: "";
 
@@ -423,8 +442,9 @@ body {
 
 .footer-wrapper {
   display: flow-root;
-
+  padding: 0 var(--body-padding);
   border-top-right-radius: 10rem;
+
   background-color: var(--black-blue-900);
 }
 
@@ -442,7 +462,7 @@ body {
 
 .footer-links-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(24rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
   gap: 4.2rem;
 }
 
@@ -467,3 +487,147 @@ body {
 }
 
 ///////////////////////////
+
+///////////////////////////
+/// Queries
+
+@media (min-width: 52em) {
+  .section-hero-wrapper {
+    @include hero-bg-img("desktop");
+  }
+
+  .footer {
+    grid-template-columns: max-content auto;
+  }
+}
+
+@media (min-width: 64em) {
+  .header-main {
+    padding-top: 6.4rem;
+
+    &__logo {
+      width: 10rem;
+    }
+  }
+
+  .section-hero {
+    margin-top: 23rem;
+  }
+
+  .header-hero {
+    &__title {
+      font-size: 6.2rem;
+    }
+
+    &__summary {
+      font-size: 2rem;
+    }
+  }
+
+  .section-feature-row {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, auto);
+
+    column-gap: 6.4rem;
+
+    &::before {
+      grid-column: span 2;
+      justify-self: center;
+      margin: 0;
+    }
+  }
+}
+
+@media (min-width: 75em) {
+  .section-features {
+    margin: 15.2rem auto 25.6rem;
+
+    &__title {
+      margin-bottom: 10rem;
+      font-size: 3.7rem;
+    }
+
+    &--laptop {
+      margin: 30rem auto;
+    }
+  }
+
+  .section-feature-row {
+    grid-template-columns: 50fr 50fr;
+    grid-template-rows: auto auto;
+    gap: 7.2rem 0rem;
+
+    &::before {
+      align-self: center;
+    }
+
+    &--editor {
+      @include illustration("editor", "desktop");
+
+      &::before {
+        grid-column: 2;
+        grid-row: 1 / span 2;
+        transform-origin: 0% 50%;
+        transform: scale(2.45) translate(-0.8rem, -0.8rem);
+      }
+    }
+
+    &--laptop {
+      @include illustration("laptop", "desktop");
+
+      &::before {
+        grid-column: 1;
+        grid-row: 1 / span 2;
+        transform-origin: 100% 50%;
+        transform: scale(2.5) translate(2.4rem, 0);
+      }
+    }
+  }
+
+  .article-feature {
+    gap: 2.8rem;
+    text-align: left;
+
+    &__title {
+      padding: 0;
+    }
+  }
+
+  .article-highlight-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8rem;
+
+    &::after {
+      top: -14%;
+      left: 9%;
+      transform: translateY(-0%);
+
+      max-width: 54rem;
+    }
+  }
+
+  .article-highlight {
+    grid-column: 2;
+    margin: 11.6rem 0 12rem;
+
+    text-align: left;
+
+    &__title {
+      font-size: 3.8rem;
+    }
+
+    &__description {
+      font-size: 2rem;
+    }
+  }
+
+  .footer {
+    gap: 12rem;
+  }
+
+  .footer-links-grid {
+    justify-items: flex-start;
+    gap: 5.2rem;
+  }
+} ;
