@@ -30,23 +30,31 @@
     <div class="header-main-wrapper">
       <header class="header-main">
         <img src="images/logo.svg" alt="Blogr logo" class="header-main__logo" />
-        <nav class="nav-main" id="nav-main">
+        <nav class="nav-main hide" id="nav-main">
           <ul class="nav-main-links-list">
             <li class="nav-main-links-list-item">
               <button
                 class="nav-main-links-btn"
                 aria-expanded="false"
                 aria-haspopup="true"
-                aria-controls="products-links"
+                aria-controls="products-links-0"
               >
                 Product
               </button>
-              <ul class="nav-main-menu-list closed" id="products-links">
-                <li class="nav-main-menu-list-item">Overview</li>
-                <li class="nav-main-menu-list-item">Pricing</li>
-                <li class="nav-main-menu-list-item">Marketplace</li>
-                <li class="nav-main-menu-list-item">Features</li>
-                <li class="nav-main-menu-list-item">Integrations</li>
+              <ul class="nav-main-menu-list closed" id="products-links-0">
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Overview</a>
+                </li>
+                <li class="nav-main-menu-list-item"><a href="#">Pricing</a></li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Marketplace</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Features</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Integrations</a>
+                </li>
               </ul>
             </li>
             <li class="nav-main-links-list-item">
@@ -54,15 +62,15 @@
                 class="nav-main-links-btn"
                 aria-expanded="false"
                 aria-haspopup="true"
-                aria-controls="products-links"
+                aria-controls="products-links-1"
               >
                 Company
               </button>
-              <ul class="nav-main-menu-list closed" id="products-links">
-                <li class="nav-main-menu-list-item">About</li>
-                <li class="nav-main-menu-list-item">Team</li>
-                <li class="nav-main-menu-list-item">Blog</li>
-                <li class="nav-main-menu-list-item">Careers</li>
+              <ul class="nav-main-menu-list closed" id="products-links-1">
+                <li class="nav-main-menu-list-item"><a href="#">About</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Team</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Blog</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Careers</a></li>
               </ul>
             </li>
             <li class="nav-main-links-list-item">
@@ -70,14 +78,18 @@
                 class="nav-main-links-btn"
                 aria-expanded="false"
                 aria-haspopup="true"
-                aria-controls="products-links"
+                aria-controls="products-links-2"
               >
                 Connect
               </button>
-              <ul class="nav-main-menu-list" id="products-links">
-                <li class="nav-main-menu-list-item">Contact</li>
-                <li class="nav-main-menu-list-item">Newsletter</li>
-                <li class="nav-main-menu-list-item">LinkedIn</li>
+              <ul class="nav-main-menu-list" id="products-links-2">
+                <li class="nav-main-menu-list-item"><a href="#">Contact</a></li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Newsletter</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">LinkedIn</a>
+                </li>
               </ul>
             </li>
           </ul>
@@ -88,7 +100,7 @@
           </div>
         </nav>
         <button
-          class="mobile-menu-btn"
+          class="mobile-menu-btn closed"
           aria-label="Show Navigation Links"
           aria-expanded="false"
           aria-haspopup="true"
@@ -97,19 +109,29 @@
       </header>
     </div>
     <main>
-      <div class="hero-wrapper"></div>
+      <div class="section-hero-wrapper">
+        <section class="section-hero">
+          <header class="header-hero">
+            <h1 class="header-hero__title">A modern publishing platform</h1>
+            <p class="header-hero__summary">
+              Grow your audience and build your online brand
+            </p>
+          </header>
+          <div class="header-hero-actions">
+            <button class="header-hero-actions__btn">Start for Free</button>
+            <a href="#" class="header-hero-actions__link">Learn More</a>
+          </div>
+        </section>
+      </div>
     </main>
   </body>
 </html>
 <!-- 
-  Login
-  Sign Up
+  
+  
 
-  A modern publishing platform
-  Grow your audience and build your online brand
-
-  Start for Free
-  Learn More
+  
+  
 
   Designed for the future
 
