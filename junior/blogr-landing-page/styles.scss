@@ -248,6 +248,7 @@ body {
 
 .header-hero-actions {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   gap: 3.2rem;
@@ -281,4 +282,134 @@ body {
   }
 }
 
+///////////////////////////
+// FEATURES SECTION
+
+.section-features-wrapper {
+  display: flow-root;
+  padding: 0 var(--body-padding);
+}
+
+.section-features {
+  margin: 10.2rem auto 27.4rem;
+
+  &__title {
+    margin-bottom: 7.4rem;
+
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--blue-900);
+  }
+}
+
+.section-feature-row {
+  display: grid;
+  gap: 4.2rem;
+
+  @mixin illustration($name) {
+    --bg-img: url("images/#{$name}.svg");
+  }
+
+  &::before {
+    display: block;
+    content: "";
+    width: 100%;
+    aspect-ratio: 406/331;
+    margin-bottom: 3.8rem;
+
+    background: var(--bg-img) no-repeat center;
+    background-size: cover;
+
+    transform: scale(1.25);
+  }
+
+  &--editor {
+    @include illustration("illustration-editor-mobile");
+  }
+
+  &--laptop {
+    @include illustration("illustration-laptop-mobile");
+  }
+}
+
+.article-feature {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+
+  text-align: center;
+
+  &__title {
+    padding-inline: 2.4rem;
+
+    font-size: 3rem;
+    font-weight: 600;
+    letter-spacing: -1.25px;
+    line-height: 1.1;
+
+    color: var(--blue-900);
+  }
+
+  &__description {
+    font-size: 1.65rem;
+    line-height: 1.7;
+    letter-spacing: 0.5px;
+    color: var(--desat-blue--900);
+  }
+}
+
+.article-highlight-wrapper {
+  position: relative;
+  display: flow-root;
+
+  padding: 0 var(--body-padding);
+  border-radius: 0 10rem;
+  background: url(images/bg-pattern-circles.svg) no-repeat center -26rem,
+    var(--gray-blue-900);
+  background-size: cover;
+
+  &::after {
+    display: block;
+    width: 100%;
+    aspect-ratio: 552/579;
+    content: "";
+
+    position: absolute;
+    left: 50%;
+    top: 0;
+    transform: translate(-50%, -46%);
+
+    background: url(images/illustration-phones.svg) no-repeat center;
+    background-size: cover;
+  }
+}
+
+.article-highlight {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  margin: 22.4rem 0 12rem;
+
+  text-align: center;
+  color: var(--white);
+
+  &__title {
+    font-size: 3.6rem;
+    font-weight: 600;
+    line-height: 1.4;
+  }
+
+  &__description {
+    font-size: 1.7rem;
+    line-height: 1.6;
+    filter: opacity(0.75);
+  }
+}
+
+.section-laptops-wrapper {
+  display: flow-root;
+  padding: 0 var(--body-padding);
+}
 ///////////////////////////
