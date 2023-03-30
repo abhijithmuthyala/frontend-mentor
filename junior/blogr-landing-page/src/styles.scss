@@ -55,15 +55,36 @@ body {
 }
 
 @mixin hero-bg-img($form: "mobile") {
-  --bg-img-url: url("images/bg-pattern-intro-#{$form}.svg");
+  --bg-img-url: url("/images/bg-pattern-intro-#{$form}.svg");
 }
 
 @mixin illustration($name, $form: "mobile") {
-  --bg-img: url("images/illustration-#{$name}-#{$form}.svg");
+  --bg-img: url("/images/illustration-#{$name}-#{$form}.svg");
 }
 
 @mixin link-btn($clr-mode: "dark") {
-  --bg-img: url("images/icon-arrow-#{$clr-mode}.svg");
+  --bg-img: url("/images/icon-arrow-#{$clr-mode}.svg");
+}
+
+.lock-height {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
+.overlay {
+  position: absolute;
+  z-index: 1;
+
+  display: block;
+  width: 100%;
+  height: 100vh;
+
+  background-color: rgba(0, 0, 0, 0.4);
+  transition: all 0.4s;
+
+  &.closed {
+    @include hide();
+  }
 }
 
 .header-main-wrapper {
@@ -89,10 +110,13 @@ body {
 
 .mobile-menu-btn {
   @mixin bg-img($name) {
-    --bg-img: url("./images/#{$name}.svg");
+    --bg-img: url("/images/#{$name}.svg");
   }
 
   @include bg-img("icon-close");
+
+  position: relative;
+  z-index: 2;
 
   max-width: 3.2rem;
   width: 100%;
@@ -100,6 +124,8 @@ body {
 
   background: var(--bg-img) no-repeat center;
   background-size: contain;
+
+  transition: all 0.4s;
 
   &.closed {
     @include bg-img("icon-hamburger");
@@ -110,23 +136,24 @@ body {
   position: absolute;
   top: 100%;
   left: 50%;
-  z-index: 1;
+  z-index: 2;
 
   width: 100%;
   max-width: 60rem;
-  transform: translateX(-50%);
+  max-height: 36rem;
   padding: 3.2rem 2.4rem;
+  overflow-y: scroll;
 
   background-color: var(--white);
   border-radius: 0.6rem;
   box-shadow: 0 0 1.2rem 1px rgba(0, 0, 0, 0.2);
 
+  transform: translateX(-50%);
+  transition: all 0.3s;
+
   &__ruler {
     margin: 2.4rem 0 2.8rem;
     border: 1px solid var(--gray-blue-50);
-  }
-
-  @media (min-width: 52em) {
   }
 }
 
@@ -390,7 +417,7 @@ body {
 
   padding: 0 var(--body-padding);
   border-radius: 0 10rem;
-  background: url(images/bg-pattern-circles.svg) no-repeat center -26rem,
+  background: url(/images/bg-pattern-circles.svg) no-repeat center -26rem,
     var(--gray-blue-900);
   background-size: cover;
 
@@ -407,7 +434,7 @@ body {
     top: 0;
     transform: translate(-50%, -46%);
 
-    background: url(images/illustration-phones.svg) no-repeat center;
+    background: url(/images/illustration-phones.svg) no-repeat center;
     background-size: cover;
   }
 }
@@ -495,10 +522,11 @@ body {
 ///////////////////////////
 /// Queries
 
-@media (max-width: 52em) {
+@media (width < 52em) {
   .nav-main {
     &.hide {
       @include hide();
+      transform: translate(-50%, -2.4rem);
     }
   }
 }
@@ -526,7 +554,11 @@ body {
     align-items: center;
 
     position: initial;
+
     max-width: initial;
+    max-height: initial;
+    overflow: visible;
+
     padding: 0;
     background-color: initial;
     box-shadow: none;
