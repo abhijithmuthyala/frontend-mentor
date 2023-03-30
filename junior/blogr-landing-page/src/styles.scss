@@ -202,6 +202,10 @@ body {
     transform: rotateZ(var(--rotate-angle));
     transition: transform 0.3s;
   }
+
+  &:hover {
+    text-decoration: 2px solid underline;
+  }
 }
 
 .nav-main-menu-list {
@@ -233,6 +237,12 @@ body {
   }
 }
 
+.nav-main-menu-list-item {
+  &:hover {
+    color: var(--gray-blue-600);
+  }
+}
+
 .nav-main-actions {
   display: flex;
   flex-direction: column;
@@ -248,6 +258,19 @@ body {
 
     background: linear-gradient(var(--red-400), var(--red-800));
     color: var(--white);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
+  }
+
+  &__link {
+    &:hover,
+    &:active {
+      text-decoration: 2px solid underline;
+    }
   }
 }
 
@@ -315,6 +338,12 @@ body {
     background-color: var(--white);
 
     color: var(--red-600);
+
+    &:hover,
+    &:focus {
+      background-color: rgba(255, 255, 255, 0.4);
+      color: var(--white);
+    }
   }
 
   &__link {
@@ -329,6 +358,12 @@ body {
       border-radius: 1000px;
 
       color: var(--white);
+    }
+
+    &:hover,
+    &:active {
+      background-color: var(--white);
+      color: var(--red-800);
     }
   }
 }
@@ -515,6 +550,15 @@ body {
   font-size: 1.8rem;
   color: var(--white);
   filter: opacity(0.75);
+}
+
+.footer-links-list-item {
+  &__link {
+    &:hover,
+    &:active {
+      text-decoration: 2px solid underline;
+    }
+  }
 }
 
 ///////////////////////////

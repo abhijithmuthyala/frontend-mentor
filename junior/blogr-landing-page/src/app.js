@@ -21,6 +21,7 @@ function handleNavEscape(e) {
   e.stopPropagation();
 
   const focusIsWithinNavigation = !!document.activeElement.closest(".nav-main");
+
   if (!(e.key === "Escape" && focusIsWithinNavigation)) return;
 
   const currentMenuIndex = getExpandedSubmenuIndex();
