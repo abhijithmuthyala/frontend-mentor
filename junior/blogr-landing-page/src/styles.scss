@@ -80,7 +80,7 @@ body {
   height: 100vh;
 
   background-color: rgba(0, 0, 0, 0.4);
-  transition: all 0.4s;
+  transition: all 0.3s;
 
   &.closed {
     @include hide();
@@ -125,7 +125,7 @@ body {
   background: var(--bg-img) no-repeat center;
   background-size: contain;
 
-  transition: all 0.4s;
+  transition: all 0.3s;
 
   &.closed {
     @include bg-img("icon-hamburger");
@@ -226,7 +226,7 @@ body {
   font-size: 1.6rem;
 
   background-color: var(--gray-blue-50);
-  transition: all 0.5s;
+  transition: all 0.3s;
 
   &.closed {
     --max-height: 0;
@@ -261,8 +261,8 @@ body {
 
     &:hover,
     &:focus {
-      background-color: rgba(255, 255, 255, 0.4);
-      color: var(--white);
+      background: var(--gray-blue-50);
+      color: var(--red-800);
     }
   }
 
@@ -634,6 +634,12 @@ body {
     &__btn {
       background: var(--white);
       color: var(--red-800);
+
+      &:hover,
+      &:focus {
+        background-color: rgba(255, 255, 255, 0.4);
+        color: var(--white);
+      }
     }
   }
 
@@ -656,7 +662,7 @@ body {
 
 @media (min-width: 64em) {
   .header-main {
-    padding-top: 6.4rem;
+    padding-top: 5.6rem;
 
     &__logo {
       width: 10rem;
