@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta
+      name="description"
+      content="Grow your audience exponentially and build your brand online with our AI assisted cutting-edge publishing platform."
+    />
+
+    <link rel="stylesheet" href="src/styles.scss" />
+    <script src="src/app.js" type="module"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Overpass:wght@300;600&family=Ubuntu:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="shortcut icon"
+      href="images/favicon-32x32.png"
+      type="image/x-icon"
+      sizes="32x32"
+    />
+    <title>Blogr</title>
+  </head>
+  <body>
+    <div class="overlay closed"></div>
+    <div class="header-main-wrapper">
+      <header class="header-main">
+        <img src="images/logo.svg" alt="Blogr logo" class="header-main__logo" />
+        <nav class="nav-main hide" id="nav-main">
+          <ul class="nav-main-links-list">
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links-0"
+                data-submenu-index="0"
+              >
+                Product
+              </button>
+              <ul class="nav-main-menu-list closed" id="products-links-0">
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Overview</a>
+                </li>
+                <li class="nav-main-menu-list-item"><a href="#">Pricing</a></li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Marketplace</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Features</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Integrations</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links-1"
+                data-submenu-index="1"
+              >
+                Company
+              </button>
+              <ul class="nav-main-menu-list closed" id="products-links-1">
+                <li class="nav-main-menu-list-item"><a href="#">About</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Team</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Blog</a></li>
+                <li class="nav-main-menu-list-item"><a href="#">Careers</a></li>
+              </ul>
+            </li>
+            <li class="nav-main-links-list-item">
+              <button
+                class="nav-main-links-btn"
+                aria-expanded="false"
+                aria-haspopup="true"
+                aria-controls="products-links-2"
+                data-submenu-index="2"
+              >
+                Connect
+              </button>
+              <ul class="nav-main-menu-list closed" id="products-links-2">
+                <li class="nav-main-menu-list-item"><a href="#">Contact</a></li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">Newsletter</a>
+                </li>
+                <li class="nav-main-menu-list-item">
+                  <a href="#">LinkedIn</a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+          <hr class="nav-main__ruler" />
+          <div class="nav-main-actions">
+            <a href="#" class="nav-main-actions__link">Login</a>
+            <button class="nav-main-actions__btn">Sign Up</button>
+          </div>
+        </nav>
+        <button
+          class="mobile-menu-btn closed"
+          aria-label="Show Navigation Links"
+          aria-expanded="false"
+          aria-haspopup="true"
+          aria-controls="nav-main"
+        ></button>
+      </header>
+    </div>
+    <main>
+      <div class="section-hero-wrapper">
+        <section class="section-hero">
+          <header class="header-hero">
+            <h1 class="header-hero__title">A modern publishing platform</h1>
+            <p class="header-hero__summary">
+              Grow your audience and build your online brand
+            </p>
+          </header>
+          <div class="header-hero-actions">
+            <button class="header-hero-actions__btn">Start for Free</button>
+            <a href="#" class="header-hero-actions__link">Learn More</a>
+          </div>
+        </section>
+      </div>
+      <div class="section-features-wrapper">
+        <section class="section-features section-features--editor">
+          <h2 class="section-features__title">Designed for the future</h2>
+          <div class="section-feature-row section-feature-row--editor">
+            <article class="article-feature">
+              <h3 class="article-feature__title">
+                Introducing an extensible editor
+              </h3>
+              <p class="article-feature__description">
+                Blogr features an exceedingly intuitive interface which lets you
+                focus on one thing: creating content. The editor supports
+                management of multiple blogs and allows easy manipulation of
+                embeds such as images, videos, and Markdown. Extensibility with
+                plugins and themes provide easy ways to add functionality or
+                change the looks of a blog.
+              </p>
+            </article>
+            <article class="article-feature">
+              <h3 class="article-feature__title">Robust content management</h3>
+              <p class="article-feature__description">
+                Flexible content management enables users to easily move through
+                posts. Increase the usability of your blog by adding customized
+                categories, sections, format, or flow. With this functionality,
+                you're in full control.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+      <div class="article-highlight-wrapper">
+        <article class="article-highlight">
+          <h3 class="article-highlight__title">
+            State of the Art Infrastructure
+          </h3>
+          <p class="article-highlight__description">
+            With reliability and speed in mind, worldwide data centers provide
+            the backbone for ultra-fast connectivity. This ensures your site
+            will load instantly, no matter where your readers are, keeping your
+            site competitive.
+          </p>
+        </article>
+      </div>
+      <div class="section-laptops-wrapper">
+        <section class="section-features section-features--laptop">
+          <h2 class="sr-only">Seamless DX</h2>
+          <div class="section-feature-row section-feature-row--laptop">
+            <article class="article-feature">
+              <h3 class="article-feature__title">Free, open, simple</h3>
+              <p class="article-feature__description">
+                Blogr is a free and open source application backed by a large
+                community of helpful developers. It supports features such as
+                code syntax highlighting, RSS feeds, social media integration,
+                third-party commenting tools, and works seamlessly with Google
+                Analytics. The architecture is clean and is relatively easy to
+                learn.
+              </p>
+            </article>
+            <article class="article-feature">
+              <h3 class="article-feature__title">Powerful tooling</h3>
+              <p class="article-feature__description">
+                Batteries included. We built a simple and straightforward CLI
+                tool that makes customization and deployment a breeze, but
+                capable of producing even the most complicated sites.
+              </p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+    <div class="footer-wrapper">
+      <footer class="footer">
+        <img src="images/logo.svg" alt="Blogr Logo" class="footer__logo" />
+        <div class="footer-links-grid">
+          <div class="footer-links-category-box">
+            <h2 class="footer-links-category-box__title">Product</h2>
+            <ul class="footer-links-list">
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Overview</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Pricing</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Marketplace</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Features</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link"
+                  >Integrations</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links-category-box">
+            <h2 class="footer-links-category-box__title">Company</h2>
+            <ul class="footer-links-list">
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">About</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Team</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Blog</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Careers</a>
+              </li>
+            </ul>
+          </div>
+          <div class="footer-links-category-box">
+            <h2 class="footer-links-category-box__title">Connect</h2>
+            <ul class="footer-links-list">
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Contact</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">Newsletter</a>
+              </li>
+              <li class="footer-links-list-item">
+                <a href="#" class="footer-links-list-item__link">LinkedIn</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
