@@ -1,6 +1,7 @@
 import {
   subscribeToMenuButton,
   subscribeToNavButtons,
+  subscribeToEscapeEvent,
   renderNavMenu,
   renderNavSubmenu,
 } from "./nav-view";
@@ -14,6 +15,18 @@ import {
 
 subscribeToMenuButton(handleMenuClick);
 subscribeToNavButtons(handleNavLinkClick);
+subscribeToEscapeEvent(handleNavEscape);
+
+function handleNavEscape(e) {
+  e.stopPropagation();
+
+  const focusIsWithinNavigation = !!document.activeElement.closest(".nav-main");
+  if (!(e.key === "Escape" && focusIsWithinNavigation)) return;
+
+  const currentMenuIndex = getExpandedSubmenuIndex();
+  renderNavSubmenu(currentMenuIndex, currentMenuIndex);
+  setExpandedSubmenuIndex(null);
+}
 
 function handleMenuClick(e) {
   e.stopPropagation();

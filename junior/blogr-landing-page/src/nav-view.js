@@ -15,6 +15,10 @@ export function subscribeToNavButtons(handler) {
   navLinksListElement.addEventListener("click", handler);
 }
 
+export function subscribeToEscapeEvent(handler) {
+  navElement.addEventListener("keydown", handler);
+}
+
 export function renderNavSubmenu(currentSubmenuIndex, targetSubmenuIndex) {
   const targetSubmenu = navSubmenus[targetSubmenuIndex];
   const targetButton = navButtons[targetSubmenuIndex];
