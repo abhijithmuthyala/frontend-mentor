@@ -12,7 +12,8 @@
 }
 
 :root {
-  --blue-900: hsl(240, 38%, 20%);
+  --blue-900: hsl(240, 17%, 22%);
+  --blue-400: hsl(240, 8%, 38%);
   --blue-100: hsl(240, 18%, 77%);
   --white: hsl(0, 0%, 100%);
   --violet-200: hsl(268, 30%, 61%);
@@ -67,6 +68,8 @@ svg {
 
   background: url(/images/pattern-curve.svg) no-repeat left -2.4rem bottom -2.4rem;
   background-size: contain;
+
+  overflow-x: hidden;
 }
 
 .testimonials-container {
@@ -83,7 +86,6 @@ svg {
   max-width: 56rem;
   width: 100%;
   justify-self: center;
-  overflow-x: hidden;
 }
 
 .article-testimonial {
@@ -104,15 +106,22 @@ svg {
   }
 
   transform: translateX(calc(var(--slider-index) * -100%));
-  transition: transform 0.3s;
+  transition: all 0.6s;
 
   &__quote {
     margin-bottom: 1.8rem;
 
     font-size: 1.75rem;
-    font-weight: 300;
+    font-weight: 500;
     line-height: 1.4;
     text-align: center;
+    color: var(--blue-400);
+  }
+
+  &.hide {
+    visibility: hidden;
+    opacity: 0;
+    pointer-events: none;
   }
 }
 
@@ -166,8 +175,8 @@ svg {
   align-items: center;
 
   &__name {
+    font-size: 2rem;
     font-weight: 700;
-    color: var(--blue-900);
   }
 
   &__job {
@@ -200,7 +209,7 @@ svg {
 
   transition: all 0.3s;
 
-  &:enabled:hover {
+  &:hover {
     background-color: var(--violet-200);
 
     &::before {
@@ -277,6 +286,7 @@ svg {
   .slider-buttons-box {
     transform: translate(calc(var(--img-box-padding) + 1.6rem), -50%);
   }
+
   .slider-btn {
     &::before {
       width: 1.2rem;

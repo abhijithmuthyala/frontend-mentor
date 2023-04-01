@@ -12,9 +12,17 @@ export const renderSlide = (function setupSlideRenderer() {
   const testimonialsContainer = document.querySelector(
     ".testimonials-container"
   );
+  const testimonials = document.querySelectorAll(".article-testimonial");
 
   return function (index) {
     testimonialsContainer.style.setProperty("--slider-index", index);
+    testimonials.forEach((testimonial, testimonialIndex) => {
+      if (index === testimonialIndex) {
+        testimonial.classList.remove("hide");
+      } else {
+        testimonial.classList.add("hide");
+      }
+    });
   };
 })();
 
