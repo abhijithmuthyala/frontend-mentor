@@ -15,6 +15,7 @@
   --blue-900: hsl(240, 38%, 20%);
   --blue-100: hsl(240, 18%, 77%);
   --white: hsl(0, 0%, 100%);
+  --violet-200: hsl(268, 30%, 61%);
 }
 
 html {
@@ -45,6 +46,10 @@ img {
   height: auto;
 }
 
+svg {
+  stroke: inherit;
+}
+
 .sr-only {
   position: absolute;
   width: 1px;
@@ -68,6 +73,7 @@ img {
 .testimonials-container {
   --num-testimonials: 2;
   --slider-index: 0;
+  --img-box-padding: 3rem;
 
   position: relative;
 
@@ -113,7 +119,7 @@ img {
   max-width: 32rem;
   width: 100%;
   aspect-ratio: 1;
-  padding: 3rem;
+  padding: var(--img-box-padding);
 
   background: url(/images/pattern-bg.svg) no-repeat center top;
   background-size: contain;
@@ -170,11 +176,13 @@ img {
 }
 
 .slider-buttons-box {
+  --btns-top: 0px;
+
   position: absolute;
 
-  // temp
-  top: 26.5rem;
-  left: 11.8rem;
+  top: calc(var(--btns-top) + var(--img-box-padding));
+  left: 50%;
+  transform: translate(-50%, -50%);
 
   display: flex;
   border-radius: 1000px;
@@ -189,6 +197,21 @@ img {
   padding: 1.2rem 1.6rem;
   background-color: var(--white);
 
+  transition: all 0.3s;
+
+  &:enabled:hover {
+    background-color: var(--violet-200);
+
+    &::before {
+      transform: translateX(calc(var(--dir) * 2px)) scale(1.2);
+      filter: brightness(0) invert(100);
+    }
+  }
+
+  &:disabled::before {
+    filter: opacity(0.25);
+  }
+
   @mixin slider-icon($name) {
     --icon-url: url("/images/icon-#{$name}.svg");
   }
@@ -201,17 +224,17 @@ img {
 
     background: var(--icon-url) no-repeat center;
     background-size: contain;
-  }
 
-  &:hover {
-    // background-color: rgba(200, 100, 50, 0.5);
+    transition: all 0.3s;
   }
 
   &--left {
     @include slider-icon("prev");
+    --dir: -1;
   }
 
   &--right {
     @include slider-icon("next");
+    --dir: 1;
   }
 }
