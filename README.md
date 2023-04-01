@@ -16,7 +16,7 @@
 | [4 Card Features](https://four-card-features-fem.netlify.app/) | [Interactive Pricing Component](https://fem-interactive-pricing.netlify.app/) | | |
 | [Huddle Hero Section](https://huddle-fem-cta.netlify.app/) | [Fylo landing page](https://fylo-lndg-page.netlify.app/) | | |
 | [FAQ Accordian](https://accordian-faq-fem.netlify.app/) | [Blogr Landing Page](https://blogr-landing-page-fem.netlify.app/) | | |
-| [Base Apparel](https://base-fem-apparel.netlify.app/) | | | |
+| [Base Apparel](https://base-fem-apparel.netlify.app/) | [Bootcamp testimonials](https://coding-testimonials-fem.netlify.app/) | | |
 | [Intro Signup Form](https://intro-signup-form-fem.netlify.app/) | | | |
 | [Ping Coming Soon](https://ping-coming-soon-fem.netlify.app/) | | | |
 | [Results Summary Component](https://results-summary-fem-component.netlify.app/) | | | |
