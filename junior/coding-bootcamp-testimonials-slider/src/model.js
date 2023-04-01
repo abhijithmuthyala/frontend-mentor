@@ -1,6 +1,6 @@
 const NUM_SLIDES = 2;
 
-let currentSlideIndex = 1;
+let currentSlideIndex = 0;
 
 export function addToSlideIndex(adder) {
   currentSlideIndex += adder;
