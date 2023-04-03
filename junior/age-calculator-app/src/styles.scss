@@ -33,6 +33,16 @@ input::placeholder {
   background: none;
 }
 
+input[type="number"] {
+  -moz-appearance: textfield;
+
+  &::-webkit-outer-spin-button,
+  &::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+}
+
 button {
   cursor: pointer;
 }
@@ -68,12 +78,12 @@ body {
 }
 
 .section-form-wrapper {
-  padding: 4.8rem 1.6rem;
+  padding: 8.8rem 1.6rem;
 }
 
 .section-form {
-  padding: 3.6rem 2.4rem;
-  border-radius: 1.2rem 1.2rem 8rem 1.2rem;
+  padding: 4.8rem 2.4rem;
+  border-radius: 2.4rem 2.4rem 10rem 2.4rem;
   background-color: var(--white);
 }
 
@@ -87,9 +97,9 @@ body {
     position: relative;
     align-self: center;
 
-    width: 3.6rem;
+    width: 6.4rem;
     aspect-ratio: 1;
-    padding: 1rem;
+    padding: 1.8rem;
     border-radius: 50%;
 
     background-color: var(--purple-600);
@@ -108,41 +118,43 @@ body {
 }
 
 .form-dob-fieldset {
-  display: flex;
-  flex-flow: row wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(8rem, 1fr));
   gap: 1.6rem;
-  justify-content: space-between;
 }
 
 .form-label {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 2px;
 
   color: var(--grey-600);
   font-weight: 400;
+  font-size: 1.2rem;
+  letter-spacing: 2px;
 
   &__input {
-    padding: 0.6rem;
-    border-radius: 4px;
+    padding: 1.2rem;
+    border-radius: 0.8rem;
     border: 1px solid var(--grey-200);
 
-    font-size: 1.4rem;
+    font-size: 2rem;
+    font-weight: 700;
   }
 }
 
 .result-box {
-  padding: 2.4rem 0 0;
+  padding: 6.4rem 0 0;
 }
 
 .result-text {
   font-style: italic;
-  font-size: 2.8rem;
-  font-weight: 700;
+  font-size: 5.4rem;
+  font-weight: 800;
+  line-height: 1.15;
 
   &__number {
-    font-size: 3.2rem;
-    font-weight: 800;
+    font-size: 5.4rem;
     color: var(--purple-600);
   }
 }
