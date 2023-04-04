@@ -156,5 +156,78 @@ body {
   &__number {
     font-size: 5.4rem;
     color: var(--purple-600);
+
+    &.empty {
+      display: inline-flex;
+      gap: 1.2rem;
+      vertical-align: middle;
+
+      &::before,
+      &::after {
+        display: block;
+        content: "";
+        width: 4.8rem;
+        height: 1.6rem;
+        background-color: var(--purple-600);
+        transform: skewX(-10deg);
+      }
+
+      &::before {
+        margin-right: 1.6rem;
+      }
+    }
+  }
+}
+
+@media (min-width: 48em) {
+  .section-form-wrapper {
+    padding-top: 17rem;
+  }
+
+  .section-form {
+    max-width: 84rem;
+    margin-inline: auto;
+    padding: 5.6rem;
+  }
+
+  .form-dob {
+    &__btn {
+      align-self: flex-end;
+
+      margin-top: -4.8rem;
+      width: 9.6rem;
+    }
+  }
+
+  .form-dob-fieldset {
+    grid-template-columns: repeat(auto-fit, minmax(0, 16rem));
+    gap: 3.2rem;
+  }
+
+  .form-label {
+    gap: 1.2rem;
+
+    font-size: 1.4rem;
+    letter-spacing: 3px;
+
+    &__input {
+      padding: 1.2rem 2.4rem;
+
+      font-size: 3rem;
+    }
+  }
+
+  .result-box {
+    padding: 4.2rem 0;
+  }
+
+  .result-text {
+    font-size: 9.6rem;
+    line-height: 1.2;
+    letter-spacing: 1.75px;
+
+    &__number {
+      font-size: 9.6rem;
+    }
   }
 }
