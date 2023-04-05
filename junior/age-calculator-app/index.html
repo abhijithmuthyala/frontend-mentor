@@ -30,67 +30,79 @@
       <h1 class="sr-only">Calculate your age</h1>
       <div class="section-form-wrapper">
         <section class="section-form">
-          <form action="#" class="form-dob">
+          <form action="#" class="form-dob" novalidate>
             <fieldset class="form-dob-fieldset">
               <legend class="sr-only">Enter your birthday details:</legend>
-              <label for="day" class="form-label"
-                >DAY
-                <input
-                  required
-                  class="form-label__input"
-                  type="number"
-                  name="day"
-                  id="day"
-                  min="0"
-                  max="31"
-                  placeholder="DD"
-                  value="24"
-                />
-              </label>
-              <label for="month" class="form-label"
-                >MONTH
-                <input
-                  required
-                  class="form-label__input"
-                  type="number"
-                  name="month"
-                  id="month"
-                  min="1"
-                  max="12"
-                  value="09"
-                  placeholder="MM"
-                />
-              </label>
-              <label for="year" class="form-label"
-                >YEAR
-                <input
-                  required
-                  class="form-label__input"
-                  type="number"
-                  name="year"
-                  id="year"
-                  min="1900"
-                  max="2023"
-                  value="1984"
-                  placeholder="YYYY"
-                />
-              </label>
+              <div class="input-box">
+                <label for="day" class="form-label"
+                  >DAY
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="day"
+                    id="day"
+                    min="1"
+                    max="31"
+                    placeholder="DD"
+                    value=""
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
+              <div class="input-box">
+                <label for="month" class="form-label"
+                  >MONTH
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="month"
+                    id="month"
+                    min="1"
+                    max="12"
+                    value=""
+                    placeholder="MM"
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
+              <div class="input-box">
+                <label for="year" class="form-label"
+                  >YEAR
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="year"
+                    id="year"
+                    min="1900"
+                    max="2023"
+                    value=""
+                    placeholder="YYYY"
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
             </fieldset>
             <button
               class="form-dob__btn"
-              type="button"
+              type="submit"
               aria-label="Calculate age"
             ></button>
           </form>
           <div class="result-box">
             <p class="result-text">
-              <span class="result-text__number">38</span> years
+              <span class="result-text__number clear" id="result-years"></span>
+              years
             </p>
             <p class="result-text">
-              <span class="result-text__number">3</span> months
+              <span class="result-text__number clear" id="result-months"></span>
+              months
             </p>
             <p class="result-text">
-              <span class="result-text__number">26</span> days
+              <span class="result-text__number clear" id="result-days"></span>
+              days
             </p>
           </div>
         </section>
