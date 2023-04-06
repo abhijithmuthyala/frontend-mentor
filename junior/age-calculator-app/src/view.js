@@ -43,9 +43,13 @@ function setupError(inputElement, controlName) {
   return { render, clear };
 
   function render(type = "empty") {
+    if (!errorMap.has(type)) return;
+
     errorElement.textContent = errorMap.get(type);
     container.classList.add("error");
     errorElement.classList.remove("hide");
+
+    inputElement.focus();
   }
 
   function clear() {
