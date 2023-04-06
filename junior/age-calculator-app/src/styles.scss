@@ -101,16 +101,21 @@ body {
   border-bottom: 2px solid var(--grey-50);
 
   &__btn {
+    --bg-clr: var(--purple-600);
+
     position: relative;
     align-self: center;
 
     width: 6.4rem;
     aspect-ratio: 1;
     padding: 1.8rem;
+    margin-top: -0.8rem;
     border-radius: 50%;
 
-    background-color: var(--purple-600);
+    background-color: var(--bg-clr);
     transform: translateY(50%);
+
+    transition: all 0.3s;
 
     &::after {
       display: block;
@@ -120,6 +125,16 @@ body {
 
       background: url(/images/icon-arrow.svg) no-repeat center;
       background-size: contain;
+    }
+
+    &:hover,
+    &:focus {
+      --bg-clr: var(--black);
+
+      box-shadow: 0 0 0.8rem 1px rgba(0, 0, 0, 0.1);
+      outline: none;
+
+      transform: scale(1.05) translateY(50%);
     }
   }
 }
@@ -203,6 +218,10 @@ body {
     color: var(--purple-600);
 
     &.clear {
+      --underscore-width: 2.4rem;
+      --underscore-height: 1.2rem;
+      --underscore-margin: 0rem;
+
       display: inline-flex;
       gap: 1.2rem;
       vertical-align: middle;
@@ -211,14 +230,14 @@ body {
       &::after {
         display: block;
         content: "";
-        width: 4.8rem;
-        height: 1.6rem;
+        width: var(--underscore-width);
+        height: var(--underscore-height);
         background-color: var(--purple-600);
         transform: skewX(-10deg);
       }
 
       &::before {
-        margin-right: 1.6rem;
+        margin-right: var(--underscore-margin);
       }
     }
   }
@@ -239,7 +258,7 @@ body {
     &__btn {
       align-self: flex-end;
 
-      margin-top: -4.8rem;
+      margin-top: -5.6rem;
       width: 9.6rem;
     }
   }
@@ -273,6 +292,12 @@ body {
 
     &__number {
       font-size: 9.6rem;
+
+      &.clear {
+        --underscore-width: 4.8rem;
+        --underscore-height: 1.6rem;
+        --underscore-margin: 1.6rem;
+      }
     }
   }
 }
