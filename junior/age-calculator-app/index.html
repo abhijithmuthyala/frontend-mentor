@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta name="description" content="Calculate your age" />
+
+    <title>Age Calculator App</title>
+    <link
+      rel="shortcut icon"
+      href="/images/favicon-32x32.png"
+      type="image/png"
+      sizes="32x32"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,700;1,400;1,800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="src/styles.scss" />
+    <script src="src/app.js" type="module"></script>
+  </head>
+  <body>
+    <main>
+      <h1 class="sr-only">Calculate your age</h1>
+      <div class="section-form-wrapper">
+        <div class="section-form">
+          <form action="#" class="form-dob" novalidate>
+            <fieldset class="form-dob-fieldset">
+              <legend class="sr-only">Birthday details form</legend>
+              <div class="input-box">
+                <label for="day" class="form-label"
+                  >DAY
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="day"
+                    id="day"
+                    min="1"
+                    max="31"
+                    placeholder="DD"
+                    value=""
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
+              <div class="input-box">
+                <label for="month" class="form-label"
+                  >MONTH
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="month"
+                    id="month"
+                    min="1"
+                    max="12"
+                    value=""
+                    placeholder="MM"
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
+              <div class="input-box">
+                <label for="year" class="form-label"
+                  >YEAR
+                  <input
+                    required
+                    class="form-label__input"
+                    type="number"
+                    name="year"
+                    id="year"
+                    min="1900"
+                    max="2023"
+                    value=""
+                    placeholder="YYYY"
+                  />
+                </label>
+                <p class="error-msg hide"></p>
+              </div>
+            </fieldset>
+            <button
+              class="form-dob__btn"
+              type="submit"
+              aria-label="Calculate age"
+            ></button>
+          </form>
+          <div class="result-box">
+            <p class="result-text">
+              <span class="result-text__number clear" id="result-years"></span>
+              years
+            </p>
+            <p class="result-text">
+              <span class="result-text__number clear" id="result-months"></span>
+              months
+            </p>
+            <p class="result-text">
+              <span class="result-text__number clear" id="result-days"></span>
+              days
+            </p>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
