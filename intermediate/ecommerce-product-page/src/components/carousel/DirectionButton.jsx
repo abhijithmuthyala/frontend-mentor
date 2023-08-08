@@ -13,7 +13,7 @@ export default function DirectionButton({ direction, onClick }) {
       className={`absolute top-1/2 -translate-y-1/2 ${edge} flex items-center justify-center w-10 h-10 rounded-full  bg-white`}
     >
       <span
-        className={`h-[16px] w-[16px] inline-block ${icons[direction]} bg-contain bg-no-repeat bg-center`}
+        className={`h-[12px] w-[14px] inline-block ${icons[direction]} bg-contain bg-no-repeat bg-center`}
       ></span>
     </button>
   );

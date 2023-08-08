@@ -10,9 +10,9 @@ export default function App() {
       <main>
         <h1 className="sr-only">Sneakers that vibe with you!</h1>
         <div>
-          <section className="max-w-screen-xl">
+          <section className="">
             <ProductCarousel imagesFolderName="product" numItems={4} />
-            <article className="mx-auto px-6">
+            <article className="px-6">
               <h2 className="font-bold mb-6">
                 <p className="text-3xl">
                   <span className="mb-3 block uppercase text-orange-900 text-sm ">

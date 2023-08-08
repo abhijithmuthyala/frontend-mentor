@@ -2,7 +2,7 @@ import HeaderNav from "./HeaderNav";
 
 export default function Header() {
   return (
-    <header className="flex items-center flex-wrap gap-4 max-w-screen-xl mx-auto py-5 px-6">
+    <header className="flex items-center flex-wrap gap-4 max-w-screen-xl mx-auto py-[22px] px-6">
       <img
         src="./images/logo.svg"
         alt="Sneakers logo"
