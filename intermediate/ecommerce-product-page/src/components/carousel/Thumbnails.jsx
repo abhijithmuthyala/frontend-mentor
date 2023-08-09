@@ -2,22 +2,30 @@ export default function Thumbnails({
   imagesFolderName,
   numItems,
   currentImageIndex,
+  onThumbnailClick,
 }) {
   return (
-    <ul className="grid grid-cols-[repeat(auto-fit,_minmax(36px,_64px))] justify-between max-w-xs mx-auto">
+    <ul className="flex-1 gap-x-4 hidden md:flex ">
       {Array.from({ length: numItems }, (_, i) => (
         <li key={i}>
-          <img
-            src={`/images/${imagesFolderName}/${i + 1}-thumbnail.jpg`}
-            alt=""
-            width={176}
-            height={176}
-            className={`cursor-pointer rounded-xl ${
-              currentImageIndex === i
-                ? "outline-orange-900 outline-3 outline-offset-2 outline opacity-60"
-                : ""
-            }`}
-          />
+          <button
+            aria-label={`Image number ${i + 1}`}
+            onClick={function handleClick() {
+              onThumbnailClick(i);
+            }}
+          >
+            <img
+              src={`/images/${imagesFolderName}/${i + 1}-thumbnail.jpg`}
+              alt={`Thumbnail for image number ${i + 1}`} // TODO: Improve a11y
+              width={176}
+              height={176}
+              className={`cursor-pointer rounded-xl ${
+                currentImageIndex === i
+                  ? "outline-orange-900 outline-4 outline-offset-2 outline opacity-60"
+                  : ""
+              } `}
+            />
+          </button>
         </li>
       ))}
     </ul>

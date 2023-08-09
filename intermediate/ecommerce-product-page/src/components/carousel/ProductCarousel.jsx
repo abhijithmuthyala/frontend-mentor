@@ -3,11 +3,7 @@ import { useState } from "react";
 import DirectionButton from "./DirectionButton";
 import Thumbnails from "./Thumbnails";
 
-export default function ProductCarousel({
-  imagesFolderName,
-  numItems,
-  showThumbnails = false,
-}) {
+export default function ProductCarousel({ imagesFolderName, numItems }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   function handleNext() {
@@ -18,15 +14,23 @@ export default function ProductCarousel({
     setCurrentImageIndex((currentImageIndex - 1 + numItems) % numItems);
   }
 
+  function onThumbnailClick(index) {
+    setCurrentImageIndex(index);
+  }
+
   return (
-    <>
-      <div className="relative max-w-4xl mx-auto mb-5">
-        <ul className="flex overflow-x-hidden  max-h-[300px]" draggable>
+    <div className="self-start flex flex-col md:gap-y-8 md:px-8 lg:px-14">
+      <div className="relative overflow-hidden md:rounded-2xl">
+        <ul
+          className="flex overflow-x-hidden max-h-[calc(200px+27vw)]"
+          draggable
+        >
           {Array.from({ length: numItems }, (_, i) => (
             <li key={i} className="basis-full shrink-0">
               <img
                 src={`/images/${imagesFolderName}/${i + 1}.jpg`}
-                alt=""
+                // TODO: Improve a11y
+                alt="Sneakers"
                 style={{
                   transform: `translateX(-${currentImageIndex * 100}%)`,
                 }}
@@ -40,14 +44,12 @@ export default function ProductCarousel({
         <DirectionButton direction="next" onClick={handleNext} />
         <DirectionButton direction="previous" onClick={handlePrevious} />
       </div>
-
-      {showThumbnails && (
-        <Thumbnails
-          imagesFolderName={imagesFolderName}
-          numItems={numItems}
-          currentImageIndex={currentImageIndex}
-        />
-      )}
-    </>
+      <Thumbnails
+        imagesFolderName={imagesFolderName}
+        numItems={numItems}
+        currentImageIndex={currentImageIndex}
+        onThumbnailClick={onThumbnailClick}
+      />
+    </div>
   );
 }
