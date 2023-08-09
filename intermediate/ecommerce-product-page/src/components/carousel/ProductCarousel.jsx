@@ -20,8 +20,8 @@ export default function ProductCarousel({
 
   return (
     <>
-      <div className="relative max-w-4xl mx-auto">
-        <ul className="flex overflow-x-hidden mb-4 max-h-[300px]" draggable>
+      <div className="relative max-w-4xl mx-auto mb-5">
+        <ul className="flex overflow-x-hidden  max-h-[300px]" draggable>
           {Array.from({ length: numItems }, (_, i) => (
             <li key={i} className="basis-full shrink-0">
               <img
