@@ -1,4 +1,5 @@
-import HeaderNav from "./HeaderNav";
+import HeaderMenuAndNav from "./HeaderMenuAndNav";
+import Cart from "../cart/Cart";
 
 export default function Header() {
   return (
@@ -13,11 +14,8 @@ export default function Header() {
         height={20}
         className="max-w-full block"
       />
-      <HeaderNav />
-      <button
-        aria-label="Cart"
-        className="ml-auto min-w-[22px] h-[20px] bg-[url('./images/icon-cart.svg')]"
-      ></button>
+      <HeaderMenuAndNav />
+      <Cart />
       <button
         aria-label="Profile"
         className="w-6 h-6 bg-[url('./images/image-avatar.png')] bg-cover bg-center rounded-full md:w-12 md:h-12"

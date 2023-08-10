@@ -10,7 +10,6 @@ export default function App() {
     <>
       <div className="relative px-6">
         <Header />
-        <Cart />
       </div>
       <main>
         <h1 className="sr-only">Sneakers that vibe with you!</h1>
