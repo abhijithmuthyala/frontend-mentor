@@ -2,10 +2,10 @@ export default function NavLinks({ collapsed }) {
   return (
     <nav
       className={`${
-        collapsed ? "hidden" : "flex"
-      } absolute z-20 left-0 top-0 h-screen w-2/3 bg-white pt-24 px-6 flex-col gap-4`}
+        collapsed ? "hidden" : "block"
+      } absolute z-20 left-0 top-0 h-screen w-2/3 bg-white pt-24 px-6 lg:block lg:relative lg:h-auto lg:w-auto lg:py-0`}
     >
-      <ul className="flex flex-col gap-5">
+      <ul className="flex flex-col gap-y-5 lg:flex-row lg:gap-x-6">
         <li>
           <NavLink href="collections" text="Collections" />
         </li>
@@ -28,7 +28,7 @@ export default function NavLinks({ collapsed }) {
 
 function NavLink({ href, text }) {
   return (
-    <a href={"/" + href} className="text-black font-bold text-lg">
+    <a href={"/" + href} className="text-black font-bold text-lg lg:text-base">
       {text}
     </a>
   );

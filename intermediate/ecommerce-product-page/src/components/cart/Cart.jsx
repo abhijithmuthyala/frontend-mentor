@@ -3,12 +3,7 @@ import { useState } from "react";
 import CartItem from "./CartItem";
 
 export default function Cart() {
-  const [productIds, setProductIds] = useState([
-    "fall",
-    "fall",
-    "fall",
-    "fall",
-  ]);
+  const [productIds, setProductIds] = useState(["fall"]);
   const [collapsed, setCollapsed] = useState(true);
 
   const cartIsEmpty = productIds.length === 0;

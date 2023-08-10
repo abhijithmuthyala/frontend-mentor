@@ -1,11 +1,11 @@
-import HeaderMenuAndNav from "./HeaderMenuAndNav";
 import Cart from "../cart/Cart";
+import HeaderMenuAndNav from "./HeaderMenuAndNav";
 
 export default function Header() {
   return (
     <header
       className="flex items-center flex-wrap gap-4 max-w-[1104px] mx-auto py-[22px]
-      md:py-8 md:border-b-2 md:border-b-blue-100"
+      md:py-8 md:border-b-2 md:border-b-blue-100 lg:gap-x-8"
     >
       <img
         src="./images/logo.svg"

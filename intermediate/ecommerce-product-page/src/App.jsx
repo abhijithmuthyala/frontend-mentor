@@ -1,5 +1,4 @@
 import ProductCarousel from "./components/carousel/ProductCarousel";
-import Cart from "./components/cart/Cart";
 import Header from "./components/header/Header";
 import Description from "./components/product/Description";
 
