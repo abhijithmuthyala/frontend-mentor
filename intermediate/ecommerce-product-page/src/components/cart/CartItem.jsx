@@ -1,14 +1,16 @@
 import products from "../../data/products.json";
 
-export default function CartItem({ id }) {
+export default function CartItem({ id, onDelete, orderQuantities }) {
   const { title, price, discountPercent } = products.find(
     (product) => product.id === id
   );
   const discountedPrice = price * (1 - discountPercent / 100);
-  const units = 2;
+  const units = orderQuantities.get(id);
   const totalPrice = units * discountedPrice;
 
-  function handleDeleteItem() {}
+  function handleDeleteItem() {
+    onDelete(id);
+  }
 
   return (
     <li className="grid grid-cols-[48px_1fr_14px]">

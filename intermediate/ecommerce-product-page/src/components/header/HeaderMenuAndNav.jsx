@@ -17,8 +17,8 @@ export default function HeaderMenuAndNav() {
     <>
       <div
         className={`absolute h-screen w-screen left-0 top-0 bg-black bg-opacity-75 ${
-          collapsed ? "opacity-0 -z-10" : "opacity-100"
-        } z-10 lg:hidden`}
+          collapsed ? "opacity-0 -z-10" : "opacity-100 z-10"
+        } lg:hidden`}
       ></div>
       <button
         aria-label={collapsed ? "Open Menu" : "Close Menu"}

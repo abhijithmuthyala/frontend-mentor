@@ -1,6 +1,4 @@
-import AddToCart from "./AddToCart";
-
-export default function Description() {
+export default function Description({ cta }) {
   return (
     <article className="px-6 md:px-8 md:self-center lg:px-14">
       <h2 className="font-bold mb-3 md:mb-10">
@@ -25,7 +23,7 @@ export default function Description() {
         </span>
         <s className="text-blue-200">$250.00</s>
       </p>
-      <AddToCart />
+      {cta}
     </article>
   );
 }
