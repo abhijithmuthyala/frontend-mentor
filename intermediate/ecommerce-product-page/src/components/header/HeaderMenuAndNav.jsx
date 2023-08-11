@@ -5,8 +5,8 @@ import NavLinks from "./NavLinks";
 export default function HeaderMenuAndNav() {
   const [collapsed, setCollapsed] = useState(true);
   const icons = {
-    menu: "bg-[url('./images/icon-menu.svg')]",
-    close: "bg-[url('./images/icon-close.svg')]",
+    menu: "bg-[url('/images/icon-menu.svg')]",
+    close: "bg-[url('/images/icon-close.svg')]",
   };
 
   function toggleMenu() {

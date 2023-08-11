@@ -37,7 +37,7 @@ export default function Cart({ cartIds, onDelete, orderQuantities }) {
       <button
         aria-label="Cart"
         onClick={toggleCart}
-        className="ml-auto min-w-[22px] h-[20px] bg-[url('./images/icon-cart.svg')]"
+        className="ml-auto min-w-[22px] h-[20px] bg-[url('/images/icon-cart.svg')]"
       ></button>
       <div
         className={`absolute z-[5] right-0 top-[calc(100%+8px)] w-full  max-w-[492px] px-2 md:px-6 ${

@@ -17,7 +17,7 @@ export default function Header({ cart }) {
       {cart}
       <button
         aria-label="Profile"
-        className="w-6 h-6 bg-[url('./images/image-avatar.png')] bg-cover bg-center rounded-full md:w-12 md:h-12"
+        className="w-6 h-6 bg-[url('/images/image-avatar.png')] bg-cover bg-center rounded-full md:w-12 md:h-12"
       ></button>
     </header>
   );

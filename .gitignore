@@ -5,6 +5,7 @@ dist
 
 design
 *.css
+!index.css
 style-guide.md
 README*.md
 !/README.md

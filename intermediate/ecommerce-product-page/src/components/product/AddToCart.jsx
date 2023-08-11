@@ -38,7 +38,7 @@ export default function AddToCart({ productId, onAdd, orderQuantities }) {
         onClick={handleAddToCart}
         className="flex flex-grow-[2] items-center justify-center gap-4 py-4 bg-orange-900 rounded-lg text-white font-bold text-center"
       >
-        <span className="bg-[url('./images/icon-cart.svg')] bg-cover bg-center inline-block w-[20px] h-[20px] brightness-0 invert"></span>
+        <span className="bg-[url('/images/icon-cart.svg')] bg-cover bg-center inline-block w-[20px] h-[20px] brightness-0 invert"></span>
         Add to cart
       </button>
     </div>
