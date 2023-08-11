@@ -1,15 +1,20 @@
+import { useContext } from "react";
+
+import { CartContext } from "../../context/CartContext";
 import products from "../../data/products.json";
 
-export default function CartItem({ id, onDelete, orderQuantities }) {
+export default function CartItem({ id }) {
+  const { cartItems, dispatchCartItems } = useContext(CartContext);
+
   const { title, price, discountPercent } = products.find(
     (product) => product.id === id
   );
   const discountedPrice = price * (1 - discountPercent / 100);
-  const units = orderQuantities.get(id);
+  const units = cartItems.get(id);
   const totalPrice = units * discountedPrice;
 
   function handleDeleteItem() {
-    onDelete(id);
+    dispatchCartItems({ type: "REMOVE_ITEM", id });
   }
 
   return (

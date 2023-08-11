@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
+import { CartContext } from "../../context/CartContext";
 import productsData from "../../data/products.json";
 
-export default function AddToCart({ productId, onAdd, orderQuantities }) {
+export default function AddToCart({ productId }) {
   const [units, setUnits] = useState(1);
+  const { cartItems, dispatchCartItems } = useContext(CartContext);
+
   const { maxUnits } = productsData.find((product) => product.id === productId);
-  const currentUnits = orderQuantities.get(productId) ?? 0;
+  const currentUnits = cartItems.get(productId) ?? 0;
 
   function handleIncreaseUnits() {
     setUnits(units + 1);
@@ -16,7 +19,11 @@ export default function AddToCart({ productId, onAdd, orderQuantities }) {
   }
 
   function handleAddToCart() {
-    onAdd(productId, units);
+    dispatchCartItems({
+      type: "ADD_ITEM",
+      id: productId,
+      orderQuantity: units,
+    });
     setUnits(1);
   }
 
@@ -35,8 +42,9 @@ export default function AddToCart({ productId, onAdd, orderQuantities }) {
         </UnitButton>
       </div>
       <button
+        disabled={units + currentUnits > maxUnits}
         onClick={handleAddToCart}
-        className="flex flex-grow-[2] items-center justify-center gap-4 py-4 bg-orange-900 rounded-lg text-white font-bold text-center"
+        className="flex flex-grow-[2] items-center justify-center gap-4 py-4 bg-orange-900 rounded-lg text-white font-bold text-center disabled:cursor-not-allowed"
       >
         <span className="bg-[url('/images/icon-cart.svg')] bg-cover bg-center inline-block w-[20px] h-[20px] brightness-0 invert"></span>
         Add to cart

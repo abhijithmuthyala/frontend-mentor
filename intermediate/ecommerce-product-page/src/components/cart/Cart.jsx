@@ -1,21 +1,18 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 
+import { CartContext } from "../../context/CartContext";
 import CartItem from "./CartItem";
 
-export default function Cart({ cartIds, onDelete, orderQuantities }) {
+export default function Cart() {
   const [collapsed, setCollapsed] = useState(true);
-  const cartIsEmpty = cartIds.size === 0;
+  const { cartItems } = useContext(CartContext);
+  const cartIsEmpty = cartItems.size === 0;
 
   const emptyItemsElement = <p className="min-h-240px">Your cart is empty.</p>;
   const items = (
     <ul className=" w-full flex flex-col gap-y-8 mb-12">
-      {[...cartIds].map((id, i) => (
-        <CartItem
-          id={id}
-          key={i}
-          onDelete={onDelete}
-          orderQuantities={orderQuantities}
-        />
+      {Array.from(cartItems).map(([id], i) => (
+        <CartItem id={id} key={i} />
       ))}
     </ul>
   );

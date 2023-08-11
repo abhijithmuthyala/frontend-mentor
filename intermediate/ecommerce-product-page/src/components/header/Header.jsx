@@ -1,6 +1,7 @@
+import Cart from "../cart/Cart";
 import HeaderMenuAndNav from "./HeaderMenuAndNav";
 
-export default function Header({ cart }) {
+export default function Header() {
   return (
     <header
       className="flex items-center flex-wrap gap-4 max-w-[1104px] mx-auto py-[22px]
@@ -14,7 +15,7 @@ export default function Header({ cart }) {
         className="max-w-full block"
       />
       <HeaderMenuAndNav />
-      {cart}
+      <Cart />
       <button
         aria-label="Profile"
         className="w-6 h-6 bg-[url('/images/image-avatar.png')] bg-cover bg-center rounded-full md:w-12 md:h-12"
