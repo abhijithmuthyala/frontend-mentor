@@ -1,6 +1,5 @@
 import ProductCarousel from "./components/carousel/ProductCarousel";
 import Header from "./components/header/Header";
-import AddToCart from "./components/product/AddToCart";
 import Description from "./components/product/Description";
 import { CartProvider } from "./context/CartContext";
 
@@ -8,6 +7,7 @@ import "./index.css";
 
 export default function App() {
   const productId = "fall";
+  const numImages = 4;
 
   return (
     <CartProvider>
@@ -18,8 +18,11 @@ export default function App() {
         <h1 className="sr-only">Sneakers that vibe with you!</h1>
         <div className="pb-24 md:px-6 md:py-20">
           <section className="max-w-[1104px] mx-auto grid gap-y-5 justify-center md:grid-cols-2">
-            <ProductCarousel imagesFolderName={productId} numItems={4} />
-            <Description cta={<AddToCart productId={productId} />} />
+            <ProductCarousel
+              imagesFolderName={productId}
+              numItems={numImages}
+            />
+            <Description productId={productId} />
           </section>
         </div>
       </main>
