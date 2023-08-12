@@ -32,10 +32,12 @@ export default function Cart() {
   return (
     <>
       <button
-        aria-label="Cart"
+        aria-label={`Cart - ${cartItems.size} items`}
         onClick={toggleCart}
         className="ml-auto min-w-[22px] h-[20px] bg-[url('/images/icon-cart.svg')]"
-      ></button>
+      >
+        {!cartIsEmpty && <CartNotification numItems={cartItems.size} />}
+      </button>
       <div
         className={`absolute z-[5] right-0 top-[calc(100%+8px)] w-full  max-w-[492px] px-2 md:px-6 ${
           collapsed ? "hidden" : "block"
@@ -61,5 +63,13 @@ export default function Cart() {
         </div>
       </div>
     </>
+  );
+}
+
+function CartNotification({ numItems }) {
+  return (
+    <span className="relative -right-3 -top-3 grid place-items-center w-6 h-6 p-[2px] text-xs rounded-full bg-orange-900 font-bold text-white">
+      {numItems}
+    </span>
   );
 }
