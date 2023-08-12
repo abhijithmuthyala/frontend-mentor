@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import DirectionButton from "./DirectionButton";
+import CarouselSlider from "./Slider";
 import Thumbnails from "./Thumbnails";
 
 export default function ProductCarousel({ imagesFolderName, numItems }) {
@@ -19,37 +20,22 @@ export default function ProductCarousel({ imagesFolderName, numItems }) {
   }
 
   return (
-    <div className="self-start flex flex-col md:gap-y-8 md:px-8 lg:px-14">
-      <div className="relative overflow-hidden md:rounded-2xl">
-        <ul
-          className="flex overflow-x-hidden max-h-[calc(200px+27vw)]"
-          draggable
-        >
-          {Array.from({ length: numItems }, (_, i) => (
-            <li key={i} className="basis-full shrink-0">
-              <img
-                src={`/images/${imagesFolderName}/${i + 1}.jpg`}
-                // TODO: Improve a11y
-                alt="Sneakers"
-                style={{
-                  transform: `translateX(-${currentImageIndex * 100}%)`,
-                }}
-                className="h-full transition-transform duration-300 object-cover object-center"
-                width={1000}
-                height={1000}
-              />
-            </li>
-          ))}
-        </ul>
-        <DirectionButton direction="next" onClick={handleNext} />
-        <DirectionButton direction="previous" onClick={handlePrevious} />
-      </div>
+    <>
+      <CarouselSlider
+        numItems={numItems}
+        imagesFolderName={imagesFolderName}
+        currentImageIndex={currentImageIndex}
+        nextButton={<DirectionButton direction="next" onClick={handleNext} />}
+        prevButton={
+          <DirectionButton direction="previous" onClick={handlePrevious} />
+        }
+      />
       <Thumbnails
         imagesFolderName={imagesFolderName}
         numItems={numItems}
         currentImageIndex={currentImageIndex}
         onThumbnailClick={onThumbnailClick}
       />
-    </div>
+    </>
   );
 }

@@ -18,10 +18,12 @@ export default function App() {
         <h1 className="sr-only">Sneakers that vibe with you!</h1>
         <div className="pb-24 md:px-6 md:py-20">
           <section className="max-w-[1104px] mx-auto grid gap-y-5 justify-center md:grid-cols-2">
-            <ProductCarousel
-              imagesFolderName={productId}
-              numItems={numImages}
-            />
+            <div className="self-start flex flex-col md:gap-y-8 md:px-8 lg:px-14">
+              <ProductCarousel
+                imagesFolderName={productId}
+                numItems={numImages}
+              />
+            </div>
             <Description productId={productId} />
           </section>
         </div>
