@@ -14,17 +14,17 @@ export default function Thumbnails({
             onClick={function handleClick() {
               onThumbnailClick(i);
             }}
+            className={`${
+              currentImageIndex === i
+                ? "outline-orange-900 outline-4 outline-offset-2 outline opacity-60"
+                : ""
+            } rounded-xl overflow-hidden hover:opacity-60 transition-all`}
           >
             <img
               src={`/images/${imagesFolderName}/${i + 1}-thumbnail.jpg`}
               alt={`Thumbnail for image number ${i + 1}`} // TODO: Improve a11y
               width={176}
               height={176}
-              className={`cursor-pointer rounded-xl ${
-                currentImageIndex === i
-                  ? "outline-orange-900 outline-4 outline-offset-2 outline opacity-60"
-                  : ""
-              } `}
             />
           </button>
         </li>
