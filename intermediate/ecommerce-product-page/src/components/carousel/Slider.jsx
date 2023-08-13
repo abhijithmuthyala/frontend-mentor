@@ -2,12 +2,16 @@ export default function CarouselSlider({
   numItems,
   imagesFolderName,
   currentImageIndex,
-  nextButton,
-  prevButton,
+  clickable = true,
+  onImageClick,
+  children,
 }) {
   return (
     <div className="relative overflow-hidden md:rounded-2xl">
-      <ul className="flex overflow-x-hidden max-h-[calc(200px+27vw)]" draggable>
+      <ul
+        onClick={onImageClick}
+        className="flex overflow-x-hidden max-h-[calc(200px+27vw)] lg:max-h-[initial]"
+      >
         {Array.from({ length: numItems }, (_, i) => (
           <li key={i} className="basis-full shrink-0">
             <img
@@ -17,15 +21,16 @@ export default function CarouselSlider({
               style={{
                 transform: `translateX(-${currentImageIndex * 100}%)`,
               }}
-              className="h-full transition-transform duration-300 object-cover object-center"
+              className={`h-full transition-transform duration-300 object-cover object-center ${
+                clickable ? "lg:cursor-pointer" : ""
+              }`}
               width={1000}
               height={1000}
             />
           </li>
         ))}
       </ul>
-      {nextButton}
-      {prevButton}
+      {children}
     </div>
   );
 }

@@ -3,9 +3,10 @@ export default function Thumbnails({
   numItems,
   currentImageIndex,
   onThumbnailClick,
+  className = "",
 }) {
   return (
-    <ul className="flex-1 gap-x-4 hidden md:flex ">
+    <ul className={`flex-1 gap-x-4 hidden md:flex ${className}`}>
       {Array.from({ length: numItems }, (_, i) => (
         <li key={i}>
           <button
