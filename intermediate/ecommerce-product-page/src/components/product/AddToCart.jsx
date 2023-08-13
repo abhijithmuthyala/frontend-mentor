@@ -44,7 +44,7 @@ export default function AddToCart({ productId }) {
       <button
         disabled={units + currentUnits > maxUnits}
         onClick={handleAddToCart}
-        className="flex flex-grow-[2] items-center justify-center gap-4 py-4 bg-orange-900 rounded-lg text-white font-bold text-center disabled:cursor-not-allowed"
+        className="flex flex-grow-[2] items-center justify-center gap-4 py-4 bg-orange-900 rounded-lg text-white font-bold text-center disabled:cursor-not-allowed hover:bg-opacity-75 transition-all"
       >
         <span className="bg-[url('/images/icon-cart.svg')] bg-cover bg-center inline-block w-[20px] h-[20px] brightness-0 invert"></span>
         Add to cart
