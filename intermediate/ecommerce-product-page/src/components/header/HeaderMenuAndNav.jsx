@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+import { viewTransitionWrapper } from "../../utils";
 import NavLinks from "./NavLinks";
 
 export default function HeaderMenuAndNav() {
@@ -10,7 +11,9 @@ export default function HeaderMenuAndNav() {
   };
 
   function toggleMenu() {
-    setCollapsed(!collapsed);
+    viewTransitionWrapper(function viewTransition() {
+      setCollapsed(!collapsed);
+    });
   }
 
   return (

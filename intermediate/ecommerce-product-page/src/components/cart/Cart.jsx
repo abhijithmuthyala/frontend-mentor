@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 
 import { CartContext } from "../../context/CartContext";
+import { viewTransitionWrapper } from "../../utils";
 import CartItem from "./CartItem";
 
 export default function Cart() {
@@ -26,7 +27,9 @@ export default function Cart() {
   );
 
   function toggleCart() {
-    setCollapsed(!collapsed);
+    viewTransitionWrapper(function viewTransition() {
+      setCollapsed(!collapsed);
+    });
   }
 
   return (

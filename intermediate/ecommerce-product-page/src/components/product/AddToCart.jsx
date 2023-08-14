@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 
 import { CartContext } from "../../context/CartContext";
 import productsData from "../../data/products.json";
+import { viewTransitionWrapper } from "../../utils";
 
 export default function AddToCart({ productId }) {
   const [units, setUnits] = useState(1);
@@ -19,12 +20,14 @@ export default function AddToCart({ productId }) {
   }
 
   function handleAddToCart() {
-    dispatchCartItems({
-      type: "ADD_ITEM",
-      id: productId,
-      orderQuantity: units,
+    viewTransitionWrapper(function viewTransition() {
+      dispatchCartItems({
+        type: "ADD_ITEM",
+        id: productId,
+        orderQuantity: units,
+      });
+      setUnits(1);
     });
-    setUnits(1);
   }
 
   return (

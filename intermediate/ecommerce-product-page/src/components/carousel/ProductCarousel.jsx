@@ -1,6 +1,7 @@
 import { useState } from "react";
 
 import useLightboxEffects from "../../hooks/useLightboxEffects";
+import { viewTransitionWrapper } from "../../utils";
 import LightboxCarousel from "../lightbox/LightboxCarousel";
 import DirectionButton from "./DirectionButton";
 import CarouselSlider from "./Slider";
@@ -62,6 +63,8 @@ export default function ProductCarousel({ imagesFolderName, numItems }) {
     const query = window.matchMedia("(min-width: 1024px)");
     if (!query.matches) return;
 
-    setShowLightbox(!showLightbox);
+    viewTransitionWrapper(function viewTransition() {
+      setShowLightbox(!showLightbox);
+    });
   }
 }
