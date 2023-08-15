@@ -1,8 +1,8 @@
-const iconNames = ["facebook", "instagram", "pinterest"];
-const icons = {};
-iconNames.forEach((name) => {
-  icons[name] = `bg-[url(/images/icon-${name}.svg)]`;
-});
+const icons = {
+  facebook: "bg-[url(/images/icon-facebook.svg)]",
+  instagram: "bg-[url(/images/icon-instagram.svg)]",
+  pinterest: "bg-[url(/images/icon-pinterest.svg)]",
+};
 
 export default function FooterLink({ iconName, url, siteName }) {
   return (
