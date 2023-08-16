@@ -9,7 +9,7 @@ export default function App() {
           We're launching soon
         </h1>
         <main>
-          <h2 className="sr-only">Live in, ...</h2>
+          <h2 className="sr-only">Live in,</h2>
           <Timer />
         </main>
       </div>
